@@ -42,12 +42,10 @@ android {
         viewBinding true
     }
 
-    lintOptions {
-        disable 'ContentDescription'
-        disable 'NotifyDataSetChanged'
-        disable 'InflateParams'
-    }
     namespace 'com.pocket_plan.j7_003'
+    lint {
+        disable 'ContentDescription', 'NotifyDataSetChanged', 'InflateParams'
+    }
 
 }
 
