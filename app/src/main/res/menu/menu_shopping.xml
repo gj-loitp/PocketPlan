@@ -2,46 +2,46 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item_shopping_add_list"
+        android:id="@+id/itemShoppingAddList"
         android:title="@string/shoppingOptionAddList"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_delete_list"
+        android:id="@+id/itemShoppingDeleteList"
         android:title="@string/shoppingOptionDeleteList"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_rename_list"
+        android:id="@+id/itemShoppingRenameList"
         android:title="@string/shoppingOptionRenameList"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_clear_list"
+        android:id="@+id/itemShoppingClearList"
         android:title="@string/shoppingOptionClearList"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_uncheck_all"
+        android:id="@+id/itemShoppingUncheckAll"
         android:title="@string/shoppingOptionUncheckAll"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_remove_checked"
+        android:id="@+id/itemShoppingRemoveChecked"
         android:title="@string/shoppingOptionDeleteChecked"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_undo"
+        android:id="@+id/itemShoppingUndo"
         android:icon="@drawable/ic_action_undo"
         android:title=""
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/item_shopping_collapse_all"
+        android:id="@+id/itemShoppingCollapseAll"
         android:title="@string/shoppingOptionCollapseAll"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_expand_all"
+        android:id="@+id/itemShoppingExpandAll"
         android:title="@string/shoppingOptionExpandAll"
         app:showAsAction="never" />
     <item
-        android:id="@+id/item_shopping_search"
+        android:id="@+id/itemShoppingSearch"
         android:icon="@drawable/ic_action_search"
         android:title=""
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always"></item>
+        app:showAsAction="always" />
 </menu>

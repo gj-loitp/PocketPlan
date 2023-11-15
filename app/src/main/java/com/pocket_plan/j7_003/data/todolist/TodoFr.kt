@@ -67,7 +67,7 @@ class TodoFr : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_tasks, menu)
         myMenu = menu
-        myMenu.findItem(R.id.item_tasks_undo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemTasksUndo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
         updateTodoIcons()
         super.onCreateOptionsMenu(menu, inflater)
     }
@@ -76,7 +76,7 @@ class TodoFr : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.item_tasks_delete_checked -> {
+            R.id.itemTasksDeleteChecked -> {
                 //delete checked tasks and update the undoTask icon
                 val titleId = R.string.tasksDialogClearChecked
                 val action: () -> Unit = {
@@ -86,7 +86,7 @@ class TodoFr : Fragment() {
                 myActivity.dialogConfirm(titleId, action)
             }
 
-            R.id.item_tasks_undo -> {
+            R.id.itemTasksUndo -> {
                 //undo deletion of last task
 
                 val newPos = todoListInstance.addFullTask(deletedTasks.last()!!)
@@ -95,7 +95,7 @@ class TodoFr : Fragment() {
 
             }
 
-            R.id.item_tasks_clear -> {
+            R.id.itemTasksClear -> {
                 //delete ALL tasks in list
                 val titleId = R.string.tasksDialogClearList
                 val action: () -> Unit = {
@@ -106,7 +106,7 @@ class TodoFr : Fragment() {
                 myActivity.dialogConfirm(titleId, action)
             }
 
-            R.id.item_tasks_uncheck_all -> {
+            R.id.itemTasksUncheckAll -> {
                 //uncheck all tasks
                 todoListInstance.uncheckAll()
                 myAdapter.notifyDataSetChanged()
@@ -270,26 +270,26 @@ class TodoFr : Fragment() {
     }
 
     fun updateUndoTaskIcon() {
-        myMenu.findItem(R.id.item_tasks_undo)?.isVisible = deletedTasks.isNotEmpty()
+        myMenu.findItem(R.id.itemTasksUndo)?.isVisible = deletedTasks.isNotEmpty()
     }
 
     private fun updateClearTaskListIcon() {
-        myMenu.findItem(R.id.item_tasks_clear)?.isVisible = todoListInstance.size > 0
+        myMenu.findItem(R.id.itemTasksClear)?.isVisible = todoListInstance.size > 0
     }
 
     private fun updateUncheckTaskListIcon() {
-        myMenu.findItem(R.id.item_tasks_uncheck_all)?.isVisible =
+        myMenu.findItem(R.id.itemTasksUncheckAll)?.isVisible =
             todoListInstance.somethingIsChecked()
     }
 
     private fun updateDeleteCheckedTasksIcon() {
-        myMenu.findItem(R.id.item_tasks_delete_checked)?.isVisible =
+        myMenu.findItem(R.id.itemTasksDeleteChecked)?.isVisible =
             todoListInstance.somethingIsChecked()
     }
 
     private fun updateDeleteTaskIcon() {
         val checkedTasks = todoListInstance.filter { t -> t.isChecked }.size
-        myMenu.findItem(R.id.item_tasks_delete_checked)?.isVisible = checkedTasks > 0
+        myMenu.findItem(R.id.itemTasksDeleteChecked)?.isVisible = checkedTasks > 0
     }
 
     fun prepareForMove() {

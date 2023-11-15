@@ -156,11 +156,11 @@ class MultiShoppingFr : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         myMenu = menu
         inflater.inflate(R.menu.menu_shopping, menu)
-        myMenu.findItem(R.id.item_shopping_undo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemShoppingUndo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
         updateShoppingMenu()
 
         //set reference to searchView from menu
-        searchView = menu.findItem(R.id.item_shopping_search).actionView as SearchView
+        searchView = menu.findItem(R.id.itemShoppingSearch).actionView as SearchView
 
         //create textListener, to listen to keyboard input when a birthday search is performed
         val textListener = object : SearchView.OnQueryTextListener {
@@ -334,7 +334,7 @@ class MultiShoppingFr : Fragment() {
         var menuRefresh = true
 
         when (item.itemId) {
-            R.id.item_shopping_delete_list -> {
+            R.id.itemShoppingDeleteList -> {
                 val titleId = R.string.shoppingDialogDeleteTitle
                 val action: () -> Unit = {
                     MainActivity.shoppingListWrapper.remove(activeShoppingFr.shoppingListName)
@@ -349,38 +349,38 @@ class MultiShoppingFr : Fragment() {
                 myActivity.dialogConfirm(titleId, action)
             }
 
-            R.id.item_shopping_add_list -> {
+            R.id.itemShoppingAddList -> {
                 dialogAddShoppingList()
             }
 
-            R.id.item_shopping_rename_list -> {
+            R.id.itemShoppingRenameList -> {
                 dialogRenameCurrentList()
             }
 
-            R.id.item_shopping_clear_list -> {
+            R.id.itemShoppingClearList -> {
                 //menu refresh is handled in dialog action
                 menuRefresh = false
                 dialogShoppingClear()
             }
 
-            R.id.item_shopping_remove_checked -> {
+            R.id.itemShoppingRemoveChecked -> {
                 dialogRemoveCheckedItems()
             }
 
-            R.id.item_shopping_uncheck_all -> {
+            R.id.itemShoppingUncheckAll -> {
                 //uncheck all shopping items
                 activeShoppingFr.shoppingListInstance.uncheckAll()
                 activeShoppingFr.myAdapter.notifyDataSetChanged()
             }
 
-            R.id.item_shopping_undo -> {
+            R.id.itemShoppingUndo -> {
                 //undo the last deletion of a shopping item
                 activeShoppingFr.shoppingListInstance.add(activeDeletedItems.last()!!)
                 activeDeletedItems.removeLast()
                 activeShoppingFr.myAdapter.notifyDataSetChanged()
             }
 
-            R.id.item_shopping_collapse_all -> {
+            R.id.itemShoppingCollapseAll -> {
                 //collapse all categories
                 activeShoppingFr.shoppingListInstance.collapseAllTags()
                 activeShoppingFr.myAdapter.notifyItemRangeChanged(
@@ -389,7 +389,7 @@ class MultiShoppingFr : Fragment() {
                 )
             }
 
-            R.id.item_shopping_expand_all -> {
+            R.id.itemShoppingExpandAll -> {
                 //expand all categories
                 activeShoppingFr.shoppingListInstance.expandAllTags()
                 activeShoppingFr.myAdapter.notifyItemRangeChanged(
@@ -816,21 +816,21 @@ class MultiShoppingFr : Fragment() {
     }
 
     fun updateExpandAllIcon() {
-        myMenu.findItem(R.id.item_shopping_expand_all)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingExpandAll)?.isVisible =
             activeShoppingFr.shoppingListInstance.somethingsCollapsed() && !(SettingsManager.getSetting(
                 SettingId.EXPAND_ONE_CATEGORY
             ) as Boolean)
     }
 
     fun updateCollapseAllIcon() {
-        myMenu.findItem(R.id.item_shopping_collapse_all)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingCollapseAll)?.isVisible =
             activeShoppingFr.shoppingListInstance.somethingIsExpanded()
     }
 
     //Hides all menu icons besides the search element
     private fun updateShoppingMenuForSearch() {
         myMenu.forEach {
-            if (it.itemId == R.id.item_shopping_search) {
+            if (it.itemId == R.id.itemShoppingSearch) {
                 return@forEach
             }
             it.isVisible = false
@@ -852,31 +852,31 @@ class MultiShoppingFr : Fragment() {
         //only show delete option if there is more than one list
         updateDeleteListIcon()
         //always show option to add / rename lists
-        myMenu.findItem(R.id.item_shopping_add_list)?.isVisible = true
-        myMenu.findItem(R.id.item_shopping_rename_list)?.isVisible = true
+        myMenu.findItem(R.id.itemShoppingAddList)?.isVisible = true
+        myMenu.findItem(R.id.itemShoppingRenameList)?.isVisible = true
     }
 
     private fun updateDeleteListIcon() {
-        myMenu.findItem(R.id.item_shopping_delete_list)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingDeleteList)?.isVisible =
             MainActivity.shoppingListWrapper.size > 1
     }
 
     private fun updateRemoveChecked() {
-        myMenu.findItem(R.id.item_shopping_remove_checked)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingRemoveChecked)?.isVisible =
             activeShoppingFr.shoppingListInstance.somethingIsChecked()
     }
 
     private fun updateUndoItemIcon() {
-        myMenu.findItem(R.id.item_shopping_undo)?.isVisible = activeDeletedItems.isNotEmpty()
+        myMenu.findItem(R.id.itemShoppingUndo)?.isVisible = activeDeletedItems.isNotEmpty()
     }
 
     private fun updateClearShoppingListIcon() {
-        myMenu.findItem(R.id.item_shopping_clear_list)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingClearList)?.isVisible =
             activeShoppingFr.shoppingListInstance.size > 0
     }
 
     private fun updateUncheckShoppingListIcon() {
-        myMenu.findItem(R.id.item_shopping_uncheck_all)?.isVisible =
+        myMenu.findItem(R.id.itemShoppingUncheckAll)?.isVisible =
             activeShoppingFr.shoppingListInstance.somethingIsChecked()
 
     }

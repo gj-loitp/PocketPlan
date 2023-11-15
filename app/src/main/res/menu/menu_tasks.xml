@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item_tasks_undo"
+        android:id="@+id/itemTasksUndo"
         android:icon="@drawable/ic_action_undo"
         android:title=""
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/item_tasks_delete_checked"
+        android:id="@+id/itemTasksDeleteChecked"
         android:title="@string/tasksOptionClearChecked"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/item_tasks_clear"
+        android:id="@+id/itemTasksClear"
         android:title="@string/tasksOptionClearList"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/item_tasks_uncheck_all"
+        android:id="@+id/itemTasksUncheckAll"
         android:title="@string/tasksOptionUncheckAll"
         app:showAsAction="never" />
 
