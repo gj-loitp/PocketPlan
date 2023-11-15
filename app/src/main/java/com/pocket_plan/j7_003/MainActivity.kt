@@ -55,7 +55,7 @@ import com.pocket_plan.j7_003.data.todolist.TodoList
 import com.pocket_plan.j7_003.data.todolist.TodoTaskAdapter
 import com.pocket_plan.j7_003.databinding.DialogConfirmBinding
 import com.pocket_plan.j7_003.databinding.DrawerLayoutBinding
-import com.pocket_plan.j7_003.databinding.HeaderNavigationDrawerBinding
+import com.pocket_plan.j7_003.databinding.VHeaderNavigationDrawerBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import com.pocket_plan.j7_003.system_interaction.handler.notifications.AlarmHandler
 import com.pocket_plan.j7_003.system_interaction.handler.storage.StorageHandler
@@ -190,7 +190,7 @@ class MainActivity : AppCompatActivity() {
 
         //Initialize header and icon in side drawer, show current version name
         val headerView = drawerLayoutBinding.navDrawer.getHeaderView(0)
-        val headerBinding = HeaderNavigationDrawerBinding.bind(headerView)
+        val headerBinding = VHeaderNavigationDrawerBinding.bind(headerView)
         val versionString = "v " + packageManager.getPackageInfoCompat(packageName, 0).versionName
         headerBinding.tvVersion.text = versionString
 

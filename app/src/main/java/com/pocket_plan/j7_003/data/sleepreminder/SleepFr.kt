@@ -21,7 +21,7 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogPickTimeBinding
-import com.pocket_plan.j7_003.databinding.FragmentSleepBinding
+import com.pocket_plan.j7_003.databinding.FSleepBinding
 import com.pocket_plan.j7_003.databinding.VRowSleepBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import org.threeten.bp.DayOfWeek
@@ -32,7 +32,7 @@ import org.threeten.bp.DayOfWeek
 
 class SleepFr : Fragment() {
 
-    private var _fragmentBinding: FragmentSleepBinding? = null
+    private var _fragmentBinding: FSleepBinding? = null
     val fragmentBinding get() = _fragmentBinding!!
 
     lateinit var myActivity: MainActivity
@@ -54,7 +54,7 @@ class SleepFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentSleepBinding.inflate(inflater, container, false)
+        _fragmentBinding = FSleepBinding.inflate(inflater, container, false)
 
         myActivity = activity as MainActivity
         sleepReminderInstance = SleepReminder(myActivity)
@@ -146,7 +146,7 @@ class SleepFr : Fragment() {
 
 
         regularCheckBoxList = arrayListOf(
-            fragmentBinding.cbMonday, fragmentBinding.cbTuesday, fragmentBinding.cbWednsday,
+            fragmentBinding.cbMonday, fragmentBinding.cbTuesday, fragmentBinding.cbWednesday,
             fragmentBinding.cbThursday, fragmentBinding.cbFriday, fragmentBinding.cbSaturday, fragmentBinding.cbSunday
         )
 

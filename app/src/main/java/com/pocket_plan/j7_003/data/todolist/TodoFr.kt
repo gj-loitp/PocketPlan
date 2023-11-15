@@ -24,7 +24,7 @@ import com.pocket_plan.j7_003.data.home.HomeFr
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddTaskBinding
-import com.pocket_plan.j7_003.databinding.FragmentTodoBinding
+import com.pocket_plan.j7_003.databinding.FTodoBinding
 import com.pocket_plan.j7_003.databinding.VRowTaskBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 
@@ -33,7 +33,7 @@ import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
  */
 
 class TodoFr : Fragment() {
-    private var _fragmentBinding: FragmentTodoBinding? = null
+    private var _fragmentBinding: FTodoBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
 
@@ -121,9 +121,9 @@ class TodoFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentTodoBinding.inflate(inflater, container, false)
+        _fragmentBinding = FTodoBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
-        myRecycler = fragmentBinding.recyclerViewTodo
+        myRecycler = fragmentBinding.recyclerViewToDo
         myFragment = this
 
         todoListInstance = TodoList()
