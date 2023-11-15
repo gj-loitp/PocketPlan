@@ -2,27 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item_birthdays_disable_reminders"
+        android:id="@+id/itemBirthdaysDisableReminders"
         android:title="@string/birthdaysDisableReminders"
-        app:showAsAction="never">
-    </item>
+        app:showAsAction="never" />
     <item
-        android:id="@+id/item_birthdays_enable_reminders"
+        android:id="@+id/itemBirthdaysEnableReminders"
         android:title="@string/birthdaysEnableReminders"
-        app:showAsAction="never">
-    </item>
+        app:showAsAction="never" />
     <item
-        android:id="@+id/item_birthdays_undo"
+        android:id="@+id/itemBirthdaysUndo"
         android:icon="@drawable/ic_action_undo"
-        android:title=""
         android:tint="?attr/colorIconTint"
-        app:showAsAction="ifRoom">
-    </item>
+        android:title=""
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/item_birthdays_search"
+        android:id="@+id/itemBirthdaysSearch"
         android:icon="@drawable/ic_action_search"
         android:title=""
-        app:showAsAction="always"
-        app:actionViewClass="android.widget.SearchView">
-    </item>
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
 </menu>

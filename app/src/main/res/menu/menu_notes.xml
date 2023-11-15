@@ -2,28 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/item_notes_undo"
-        android:title=""
+    <item
+        android:id="@+id/itemNotesUndo"
         android:icon="@drawable/ic_action_undo"
-        app:showAsAction="ifRoom"/>
-
-    <item android:id="@+id/item_notes_add_folder"
-        android:title="@string/notesOptionAddFolder"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/item_notes_delete_folder"
-        android:title="@string/settingsNotesOptionDeleteFolder"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/item_notes_edit_folder"
-        android:title="@string/notesEditFolder"
-        app:showAsAction="never"/>
+        android:title=""
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/item_notes_search"
+        android:id="@+id/itemNotesAddFolder"
+        android:title="@string/notesOptionAddFolder"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemNotesDeleteFolder"
+        android:title="@string/settingsNotesOptionDeleteFolder"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemNotesEditFolder"
+        android:title="@string/notesEditFolder"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/itemNotesSearch"
         android:icon="@drawable/ic_action_search"
         android:title=""
-        app:showAsAction="always"
-        app:actionViewClass="android.widget.SearchView">
-    </item>
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
 </menu>

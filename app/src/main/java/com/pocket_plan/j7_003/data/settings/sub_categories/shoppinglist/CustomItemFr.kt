@@ -78,7 +78,7 @@ class CustomItemFr : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_custom_clear -> {
+            R.id.itemCustomClear -> {
                 val action: () -> Unit = {
                     //remove user items from itemNameList and update act adapter so they
                     //don't show up in the add item dialog anymore
@@ -92,7 +92,7 @@ class CustomItemFr : Fragment() {
                 myActivity.dialogConfirm(titleId, action)
             }
 
-            R.id.item_custom_undo -> {
+            R.id.itemCustomUndo -> {
                 //Return if deletedItem = null, this should never happen
                 if (deletedItem == null) return true
                 //Re-Add item to userItemTemplateList
@@ -116,11 +116,11 @@ class CustomItemFr : Fragment() {
     }
 
     fun updateClearCustomListIcon() {
-        myMenu.findItem(R.id.item_custom_clear).isVisible = myActivity.userItemTemplateList.size > 0
+        myMenu.findItem(R.id.itemCustomClear).isVisible = myActivity.userItemTemplateList.size > 0
     }
 
     fun updateUndoCustomIcon() {
-        myMenu.findItem(R.id.item_custom_undo).isVisible = deletedItem != null
+        myMenu.findItem(R.id.itemCustomUndo).isVisible = deletedItem != null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

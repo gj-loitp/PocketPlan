@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:title="@string/menuTitleSleep"
+        android:id="@+id/menuSleepReminder"
         android:icon="@drawable/ic_action_sleepreminder"
-        android:id="@+id/menuSleepReminder"/>
+        android:title="@string/menuTitleSleep" />
     <item
-        android:title="@string/settingsHowToTitle"
+        android:id="@+id/menuHelp"
         android:icon="@drawable/ic_action_help"
-        android:id="@+id/menuHelp"/>
+        android:title="@string/settingsHowToTitle" />
     <item
-        android:title="@string/menuTitleSettings"
+        android:id="@+id/menuItemSettings"
         android:icon="@drawable/ic_action_settings"
-        android:id="@+id/menuItemSettings"/>
+        android:title="@string/menuTitleSettings" />
 
 </menu>

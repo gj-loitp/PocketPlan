@@ -130,13 +130,13 @@ class NoteEditorFr : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_editor_delete -> openDeleteNoteDialog()
+            R.id.itemEditorDelete -> openDeleteNoteDialog()
 
-            R.id.item_editor_color -> dialogColorChooser()
+            R.id.itemEditorColor -> dialogColorChooser()
 
-            R.id.item_editor_move -> dialogMoveNote()
+            R.id.itemEditorMove -> dialogMoveNote()
 
-            R.id.item_editor_share -> {
+            R.id.itemEditorShare -> {
                 val noteContent = getEditorContent()
                 val noteTitle = getEditorTitle()
                 var fullNote = ""
@@ -154,7 +154,7 @@ class NoteEditorFr : Fragment() {
                 startActivity(shareIntent)
             }
 
-            R.id.item_editor_save -> {
+            R.id.itemEditorSave -> {
                 val noteContent = getEditorContent()
                 val noteTitle = getEditorTitle()
 
@@ -183,7 +183,7 @@ class NoteEditorFr : Fragment() {
 
         if (NoteFr.editNoteHolder != null) {
             //Show delete icon in menu bar
-            myMenu.findItem(R.id.item_editor_delete)?.isVisible = true
+            myMenu.findItem(R.id.itemEditorDelete)?.isVisible = true
             //Get color from note to be edited, to tint the color change icon
             var tintColor = when (NoteFr.displayColor != -1) {
                 true -> {
@@ -203,7 +203,7 @@ class NoteEditorFr : Fragment() {
                 tintColor = myNoteFr.getCorrespondingDarkColor(tintColor)
             }
             //Apply tint to icon
-            myMenu.findItem(R.id.item_editor_color)?.icon?.setTint(
+            myMenu.findItem(R.id.itemEditorColor)?.icon?.setTint(
                 myActivity.colorForAttr(tintColor)
             )
 
@@ -218,7 +218,7 @@ class NoteEditorFr : Fragment() {
                     tintColor = myNoteFr.getCorrespondingDarkColor(tintColor)
                 }
 
-                myMenu.findItem(R.id.item_editor_color)?.icon?.setTint(
+                myMenu.findItem(R.id.itemEditorColor)?.icon?.setTint(
                     myActivity.colorForAttr(tintColor)
                 )
 
@@ -232,7 +232,7 @@ class NoteEditorFr : Fragment() {
                 if (myNoteFr.dark && myNoteFr.darkBorderStyle == 3.0) {
                     tintColor = myNoteFr.getCorrespondingDarkColor(tintColor)
                 }
-                myMenu.findItem(R.id.item_editor_color)?.icon?.setTint(
+                myMenu.findItem(R.id.itemEditorColor)?.icon?.setTint(
                     myActivity.colorForAttr(tintColor)
                 )
 
@@ -240,9 +240,9 @@ class NoteEditorFr : Fragment() {
 
         }
 
-        myMenu.findItem(R.id.item_editor_delete)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
-        myMenu.findItem(R.id.item_editor_save)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
-        myMenu.findItem(R.id.item_editor_move)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemEditorDelete)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemEditorSave)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemEditorMove)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
 
         updateMenuAccessibility()
 
@@ -449,7 +449,7 @@ class NoteEditorFr : Fragment() {
         buttonList.forEachIndexed { i, b ->
             b.setOnClickListener {
                 noteColor = NoteColors.values()[i]
-                myMenu.findItem(R.id.item_editor_color)?.icon?.setTint(
+                myMenu.findItem(R.id.itemEditorColor)?.icon?.setTint(
                     myActivity.colorForAttr(colorList[i])
                 )
                 myAlertDialog.dismiss()
@@ -480,7 +480,7 @@ class NoteEditorFr : Fragment() {
     }
 
     private fun updateMenuAccessibility() {
-        myMenu.findItem(R.id.item_editor_delete).isVisible = NoteFr.editNoteHolder != null
-        myMenu.findItem(R.id.item_editor_move).isVisible = NoteFr.editNoteHolder != null
+        myMenu.findItem(R.id.itemEditorDelete).isVisible = NoteFr.editNoteHolder != null
+        myMenu.findItem(R.id.itemEditorMove).isVisible = NoteFr.editNoteHolder != null
     }
 }

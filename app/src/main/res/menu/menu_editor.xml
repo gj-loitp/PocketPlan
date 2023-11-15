@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/item_editor_delete"
-        android:title=""
+    <item
+        android:id="@+id/itemEditorDelete"
         android:icon="@drawable/ic_action_delete"
-        app:showAsAction="always"
-        />
-    <item android:id="@+id/item_editor_color"
         android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemEditorColor"
         android:icon="@drawable/ic_action_color_picker"
-        app:showAsAction="always"
-        />
-    <item android:id="@+id/item_editor_move"
-        android:title="@string/notesConfirmMove"
-        android:icon="@drawable/ic_action_folder"
-        app:showAsAction="never"
-        />
-    <item android:id="@+id/item_editor_save"
         android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemEditorMove"
+        android:icon="@drawable/ic_action_folder"
+        android:title="@string/notesConfirmMove"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itemEditorSave"
         android:icon="@drawable/ic_action_checkmark"
-        app:showAsAction="always"
-        />
+        android:title=""
+        app:showAsAction="always" />
 
-    <item android:id="@+id/item_editor_share"
-        android:title="@string/notesShare"
+    <item
+        android:id="@+id/itemEditorShare"
         android:icon="@drawable/ic_action_checkmark"
-        app:showAsAction="never"
-        />
+        android:title="@string/notesShare"
+        app:showAsAction="never" />
 
 </menu>

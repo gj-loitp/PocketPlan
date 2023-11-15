@@ -90,10 +90,10 @@ class BirthdayFr : Fragment() {
         searching = false
         updateBirthdayMenu()
         //set correct color to undo icon
-        myMenu.findItem(R.id.item_birthdays_undo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
+        myMenu.findItem(R.id.itemBirthdaysUndo)?.icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
 
         //set reference to searchView from menu
-        searchView = menu.findItem(R.id.item_birthdays_search).actionView as SearchView
+        searchView = menu.findItem(R.id.itemBirthdaysSearch).actionView as SearchView
 
         //create textListener, to listen to keyboard input when a birthday search is performed
         val textListener = object : SearchView.OnQueryTextListener {
@@ -141,7 +141,7 @@ class BirthdayFr : Fragment() {
             //sets searching to true, which results in the recyclerViewAdapter reading its elements from
             //adjusted list instead of birthdayList
             searching = true
-            myMenu.findItem(R.id.item_birthdays_undo)?.isVisible = false
+            myMenu.findItem(R.id.itemBirthdaysUndo)?.isVisible = false
             hideMenuExceptSearch()
 
             //clear adjusted list
@@ -165,22 +165,22 @@ class BirthdayFr : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             //disable all reminders and refresh adapter
-            R.id.item_birthdays_disable_reminders -> {
+            R.id.itemBirthdaysDisableReminders -> {
                 birthdayListInstance.disableAllReminders()
                 myAdapter.notifyDataSetChanged()
             }
 
             //enable all reminders and refresh adapter
-            R.id.item_birthdays_enable_reminders -> {
+            R.id.itemBirthdaysEnableReminders -> {
                 birthdayListInstance.enableAllReminders()
                 myAdapter.notifyDataSetChanged()
             }
 
-            R.id.item_birthdays_search -> {/* no-op, listeners for this searchView are set
+            R.id.itemBirthdaysSearch -> {/* no-op, listeners for this searchView are set
              in on create options menu*/
             }
 
-            R.id.item_birthdays_undo -> {
+            R.id.itemBirthdaysUndo -> {
                 //undo the last deletion
                 //re-add previously deleted birthday and get its new position
 
@@ -260,26 +260,26 @@ class BirthdayFr : Fragment() {
     }
 
     fun updateBirthdayMenu() {
-        myMenu.findItem(R.id.item_birthdays_search).isVisible = birthdayListInstance.size > 0
-        myMenu.findItem(R.id.item_birthdays_enable_reminders).isVisible =
+        myMenu.findItem(R.id.itemBirthdaysSearch).isVisible = birthdayListInstance.size > 0
+        myMenu.findItem(R.id.itemBirthdaysEnableReminders).isVisible =
             birthdayListInstance.size > 0
-        myMenu.findItem(R.id.item_birthdays_disable_reminders).isVisible =
+        myMenu.findItem(R.id.itemBirthdaysDisableReminders).isVisible =
             birthdayListInstance.size > 0
     }
 
     fun updateUndoBirthdayIcon() {
         if (deletedBirthdays.isNotEmpty() && !searching) {
-            myMenu.findItem(R.id.item_birthdays_undo)?.setIcon(R.drawable.ic_action_undo)
-            myMenu.findItem(R.id.item_birthdays_undo)?.isVisible = true
+            myMenu.findItem(R.id.itemBirthdaysUndo)?.setIcon(R.drawable.ic_action_undo)
+            myMenu.findItem(R.id.itemBirthdaysUndo)?.isVisible = true
         } else {
-            myMenu.findItem(R.id.item_birthdays_undo)?.isVisible = false
+            myMenu.findItem(R.id.itemBirthdaysUndo)?.isVisible = false
         }
     }
 
     private fun hideMenuExceptSearch() {
         val size = myMenu.size()
         for (i in 0 until size) myMenu.getItem(i).isVisible = false
-        myMenu.findItem(R.id.item_birthdays_search)?.isVisible = true
+        myMenu.findItem(R.id.itemBirthdaysSearch)?.isVisible = true
     }
 
     @SuppressLint("InflateParams", "NotifyDataSetChanged")

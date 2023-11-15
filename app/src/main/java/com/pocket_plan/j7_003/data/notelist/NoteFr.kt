@@ -105,7 +105,7 @@ class NoteFr : Fragment() {
         //color tint for undo icon
         myMenu.getItem(0).icon?.setTint(myActivity.colorForAttr(R.attr.colorOnBackGround))
 
-        searchView = menu.findItem(R.id.item_notes_search).actionView as SearchView
+        searchView = menu.findItem(R.id.itemNotesSearch).actionView as SearchView
         val textListener = object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
@@ -164,18 +164,18 @@ class NoteFr : Fragment() {
     }
 
     private fun updateNoteSearchIcon() {
-        myMenu.findItem(R.id.item_notes_search).isVisible = noteListDirs.rootDir.noteList.size > 0
+        myMenu.findItem(R.id.itemNotesSearch).isVisible = noteListDirs.rootDir.noteList.size > 0
     }
 
     private fun updateNoteUndoIcon() {
-        myMenu.findItem(R.id.item_notes_undo).isVisible = deletedNote != null && !searching
+        myMenu.findItem(R.id.itemNotesUndo).isVisible = deletedNote != null && !searching
     }
 
     fun setMenuAccessibility(state: Boolean) {
         val notInRootFolder = noteListDirs.folderStack.size > 1 && state
-        myMenu.findItem(R.id.item_notes_add_folder).isVisible = state
-        myMenu.findItem(R.id.item_notes_delete_folder).isVisible = notInRootFolder
-        myMenu.findItem(R.id.item_notes_edit_folder).isVisible = notInRootFolder
+        myMenu.findItem(R.id.itemNotesAddFolder).isVisible = state
+        myMenu.findItem(R.id.itemNotesDeleteFolder).isVisible = notInRootFolder
+        myMenu.findItem(R.id.itemNotesEditFolder).isVisible = notInRootFolder
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -198,18 +198,18 @@ class NoteFr : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_notes_search -> {
+            R.id.itemNotesSearch -> {
                 /* no-op, listeners for this view are implemented in onCreateOptionsMenu */
             }
 
-            R.id.item_notes_edit_folder -> {
+            R.id.itemNotesEditFolder -> {
                 if (noteListDirs.folderStack.size == 1) {
                     return true
                 }
                 dialogEditNoteFolder()
             }
 
-            R.id.item_notes_undo -> {
+            R.id.itemNotesUndo -> {
                 if (deletedNote!!.content != null) noteListDirs.addFullNote(deletedNote!!)
                 else noteListDirs.addNoteDir(deletedNote!!)
 
@@ -224,11 +224,11 @@ class NoteFr : Fragment() {
                 updateNoteSearchIcon()
             }
 
-            R.id.item_notes_add_folder -> {
+            R.id.itemNotesAddFolder -> {
                 dialogAddNoteFolder()
             }
 
-            R.id.item_notes_delete_folder -> {
+            R.id.itemNotesDeleteFolder -> {
                 val action: () -> Unit = {
                     val deletedDir = noteListDirs.deleteCurrentFolder()
                     if (deletedDir != null) {
