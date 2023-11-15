@@ -22,8 +22,8 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogPickTimeBinding
 import com.pocket_plan.j7_003.databinding.FragmentSleepBinding
-import com.pocket_plan.j7_003.databinding.RowSleepBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VRowSleepBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import org.threeten.bp.DayOfWeek
 
 /**
@@ -202,7 +202,7 @@ class SleepFr : Fragment() {
             dialogPickTimeBinding.tvHourMinuteAttachment.text = "m"
 
             val myBuilder = AlertDialog.Builder(myActivity).setView(dialogPickTimeBinding.root)
-            val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+            val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
 
             titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.sleepDuration)
             myBuilder.setCustomTitle(titleDialogBinding.root)
@@ -322,7 +322,7 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SleepViewHolder {
-        val rowSleepBinding = RowSleepBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowSleepBinding = VRowSleepBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SleepViewHolder(rowSleepBinding)
     }
 
@@ -379,7 +379,7 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
             dialogPickTimeBinding.tvHourMinuteAttachment.text = "m"
 
             val myBuilder2 = AlertDialog.Builder(myActivity).setView(dialogPickTimeBinding.root)
-            val titleDialogBinding = TitleDialogBinding.inflate(LayoutInflater.from(myActivity))
+            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
             titleDialogBinding.tvDialogTitle.text = myActivity.getString(
                 R.string.sleepDurationDay
             )
@@ -444,7 +444,7 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
 
     override fun getItemCount(): Int = 7
 
-    class SleepViewHolder(rowSleepBinding: RowSleepBinding) : RecyclerView.ViewHolder(rowSleepBinding.root) {
+    class SleepViewHolder(rowSleepBinding: VRowSleepBinding) : RecyclerView.ViewHolder(rowSleepBinding.root) {
         lateinit var day: DayOfWeek
         var binding = rowSleepBinding
     }

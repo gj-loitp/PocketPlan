@@ -25,8 +25,8 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddTaskBinding
 import com.pocket_plan.j7_003.databinding.FragmentTodoBinding
-import com.pocket_plan.j7_003.databinding.RowTaskBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VRowTaskBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -328,7 +328,7 @@ class TodoFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogAddTaskBinding.root) }
-        val titleDialogBinding = TitleDialogBinding.inflate(myLayoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(myLayoutInflater)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
@@ -400,7 +400,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoTaskViewHolder {
-        val rowTaskBinding = RowTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowTaskBinding = VRowTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TodoTaskViewHolder(rowTaskBinding)
     }
 
@@ -500,7 +500,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
             //AlertDialogBuilder
             val myBuilder = AlertDialog.Builder(myActivity).setView(dialogAddTaskBinding.root)
 
-            val titleDialogBinding = TitleDialogBinding.inflate(LayoutInflater.from(myActivity))
+            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
             titleDialogBinding.tvDialogTitle.text = myActivity.resources.getText(R.string.tasksEditTitle)
             myBuilder.setCustomTitle(titleDialogBinding.root)
 
@@ -579,7 +579,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
 
     override fun getItemCount() = TodoFr.todoListInstance.size
 
-    class TodoTaskViewHolder(rowTaskBinding: RowTaskBinding) : RecyclerView.ViewHolder(rowTaskBinding.root){
+    class TodoTaskViewHolder(rowTaskBinding: VRowTaskBinding) : RecyclerView.ViewHolder(rowTaskBinding.root){
         var binding = rowTaskBinding
     }
 }

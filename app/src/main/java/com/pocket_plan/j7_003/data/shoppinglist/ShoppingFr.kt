@@ -17,7 +17,7 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.FragmentShoppingBinding
 import com.pocket_plan.j7_003.databinding.RowCategoryBinding
-import com.pocket_plan.j7_003.databinding.RowItemBinding
+import com.pocket_plan.j7_003.databinding.VRowItemBinding
 import java.util.Locale
 
 
@@ -604,7 +604,7 @@ class SublistAdapter(
         SettingsManager.getSetting(SettingId.MOVE_CHECKED_DOWN) as Boolean
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val rowItemBinding = RowItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowItemBinding = VRowItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(rowItemBinding)
     }
 
@@ -698,7 +698,7 @@ class SublistAdapter(
 
 
         //Onclick Listener for checkBox
-        holder.binding.clItemTapfield.setOnClickListener {
+        holder.binding.clItemTapField.setOnClickListener {
 
             //flip checkedState of item and save new position (flipItemCheckedState sorts list and returns new position)
             val newPosition = myFragment.shoppingListInstance.flipItemCheckedState(
@@ -750,7 +750,7 @@ class SublistAdapter(
             myFragment.myMultiShoppingFr.updateShoppingMenu()
         }
 
-        holder.binding.clItemTapfield.setOnLongClickListener {
+        holder.binding.clItemTapField.setOnLongClickListener {
             if (myFragment.myMultiShoppingFr.searching) return@setOnLongClickListener true
             val animationShake =
                 AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
@@ -767,7 +767,7 @@ class SublistAdapter(
     one instance of this class will contain one instance of row_item and meta data like position
     also holds references to views inside the layout
      */
-    class ItemViewHolder(rowItemBinding: RowItemBinding) :
+    class ItemViewHolder(rowItemBinding: VRowItemBinding) :
         RecyclerView.ViewHolder(rowItemBinding.root) {
 
         lateinit var tag: String

@@ -24,7 +24,7 @@ import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddItemBinding
 import com.pocket_plan.j7_003.databinding.DialogAddShoppingListBinding
 import com.pocket_plan.j7_003.databinding.FragmentMultiShoppingBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import java.util.Collections
 import kotlin.math.abs
 import kotlin.math.min
@@ -243,7 +243,7 @@ class MultiShoppingFr : Fragment() {
                 AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
             }
 
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = getString(R.string.shoppingDialogRenameList)
         myBuilder.setCustomTitle(titleDialogBinding.root)
 
@@ -287,7 +287,7 @@ class MultiShoppingFr : Fragment() {
             myActivity.let { it1 ->
                 AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
             }
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingOptionAddList)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
 
@@ -449,7 +449,7 @@ class MultiShoppingFr : Fragment() {
         //Initialize dialogBuilder and set its title
         val myBuilder = myActivity.let { AlertDialog.Builder(it).setView(dialogAddItemBinding.root) }
 
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingAddItemTitle)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
 

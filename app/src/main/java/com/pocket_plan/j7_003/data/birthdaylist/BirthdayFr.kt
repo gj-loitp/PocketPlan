@@ -22,7 +22,7 @@ import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddBirthdayBinding
 import com.pocket_plan.j7_003.databinding.FragmentBirthdayBinding
 import com.pocket_plan.j7_003.databinding.RowBirthdayBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import org.threeten.bp.LocalDate
 import java.util.*
 import java.util.regex.Pattern
@@ -212,7 +212,7 @@ class BirthdayFr : Fragment() {
 
     @SuppressLint("InflateParams")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _frBinding = FragmentBirthdayBinding.inflate(inflater, container, false)
         val view = frBinding.root
@@ -558,7 +558,7 @@ class BirthdayFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
-        val myTitleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         myTitleDialogBinding.tvDialogTitle.text =
             resources.getText(R.string.birthdayDialogEditTitle)
         myBuilder?.setCustomTitle(myTitleDialogBinding.root)
@@ -878,7 +878,7 @@ class BirthdayFr : Fragment() {
         val myBuilder =
             activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
 //        val myTitle = layoutInflater.inflate(R.layout.title_dialog, null)
-        val myTitleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         myTitleDialogBinding.tvDialogTitle.text = resources.getText(R.string.birthdayDialogAddTitle)
         myBuilder?.setCustomTitle(myTitleDialogBinding.root)
 
@@ -989,11 +989,11 @@ class BirthdayFr : Fragment() {
 }
 
 class SwipeToDeleteBirthday(
-    private var adapter: BirthdayAdapter, direction: Int, birthdayFr: BirthdayFr
+    private var adapter: BirthdayAdapter, direction: Int, birthdayFr: BirthdayFr,
 ) : ItemTouchHelper.SimpleCallback(0, direction) {
     private val myFragment = birthdayFr
     override fun getSwipeDirs(
-        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
+        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
     ): Int {
         val parsed = viewHolder as BirthdayAdapter.BirthdayViewHolder
         return if (viewHolder.bindingAdapterPosition == myFragment.birthdayListInstance.size || parsed.birthday.daysToRemind < 0) {
@@ -1006,7 +1006,7 @@ class SwipeToDeleteBirthday(
     override fun onMove(
         recyclerView: RecyclerView,
         viewHolder: RecyclerView.ViewHolder,
-        target: RecyclerView.ViewHolder
+        target: RecyclerView.ViewHolder,
     ): Boolean = false
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) =
@@ -1015,7 +1015,7 @@ class SwipeToDeleteBirthday(
 
 
 class BirthdayAdapter(
-    birthdayFr: BirthdayFr, mainActivity: MainActivity, private var searchList: ArrayList<Birthday>
+    birthdayFr: BirthdayFr, mainActivity: MainActivity, private var searchList: ArrayList<Birthday>,
 ) : RecyclerView.Adapter<BirthdayAdapter.BirthdayViewHolder>() {
     private val myFragment = birthdayFr
     private val myActivity = mainActivity
@@ -1152,7 +1152,7 @@ class BirthdayAdapter(
 
         //display info if birthday is expanded
         var expanded = currentBirthday.expanded
-        if (myFragment.searching && itemCount == 1){
+        if (myFragment.searching && itemCount == 1) {
             // expand birthday if it is the only search result
             expanded = true
         }
@@ -1327,7 +1327,7 @@ class BirthdayAdapter(
     }
 
     private fun initializeMonthViewHolder(
-        holder: BirthdayViewHolder, currentBirthday: Birthday
+        holder: BirthdayViewHolder, currentBirthday: Birthday,
     ) {
         //initialize values specific to month divider
         // reintroduces margin at sides
@@ -1381,7 +1381,7 @@ class BirthdayAdapter(
      * @param currentBirthday the birthday being displayed by this BirthdayViewHolder
      */
     private fun initializeDividerViewHolder(
-        holder: BirthdayViewHolder, currentBirthday: Birthday
+        holder: BirthdayViewHolder, currentBirthday: Birthday,
     ) {
         //show tvRowBirthdayDivider and set its text to the correct month or year name
         holder.binding.tvRowBirthdayDivider.visibility = View.VISIBLE

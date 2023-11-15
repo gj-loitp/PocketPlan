@@ -28,7 +28,7 @@ import com.pocket_plan.j7_003.databinding.DialogChooseColorBinding
 import com.pocket_plan.j7_003.databinding.DialogDiscardNoteEditBinding
 import com.pocket_plan.j7_003.databinding.DialogMoveNoteBinding
 import com.pocket_plan.j7_003.databinding.FragmentNoteEditorBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import kotlin.random.Random
 
 
@@ -306,7 +306,7 @@ class NoteEditorFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogDiscardNoteEdit.root) }
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.noteDiscardDialogTitle)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
 
@@ -369,7 +369,7 @@ class NoteEditorFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogMoveNoteBinding.root) }
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.notesConfirmMove)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
 
@@ -423,7 +423,7 @@ class NoteEditorFr : Fragment() {
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(myActivity).setView(dialogChooseColorBinding.root)
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = getString(R.string.menuTitleColorChoose)
         myBuilder.setCustomTitle(titleDialogBinding.root)
 

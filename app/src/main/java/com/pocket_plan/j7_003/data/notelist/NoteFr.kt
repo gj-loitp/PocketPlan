@@ -31,8 +31,8 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddNoteFolderBinding
 import com.pocket_plan.j7_003.databinding.FragmentNoteBinding
-import com.pocket_plan.j7_003.databinding.RowNoteBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VRowNoteBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import java.util.Calendar
 import kotlin.random.Random
 
@@ -255,7 +255,7 @@ class NoteFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
-        val customTitleBinding = TitleDialogBinding.inflate(layoutInflater)
+        val customTitleBinding = VTitleDialogBinding.inflate(layoutInflater)
         customTitleBinding.tvDialogTitle.text = getString(R.string.notesEditFolder)
         myBuilder?.setCustomTitle(customTitleBinding.root)
 
@@ -382,7 +382,7 @@ class NoteFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
-        val customTitleBinding = TitleDialogBinding.inflate(layoutInflater)
+        val customTitleBinding = VTitleDialogBinding.inflate(layoutInflater)
         //Set "Add folder" title
         customTitleBinding.tvDialogTitle.text = myActivity.getString(R.string.notesOptionAddFolder)
         myBuilder?.setCustomTitle(customTitleBinding.root)
@@ -636,7 +636,7 @@ class NoteAdapter(mainActivity: MainActivity, noteFr: NoteFr) :
     private val myNoteFr = noteFr
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val binding = RowNoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = VRowNoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NoteViewHolder(binding)
     }
 
@@ -886,7 +886,7 @@ class NoteAdapter(mainActivity: MainActivity, noteFr: NoteFr) :
 
     //one instance of this class will contain one instance of row_task and meta data like position
     //also holds references to views inside the layout
-    class NoteViewHolder(bind: RowNoteBinding) : ViewHolder(bind.root) {
+    class NoteViewHolder(bind: VRowNoteBinding) : ViewHolder(bind.root) {
         lateinit var noteObj: Note
         val binding = bind
     }

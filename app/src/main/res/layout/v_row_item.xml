@@ -8,7 +8,7 @@
     android:background="@drawable/dc_round_corner_gray_pure"
     android:padding="0dp">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvItemTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -17,32 +17,30 @@
         android:textColor="?attr/colorOnBackGround"
         android:textSize="@dimen/font_size_medium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/clItemTapfield"
+        app:layout_constraintEnd_toStartOf="@+id/clItemTapField"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clItemTapfield"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/clItemTapField"
         android:layout_width="65dp"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <CheckBox
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cbItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="false"
             android:layout_marginEnd="6dp"
+            android:clickable="false"
             android:theme="@style/CheckStyleItem"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.48000002" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

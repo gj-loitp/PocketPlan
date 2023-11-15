@@ -20,6 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:scrollbars="vertical"
-        tools:listitem="@layout/row_task" />
+        tools:listitem="@layout/v_row_task" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

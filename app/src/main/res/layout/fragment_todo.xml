@@ -18,6 +18,6 @@
         android:scrollbars="vertical"
         tools:layout_editor_absoluteX="-24dp"
         tools:layout_editor_absoluteY="0dp"
-        tools:listitem="@layout/row_task" />
+        tools:listitem="@layout/v_row_task" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

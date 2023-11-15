@@ -56,7 +56,7 @@ import com.pocket_plan.j7_003.data.todolist.TodoTaskAdapter
 import com.pocket_plan.j7_003.databinding.DialogConfirmBinding
 import com.pocket_plan.j7_003.databinding.DrawerLayoutBinding
 import com.pocket_plan.j7_003.databinding.HeaderNavigationDrawerBinding
-import com.pocket_plan.j7_003.databinding.TitleDialogBinding
+import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import com.pocket_plan.j7_003.system_interaction.handler.notifications.AlarmHandler
 import com.pocket_plan.j7_003.system_interaction.handler.storage.StorageHandler
 import java.util.Locale
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
     private var sleepFr: SleepFr? = null
     var todoFr: TodoFr? = null
 
-    lateinit var titleDialogBinding: TitleDialogBinding
+    lateinit var titleDialogBinding: VTitleDialogBinding
 
     lateinit var itemTemplateList: ItemTemplateList
     lateinit var userItemTemplateList: UserItemTemplateList
@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
     fun colorForAttr(
         attrColor: Int,
         typedValue: TypedValue = TypedValue(),
-        resolveRefs: Boolean = true
+        resolveRefs: Boolean = true,
     ): Int {
         theme.resolveAttribute(attrColor, typedValue, resolveRefs)
         return typedValue.data
@@ -250,40 +250,40 @@ class MainActivity : AppCompatActivity() {
         mainNoteListDir = NoteDirList()
         noteFr!!.noteListDirs = mainNoteListDir
 
-    //When activity is entered via special intent, change to respective fragment
-        if(intent?.action == Intent.ACTION_SEND && intent?.type == "text/plain"){
-            if(handleTextViaIntent(intent)) changeToFragment(FT.NOTES)
+        //When activity is entered via special intent, change to respective fragment
+        if (intent?.action == Intent.ACTION_SEND && intent?.type == "text/plain") {
+            if (handleTextViaIntent(intent)) changeToFragment(FT.NOTES)
         }
 
         when (intent.extras?.getString("NotificationEntry")) {
-        "birthdays" -> changeToFragment(FT.BIRTHDAYS)
-        "SReminder" -> changeToFragment(FT.HOME)
-        "settings" -> changeToFragment(FT.SETTINGS)
-        "general" -> {
-            previousFragmentStack.push(FT.HOME)
-            previousFragmentStack.push(FT.SETTINGS)
-            changeToFragment(FT.SETTINGS_GENERAL)
-        }
+            "birthdays" -> changeToFragment(FT.BIRTHDAYS)
+            "SReminder" -> changeToFragment(FT.HOME)
+            "settings" -> changeToFragment(FT.SETTINGS)
+            "general" -> {
+                previousFragmentStack.push(FT.HOME)
+                previousFragmentStack.push(FT.SETTINGS)
+                changeToFragment(FT.SETTINGS_GENERAL)
+            }
 
-        "backup" -> {
-            previousFragmentStack.push(FT.HOME)
-            changeToFragment(FT.SETTINGS)
-        }
+            "backup" -> {
+                previousFragmentStack.push(FT.HOME)
+                changeToFragment(FT.SETTINGS)
+            }
 
-        else -> {
-            if (previousFragmentStack.peek() == FT.EMPTY) {
-                changeToFragment(FT.HOME)
-            } else {
-                changeToFragment(previousFragmentStack.pop())
+            else -> {
+                if (previousFragmentStack.peek() == FT.EMPTY) {
+                    changeToFragment(FT.HOME)
+                } else {
+                    changeToFragment(previousFragmentStack.pop())
+                }
             }
         }
-    }
 
-    multiShoppingFr.preloadAddItemDialog(this, layoutInflater)
-    todoFr!!.preloadAddTaskDialog(this, layoutInflater)
+        multiShoppingFr.preloadAddItemDialog(this, layoutInflater)
+        todoFr!!.preloadAddTaskDialog(this, layoutInflater)
 
 
-    try {
+        try {
             //1000 things can go wrong here
             manageNoteRestore()
         } catch (e: Exception) {
@@ -377,7 +377,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun handleTextViaIntent(intent: Intent): Boolean{
+    private fun handleTextViaIntent(intent: Intent): Boolean {
         try {
             val content = intent.getStringExtra(Intent.EXTRA_TEXT)
             if (content != null) {
@@ -385,17 +385,18 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.notesNotificationNoteAdded), Toast.LENGTH_SHORT).show()
                 return true
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             Toast.makeText(this, getString(R.string.settingsBackupImportFailed), Toast.LENGTH_SHORT).show()
         }
         return false
     }
+
     private fun PackageManager.getPackageInfoCompat(packageName: String, flags: Int = 0): PackageInfo =
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(flags.toLong()))
-    } else {
-        @Suppress("DEPRECATION") getPackageInfo(packageName, flags)
-    }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getPackageInfo(packageName, PackageManager.PackageInfoFlags.of(flags.toLong()))
+        } else {
+            @Suppress("DEPRECATION") getPackageInfo(packageName, flags)
+        }
 
 
     private fun manageNoteRestore() {
@@ -541,7 +542,9 @@ class MainActivity : AppCompatActivity() {
             FT.TASKS,
             FT.SHOPPING,
             FT.NOTES,
-            FT.BIRTHDAYS -> View.VISIBLE
+            FT.BIRTHDAYS,
+            -> View.VISIBLE
+
             else -> View.INVISIBLE
         }
 
@@ -608,19 +611,23 @@ class MainActivity : AppCompatActivity() {
             FT.SHOPPING -> {
                 multiShoppingFr
             }
+
             FT.NOTES -> {
                 NoteFr.searching = false
                 noteFr = NoteFr()
                 noteFr!!.noteListDirs = mainNoteListDir
                 noteFr
             }
+
             FT.NOTE_EDITOR -> {
                 noteEditorFr = NoteEditorFr()
                 noteEditorFr
             }
+
             FT.BIRTHDAYS -> {
                 birthdayFr
             }
+
             FT.SETTINGS_ABOUT -> SettingsAboutFr()
             FT.SETTINGS_NOTES -> SettingsNotesFr()
             FT.SETTINGS_SHOPPING -> SettingsShoppingFr()
@@ -650,7 +657,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setToolbarTitle(msg: String) {
-       toolbar.title = msg
+        toolbar.title = msg
     }
 
 
@@ -723,7 +730,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStop() {
-        if(previousFragmentStack.isEmpty()){
+        if (previousFragmentStack.isEmpty()) {
             super.onStop()
             return
         }
@@ -760,7 +767,7 @@ class MainActivity : AppCompatActivity() {
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(this).setView(dialogConfirmBinding.root)
-        val titleDialogBinding = TitleDialogBinding.inflate(layoutInflater)
+        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = title
         myBuilder.setCustomTitle(titleDialogBinding.root)
         val myAlertDialog = myBuilder.create()
