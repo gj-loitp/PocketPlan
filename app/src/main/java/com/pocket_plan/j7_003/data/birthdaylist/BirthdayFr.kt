@@ -21,7 +21,7 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddBirthdayBinding
 import com.pocket_plan.j7_003.databinding.FragmentBirthdayBinding
-import com.pocket_plan.j7_003.databinding.RowBirthdayBinding
+import com.pocket_plan.j7_003.databinding.VRowBirthdayBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import org.threeten.bp.LocalDate
 import java.util.*
@@ -1075,7 +1075,7 @@ class BirthdayAdapter(
 //        val itemView =
 //            LayoutInflater.from(parent.context).inflate(R.layout.row_birthday, parent, false)
         val rowBirthdayBinding =
-            RowBirthdayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            VRowBirthdayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BirthdayViewHolder(rowBirthdayBinding)
     }
 
@@ -1420,7 +1420,7 @@ class BirthdayAdapter(
         }
     }
 
-    class BirthdayViewHolder(itemBinding: RowBirthdayBinding) :
+    class BirthdayViewHolder(itemBinding: VRowBirthdayBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         //birthday instance represented by this viewHolder
         lateinit var birthday: Birthday

@@ -16,7 +16,7 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.FragmentShoppingBinding
-import com.pocket_plan.j7_003.databinding.RowCategoryBinding
+import com.pocket_plan.j7_003.databinding.VRowCategoryBinding
 import com.pocket_plan.j7_003.databinding.VRowItemBinding
 import java.util.Locale
 
@@ -94,7 +94,7 @@ class ShoppingFr : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FragmentShoppingBinding.inflate(inflater, container, false)
 
@@ -138,7 +138,7 @@ class ShoppingFr : Fragment() {
 
                 override fun getDragDirs(
                     recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder
+                    viewHolder: RecyclerView.ViewHolder,
                 ): Int {
                     return when (myMultiShoppingFr.searching) {
                         true -> 0
@@ -148,7 +148,7 @@ class ShoppingFr : Fragment() {
 
                 override fun clearView(
                     recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder
+                    viewHolder: RecyclerView.ViewHolder,
                 ) {
                     val currentPosition = viewHolder.bindingAdapterPosition
                     //mark that moving has ended (to allow a new previousPosition when move is detected)
@@ -231,7 +231,7 @@ class ShoppingFr : Fragment() {
 
                 override fun onMove(
                     recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder
+                    viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder,
                 ): Boolean {
 
                     if (!moving) {
@@ -306,7 +306,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
     private val density = myActivity.resources.displayMetrics.density
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val rowCategoryBinding = RowCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowCategoryBinding = VRowCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoryViewHolder(rowCategoryBinding)
     }
 
@@ -473,7 +473,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
      */
     fun manageCheckedCategory(
         holder: CategoryViewHolder, allChecked: Boolean,
-        numberOfItems: Int, tag: String
+        numberOfItems: Int, tag: String,
     ) {
         if (!allChecked) {
             //get onBackGroundColor resolved
@@ -574,7 +574,8 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
      * one instance of this class will contain one instance of row_category and meta data like
      * position also holds references to views inside the layout
      */
-    class CategoryViewHolder(rowCategoryBinding: RowCategoryBinding) : RecyclerView.ViewHolder(rowCategoryBinding.root) {
+    class CategoryViewHolder(rowCategoryBinding: VRowCategoryBinding) :
+        RecyclerView.ViewHolder(rowCategoryBinding.root) {
         lateinit var tag: String
         val binding = rowCategoryBinding
     }
@@ -587,7 +588,7 @@ class SublistAdapter(
     private val tag: String,
     private val parentHolder: ShoppingListAdapter.CategoryViewHolder,
     mainActivity: MainActivity,
-    shoppingFr: ShoppingFr
+    shoppingFr: ShoppingFr,
 ) : RecyclerView.Adapter<SublistAdapter.ItemViewHolder>() {
     private val myActivity = mainActivity
     private val myFragment = shoppingFr
@@ -784,8 +785,9 @@ class SwipeItemToDelete(direction: Int, shoppingFr: ShoppingFr) :
     private val myFragment = shoppingFr
 
     override fun onMove(
-        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target:
-        RecyclerView.ViewHolder
+        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
+        target:
+        RecyclerView.ViewHolder,
     ): Boolean {
         return false
     }

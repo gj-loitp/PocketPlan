@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.databinding.FragmentSettingsHowToBinding
-import com.pocket_plan.j7_003.databinding.RowHowtoBinding
-import com.pocket_plan.j7_003.databinding.RowHowtoCatBinding
+import com.pocket_plan.j7_003.databinding.VRowHowtoBinding
+import com.pocket_plan.j7_003.databinding.VRowHowtoCatBinding
 
 class HowToCategory(val nameId: Int, val iconId: Int, val elements: ArrayList<HowToElement>)
 
@@ -87,7 +87,7 @@ class HowToAdapter(private val myFragment: SettingsHowTo, val myActivity: MainAc
     RecyclerView.Adapter<HowToAdapter.HowToViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HowToViewHolder {
-        val rowHowtoCatBinding = RowHowtoCatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowHowtoCatBinding = VRowHowtoCatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HowToViewHolder(rowHowtoCatBinding)
     }
 
@@ -107,7 +107,7 @@ class HowToAdapter(private val myFragment: SettingsHowTo, val myActivity: MainAc
 
     override fun getItemCount() = myFragment.howToList.size
 
-    class HowToViewHolder(rowHowtoCatBinding: RowHowtoCatBinding) : RecyclerView.ViewHolder(rowHowtoCatBinding.root) {
+    class HowToViewHolder(rowHowtoCatBinding: VRowHowtoCatBinding) : RecyclerView.ViewHolder(rowHowtoCatBinding.root) {
         var binding = rowHowtoCatBinding
     }
 }
@@ -118,7 +118,7 @@ class SubHowToAdapter(private val myFragment: SettingsHowTo, val category: HowTo
     RecyclerView.Adapter<SubHowToAdapter.SubHowToViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubHowToViewHolder {
-        val rowHowtoBinding = RowHowtoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowHowtoBinding = VRowHowtoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SubHowToViewHolder(rowHowtoBinding)
     }
 
@@ -155,7 +155,7 @@ class SubHowToAdapter(private val myFragment: SettingsHowTo, val category: HowTo
 
     override fun getItemCount() = category.elements.size
 
-    class SubHowToViewHolder(itemViewBinding: RowHowtoBinding) : RecyclerView.ViewHolder(itemViewBinding.root) {
+    class SubHowToViewHolder(itemViewBinding: VRowHowtoBinding) : RecyclerView.ViewHolder(itemViewBinding.root) {
         var binding = itemViewBinding
     }
 }

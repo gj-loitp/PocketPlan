@@ -20,7 +20,7 @@ import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.data.shoppinglist.ItemTemplate
 import com.pocket_plan.j7_003.data.shoppinglist.MultiShoppingFr
 import com.pocket_plan.j7_003.databinding.FragmentCustomItemsBinding
-import com.pocket_plan.j7_003.databinding.RowCustomItemBinding
+import com.pocket_plan.j7_003.databinding.VRowCustomItemBinding
 
 class CustomItemFr : Fragment() {
     private var _fragmentBinding: FragmentCustomItemsBinding? = null
@@ -176,7 +176,7 @@ class CustomItemAdapter(val myActivity: MainActivity) :
     override fun getItemCount() = myActivity.userItemTemplateList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomItemViewHolder {
-        val rowCustomItemBinding = RowCustomItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val rowCustomItemBinding = VRowCustomItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CustomItemViewHolder(rowCustomItemBinding)
     }
 
@@ -207,7 +207,7 @@ class CustomItemAdapter(val myActivity: MainActivity) :
 
     }
 
-    class CustomItemViewHolder(rowCustomItemBinding: RowCustomItemBinding) :
+    class CustomItemViewHolder(rowCustomItemBinding: VRowCustomItemBinding) :
         RecyclerView.ViewHolder(rowCustomItemBinding.root) {
         lateinit var myItem: ItemTemplate
         var binding = rowCustomItemBinding

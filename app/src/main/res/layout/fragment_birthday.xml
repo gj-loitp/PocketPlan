@@ -14,6 +14,6 @@
         android:paddingBottom="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/row_birthday"/>
+        tools:listitem="@layout/v_row_birthday"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
