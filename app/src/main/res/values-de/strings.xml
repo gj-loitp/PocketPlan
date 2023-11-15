@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<!--    about-->
+    <!--    about-->
     <string name="aboutDevs">Entwickelt von</string>
     <string name="aboutFeedback">Feedback</string>
     <string name="aboutSourcecode">Sourcecode</string>
     <string name="aboutVersion">Version</string>
     <string name="aboutViewOnGithub">Auf GitHub</string>
 
-<!--    birthdays-->
+    <!--    birthdays-->
     <string name="birthdayAgeUnknown">Kein Jahr gespeichert</string>
     <string name="birthdayChooseDate">Datum wählen</string>
     <string name="birthdayDialogAdd">Hinzufügen</string>
@@ -36,17 +36,17 @@
     <string name="birthdaysNotify">erinnern</string>
     <string name="birthdaysReminderActivated">\nErinnerung aktiviert</string>
 
-<!--    general-->
+    <!--    general-->
     <string name="generalClose">schließen</string>
     <string name="generalOk">OK</string>
     <string name="generalOpen">öffnen</string>
 
-<!--    home-->
+    <!--    home-->
     <string name="homeNoBirthdays">\nKeine Geburtstage heute\n</string>
     <string name="homeNoTasks">\nKeine wichtigen Aufgaben\n</string>
     <string name="homeNotificationTaskAdded">Aufgabe hinzugefügt!</string>
 
-<!--    howto-->
+    <!--    howto-->
     <string name="howtoBirthdaysDelete">Swipe einen Geburtstag zur Seite, um ihn zu löschen.</string>
     <string name="howtoBirthdaysEdit">Halte einen Geburtstag gedrückt, um ihn zu bearbeiten.</string>
     <string name="howtoBirthdaysExplanation">Tippe auf einen Geburtstag, um zusätzliche Informationen anzeigen zu lassen.</string>
@@ -72,7 +72,7 @@
     <string name="howtoTodoReorder">Halte eine Aufgabe gedrückt um sie umzusortieren.</string>
     <string name="howtoBackupExplanation">Deine in PocketPlan gespeicherten Daten werden nur lokal auf deinem Gerät gespeichert. Um diese Daten zu sichern, oder um deine Daten auf ein anderes Gerät zu übertragen, kannst du ein Backup exportieren.\n\nGehe in die Einstellungen -> Backup und wähle \"Volles Backup als .zip exportieren\". Speichere diese Datei dann, beispielsweise indem du sie dir selbst per Mail sendest.\n\nUm ein Backup zu importieren, gehe in die Einstellungen -> Backup und wähle \"Volles Backup aus .zip importieren\", wähle dann die Backup Datei aus, die du importieren willst.</string>
 
-<!--    menu-->
+    <!--    menu-->
     <string name="menuTitleAbout">Über die App</string>
     <string name="menuTitleBirthdays">Geburtstage</string>
     <string name="menuTitleColorChoose">Wähle eine Farbe</string>
@@ -85,7 +85,7 @@
     <string name="menuTitleSleep">Schlaf Rhythmus</string>
     <string name="menuTitleTasks">To-Do</string>
 
-<!--    notes-->
+    <!--    notes-->
     <string name="noteDeleteDialogCancel">Abbrechen</string>
     <string name="noteDeleteDialogText">Notiz löschen?</string>
     <string name="noteDiscardDialogDiscard">Verwerfen</string>
@@ -177,7 +177,7 @@
     <string name="settingsShoppingOnlyExpandOne">Nur eine Kategorie ausklappbar</string>
     <string name="settingsShoppingSearchHint">Z.b. schlage \'Apfel\' vor wenn \'Applfe\' eingegeben wurde</string>
 
-<!--    shopping-->
+    <!--    shopping-->
     <string name="shoppingAddItemTitle">Einkauf hinzufügen</string>
     <string name="shoppingDialogClearList">Liste leeren?</string>
     <string name="shoppingDialogDeleteTitle">Liste löschen?</string>
@@ -194,7 +194,7 @@
     <string name="shoppingOptionRenameList">Liste umbenennen</string>
     <string name="shoppingOptionUncheckAll">Haken entfernen</string>
 
-<!--    sleep-->
+    <!--    sleep-->
     <string name="sleepActiveDays">Aktive Tage</string>
     <string name="sleepCustomDays">Tagesabhängige Zeit</string>
     <string name="sleepDialogMinute">m</string>
@@ -213,7 +213,7 @@
     <string name="sleepWakeUpTime">Aufstehzeit</string>
     <string name="sleepWed">Mi</string>
 
-<!--    tasks-->
+    <!--    tasks-->
     <string name="tasksAddHint">Titel</string>
     <string name="tasksAddTitle">Aufgabe hinzufügen</string>
     <string name="tasksDialogClearChecked">Abgehaktes löschen?</string>

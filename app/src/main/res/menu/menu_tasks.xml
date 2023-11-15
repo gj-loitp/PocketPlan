@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <item android:id="@+id/item_tasks_undo"
-        android:title=""
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_tasks_undo"
         android:icon="@drawable/ic_action_undo"
-        app:showAsAction="ifRoom"/>
+        android:title=""
+        app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/item_tasks_delete_checked"
+    <item
+        android:id="@+id/item_tasks_delete_checked"
         android:title="@string/tasksOptionClearChecked"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/item_tasks_clear"
+    <item
+        android:id="@+id/item_tasks_clear"
         android:title="@string/tasksOptionClearList"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/item_tasks_uncheck_all"
+    <item
+        android:id="@+id/item_tasks_uncheck_all"
         android:title="@string/tasksOptionUncheckAll"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-<!--    <item android:id="@+id/item_shopping_undo"-->
-<!--        android:title=""-->
-<!--        android:icon="@drawable/ic_action_undo"-->
-<!--        app:showAsAction="ifRoom"/>-->
+    <!--    <item android:id="@+id/item_shopping_undo"-->
+    <!--        android:title=""-->
+    <!--        android:icon="@drawable/ic_action_undo"-->
+    <!--        app:showAsAction="ifRoom"/>-->
 </menu>

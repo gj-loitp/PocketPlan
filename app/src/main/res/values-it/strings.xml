@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-<!--    about-->
+    <!--    about-->
     <string name="aboutFeedback">Feedback</string>
     <string name="aboutDevs">Sviluppata da</string>
     <string name="aboutSourcecode">Codice sorgente</string>
     <string name="aboutVersion">Versione</string>
     <string name="aboutViewOnGithub">Visualizza su GitHub</string>
 
-<!--    birthdays-->
+    <!--    birthdays-->
     <string name="birthdayAgeUnknown">Nessun anno salvato</string>
     <string name="birthdayChooseDate">Scegli la data</string>
     <string name="birthdayDialogAdd">Aggiungi</string>
@@ -36,17 +36,17 @@
     <string name="birthdaysNotify">notificami</string>
     <string name="birthdaysReminderActivated">\nPromemoria impostato</string>
 
-<!--    general-->
+    <!--    general-->
     <string name="generalClose">chiudi</string>
     <string name="generalOk">OK</string>
     <string name="generalOpen">apri</string>
 
-<!--    home-->
+    <!--    home-->
     <string name="homeNoBirthdays">\nNessun compleanno oggi\n</string>
     <string name="homeNoTasks">\nNessuna attività importante\n</string>
     <string name="homeNotificationTaskAdded">Attività aggiunta!</string>
 
-<!--    howto-->
+    <!--    howto-->
     <string name="howtoBirthdaysDelete">Scorri su un compleanno a sinistra o a destra per eliminarlo.</string>
     <string name="howtoBirthdaysEdit">Premi a lungo su un compleanno per modificarlo.</string>
     <string name="howtoBirthdaysExplanation">Tocca un compleanno per visualizzare ulteriori informazioni.\n\nSe un compleanno è in arrivo tra 30 giorni o meno, i giorni rimanenti saranno visualizzati nell\'elenco.\n\nSe un promemoria è impostato per x giorni prima e il compleanno è in arrivo tra x giorni o meno, viene evidenziato con un colore nell\'elenco.</string>
@@ -72,7 +72,7 @@
     <string name="howtoTodoReorder">Premi a lungo e trascina un\'attività per spostarla all\'interno dell\'elenco.</string>
     <string name="howtoBackupExplanation">Tutti i tuoi dati di PocketPlan sono archiviati localmente sul tuo dispositivo. Per conservare i dati in caso di perdita del dispositivo o per migrarli su un altro dispositivo, è possibile esportare un backup.\n\nVai in Impostazioni -> Backup e seleziona \"Esporta il backup completo come file .zip\", quindi salva questo file zip, ad esempio inviandolo a te stesso tramite e-mail.\n\nPer importare questo backup su un nuovo dispositivo, vai in Impostazioni -> Backup e seleziona \"Importa backup completo da file .zip\". Quindi seleziona il backup salvato in precedenza.</string>
 
-<!--    menu-->
+    <!--    menu-->
     <string name="menuTitleAbout">Info</string>
     <string name="menuTitleBirthdays">Compleanni</string>
     <string name="menuTitleColorChoose">Scegli un colore</string>
@@ -85,7 +85,7 @@
     <string name="menuTitleSleep">Promemoria del sonno</string>
     <string name="menuTitleTasks">Da fare</string>
 
-<!--    notes-->
+    <!--    notes-->
     <string name="noteDeleteDialogCancel">Annulla</string>
     <string name="noteDeleteDialogText">Cancellare questa nota?</string>
     <string name="noteDiscardDialogDiscard">Scarta</string>
@@ -105,7 +105,7 @@
     <string name="notesToastFolderMoved">Cartella spostata!</string>
     <string name="notesToastNoteMoved">Nota spostata!</string>
 
-<!--    settings-->
+    <!--    settings-->
     <string name="aboutContactDescription">Per segnalare un bug o suggerire una nuova funzionalità, contattaci all\'indirizzo e-mail sopra elencato.\n\nSe ci stai contattando per un bug, includi la tua versione di Android, il tipo di dispositivo e i passaggi dettagliati su come riprodurre il bug.\n\nSe hai un account GitHub, puoi creare una issue nel nostro repository.</string>
     <string name="settingsGeneralBorderHint">(Applicato agli elementi delle attività e delle note)</string>
     <string name="settingsGeneralBorderTitle">Tema con bordi scuri:</string>
@@ -176,7 +176,7 @@
     <string name="settingsShoppingOnlyExpandOne">Espandi solo una categoria</string>
     <string name="settingsShoppingSearchHint">ad esepmio, consiglia \'Carote\' se viene inserito \'Carofte\'.</string>
 
-<!--    shopping-->
+    <!--    shopping-->
     <string name="shoppingAddItemTitle">Aggiungi articolo</string>
     <string name="shoppingDialogClearList">Cancellare la lista?</string>
     <string name="shoppingDialogDeleteTitle">Eliminare la lista?</string>
@@ -193,7 +193,7 @@
     <string name="shoppingOptionRenameList">Rinomina lista</string>
     <string name="shoppingOptionUncheckAll">Deseleziona tutto</string>
 
-<!--    sleep-->
+    <!--    sleep-->
     <string name="sleepActiveDays">Giorni attivi</string>
     <string name="sleepCustomDays">Abilita giorni personalizzati</string>
     <string name="sleepDialogMinute">m</string>
@@ -212,7 +212,7 @@
     <string name="sleepWakeUpTime">Ora del risveglio</string>
     <string name="sleepWed">Mer</string>
 
-<!--    tasks-->
+    <!--    tasks-->
     <string name="tasksAddHint">Titolo</string>
     <string name="tasksAddTitle">Aggiungi attività</string>
     <string name="tasksDialogClearChecked">Eliminare le attività selezionate?</string>

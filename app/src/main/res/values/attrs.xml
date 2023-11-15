@@ -1,146 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <attr name="colorBackground" format="color"/>
-
-    <attr name="colorBackgroundElevated" format="color"/>
-
-    <attr name="colorOnBackGround" format="color"/>
-    <attr name="colorOnBackGroundTask" format="color"/>
-    <attr name="colorHint" format="color"/>
-
-    <attr name="colorBirthdayToday" format="color"/>
-    <attr name="colorBirthdaySoon" format="color"/>
-
-    <attr name="colorPrimary" format="color"/>
-    <attr name="colorPrimaryLight" format="color"/>
-    <attr name="colorPrimaryDark" format="color"/>
-
-    <attr name="colorGray" format="color"/>
-    <attr name="colorGrayL" format="color"/>
-    <attr name="colorGrayD" format="color"/>
-
-    <attr name="colorAccent" format="color"/>
-    <attr name="colorAccentClone" format="color"/>
-    <attr name="colorButtonCancel" format="color"/>
-    <attr name="colorCheckedCategoryTitle" format="color"/>
-    <attr name="colorCheckedTask" format="color"/>
-    <attr name="colorHyperLink" format="color"/>
-    <attr name="colorIconTint" format="color"/>
-
-    <attr name="colorPriority1" format="color"/>
-    <attr name="colorPriority2" format="color"/>
-    <attr name="colorPriority3" format="color"/>
-
-    <attr name="colorPriority1darker" format="color"/>
-    <attr name="colorPriority2darker" format="color"/>
-    <attr name="colorPriority3darker" format="color"/>
-
-    <attr name="colorPriority1border" format="color"/>
-    <attr name="colorPriority2border" format="color"/>
-    <attr name="colorPriority3border" format="color"/>
-
-    <attr name="colorPriorityButtonBackground1" format="color"/>
-    <attr name="colorPriorityButtonBackground2" format="color"/>
-    <attr name="colorPriorityButtonBackground3" format="color"/>
-
-    <attr name="colorPriorityButtonText1" format="color"/>
-    <attr name="colorPriorityButtonText2" format="color"/>
-    <attr name="colorPriorityButtonText3" format="color"/>
-
-    <attr name="colorRoundAccentBorder" format="color"/>
-    <attr name="colorRoundAccentBackground" format="color"/>
-
-    <attr name="colorRoundRedBorder" format="color"/>
-    <attr name="colorRoundRedBackground" format="color"/>
-
-    <attr name="colorNoteRed" format="color"/>
-    <attr name="colorNoteOrange" format="color"/>
-    <attr name="colorNoteYellow" format="color"/>
-    <attr name="colorNoteLime" format="color"/>
-    <attr name="colorNoteGreen" format="color"/>
-    <attr name="colorNoteTurquoise" format="color"/>
-    <attr name="colorNoteBlue" format="color"/>
-    <attr name="colorNoteDarkBlue" format="color"/>
-    <attr name="colorNotePurple" format="color"/>
-    <attr name="colorNoteDarkPurple" format="color"/>
-
-    <attr name="colorNoteRedDarker" format="color"/>
-    <attr name="colorNoteOrangeDarker" format="color"/>
-    <attr name="colorNoteYellowDarker" format="color"/>
-    <attr name="colorNoteLimeDarker" format="color"/>
-    <attr name="colorNoteGreenDarker" format="color"/>
-    <attr name="colorNoteTurquoiseDarker" format="color"/>
-    <attr name="colorNoteBlueDarker" format="color"/>
-    <attr name="colorNoteDarkBlueDarker" format="color"/>
-    <attr name="colorNotePurpleDarker" format="color"/>
-    <attr name="colorNoteDarkPurpleDarker" format="color"/>
-
-    <attr name="colorBackgroundListElement" format="color"/>
-    <attr name="colorGoToSleep" format="color"/>
-
-    <attr name="colorSun" format="color"/>
-
-    <attr name="colorBirthdayNotify" format="color"/>
-    <attr name="colorBirthdayNotifyDisabled" format="color"/>
-    <attr name="colorHomePanel" format="color"/>
-
-    <attr name="colorCategory" format="color"/>
-
-    <attr name="colorMonth1" format="color"/>
-    <attr name="colorMonth2" format="color"/>
-    <attr name="colorMonth3" format="color"/>
-    <attr name="colorMonth4" format="color"/>
-    <attr name="colorMonth5" format="color"/>
-    <attr name="colorMonth6" format="color"/>
-    <attr name="colorMonth7" format="color"/>
-    <attr name="colorMonth8" format="color"/>
-    <attr name="colorMonth9" format="color"/>
-    <attr name="colorMonth10" format="color"/>
-    <attr name="colorMonth11" format="color"/>
-    <attr name="colorMonth12" format="color"/>
-
-    <attr name="colorIconAppearance" format="color"/>
-    <attr name="colorIconNotes" format="color"/>
-    <attr name="colorIconShopping" format="color"/>
-    <attr name="colorIconBackup" format="color"/>
-    <attr name="colorIconAbout" format="color"/>
-
-    <attr name="colorSonstiges" format="color"/>
-    <attr name="colorSonstigesL" format="color"/>
-    <attr name="colorObstundGemüse" format="color"/>
-    <attr name="colorObstundGemüseL" format="color"/>
-    <attr name="colorGetränke" format="color"/>
-    <attr name="colorGetränkeL" format="color"/>
-    <attr name="colorNudelnundGetreide" format="color"/>
-    <attr name="colorNudelnundGetreideL" format="color"/>
-    <attr name="colorBackwaren" format="color"/>
-    <attr name="colorBackwarenL" format="color"/>
-    <attr name="colorKühlregalMilch" format="color"/>
-    <attr name="colorKühlregalMilchL" format="color"/>
-    <attr name="colorKühlregalFleisch" format="color"/>
-    <attr name="colorKühlregalFleischL" format="color"/>
-    <attr name="colorVegan" format="color"/>
-    <attr name="colorVeganL" format="color"/>
-    <attr name="colorTiefkühl" format="color"/>
-    <attr name="colorTiefkühlL" format="color"/>
-    <attr name="colorKonservenFertiges" format="color"/>
-    <attr name="colorKonservenFertigesL" format="color"/>
-    <attr name="colorFrühstück" format="color"/>
-    <attr name="colorFrühstückL" format="color"/>
-    <attr name="colorGewürze" format="color"/>
-    <attr name="colorGewürzeL" format="color"/>
-    <attr name="colorHaushalt" format="color"/>
-    <attr name="colorHaushaltL" format="color"/>
-    <attr name="colorSnacks" format="color"/>
-    <attr name="colorSnacksL" format="color"/>
-    <attr name="colorBackzutaten" format="color"/>
-    <attr name="colorBackzutatenL" format="color"/>
-    <attr name="colorDrogerieKosmetik" format="color"/>
-    <attr name="colorDrogerieKosmetikL" format="color"/>
-    <attr name="colorAlkoholTabak" format="color"/>
-    <attr name="colorAlkoholTabakL" format="color"/>
-
-
+    <attr name="colorBackground" format="color" />
+    <attr name="colorBackgroundElevated" format="color" />
+    <attr name="colorOnBackGround" format="color" />
+    <attr name="colorOnBackGroundTask" format="color" />
+    <attr name="colorHint" format="color" />
+    <attr name="colorBirthdayToday" format="color" />
+    <attr name="colorBirthdaySoon" format="color" />
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorPrimaryLight" format="color" />
+    <attr name="colorPrimaryDark" format="color" />
+    <attr name="colorGray" format="color" />
+    <attr name="colorGrayL" format="color" />
+    <attr name="colorGrayD" format="color" />
+    <attr name="colorAccent" format="color" />
+    <attr name="colorAccentClone" format="color" />
+    <attr name="colorButtonCancel" format="color" />
+    <attr name="colorCheckedCategoryTitle" format="color" />
+    <attr name="colorCheckedTask" format="color" />
+    <attr name="colorHyperLink" format="color" />
+    <attr name="colorIconTint" format="color" />
+    <attr name="colorPriority1" format="color" />
+    <attr name="colorPriority2" format="color" />
+    <attr name="colorPriority3" format="color" />
+    <attr name="colorPriority1darker" format="color" />
+    <attr name="colorPriority2darker" format="color" />
+    <attr name="colorPriority3darker" format="color" />
+    <attr name="colorPriority1border" format="color" />
+    <attr name="colorPriority2border" format="color" />
+    <attr name="colorPriority3border" format="color" />
+    <attr name="colorPriorityButtonBackground1" format="color" />
+    <attr name="colorPriorityButtonBackground2" format="color" />
+    <attr name="colorPriorityButtonBackground3" format="color" />
+    <attr name="colorPriorityButtonText1" format="color" />
+    <attr name="colorPriorityButtonText2" format="color" />
+    <attr name="colorPriorityButtonText3" format="color" />
+    <attr name="colorRoundAccentBorder" format="color" />
+    <attr name="colorRoundAccentBackground" format="color" />
+    <attr name="colorRoundRedBorder" format="color" />
+    <attr name="colorRoundRedBackground" format="color" />
+    <attr name="colorNoteRed" format="color" />
+    <attr name="colorNoteOrange" format="color" />
+    <attr name="colorNoteYellow" format="color" />
+    <attr name="colorNoteLime" format="color" />
+    <attr name="colorNoteGreen" format="color" />
+    <attr name="colorNoteTurquoise" format="color" />
+    <attr name="colorNoteBlue" format="color" />
+    <attr name="colorNoteDarkBlue" format="color" />
+    <attr name="colorNotePurple" format="color" />
+    <attr name="colorNoteDarkPurple" format="color" />
+    <attr name="colorNoteRedDarker" format="color" />
+    <attr name="colorNoteOrangeDarker" format="color" />
+    <attr name="colorNoteYellowDarker" format="color" />
+    <attr name="colorNoteLimeDarker" format="color" />
+    <attr name="colorNoteGreenDarker" format="color" />
+    <attr name="colorNoteTurquoiseDarker" format="color" />
+    <attr name="colorNoteBlueDarker" format="color" />
+    <attr name="colorNoteDarkBlueDarker" format="color" />
+    <attr name="colorNotePurpleDarker" format="color" />
+    <attr name="colorNoteDarkPurpleDarker" format="color" />
+    <attr name="colorBackgroundListElement" format="color" />
+    <attr name="colorGoToSleep" format="color" />
+    <attr name="colorSun" format="color" />
+    <attr name="colorBirthdayNotify" format="color" />
+    <attr name="colorBirthdayNotifyDisabled" format="color" />
+    <attr name="colorHomePanel" format="color" />
+    <attr name="colorCategory" format="color" />
+    <attr name="colorMonth1" format="color" />
+    <attr name="colorMonth2" format="color" />
+    <attr name="colorMonth3" format="color" />
+    <attr name="colorMonth4" format="color" />
+    <attr name="colorMonth5" format="color" />
+    <attr name="colorMonth6" format="color" />
+    <attr name="colorMonth7" format="color" />
+    <attr name="colorMonth8" format="color" />
+    <attr name="colorMonth9" format="color" />
+    <attr name="colorMonth10" format="color" />
+    <attr name="colorMonth11" format="color" />
+    <attr name="colorMonth12" format="color" />
+    <attr name="colorIconAppearance" format="color" />
+    <attr name="colorIconNotes" format="color" />
+    <attr name="colorIconShopping" format="color" />
+    <attr name="colorIconBackup" format="color" />
+    <attr name="colorIconAbout" format="color" />
+    <attr name="colorSonstiges" format="color" />
+    <attr name="colorSonstigesL" format="color" />
+    <attr name="colorObstundGemüse" format="color" />
+    <attr name="colorObstundGemüseL" format="color" />
+    <attr name="colorGetränke" format="color" />
+    <attr name="colorGetränkeL" format="color" />
+    <attr name="colorNudelnundGetreide" format="color" />
+    <attr name="colorNudelnundGetreideL" format="color" />
+    <attr name="colorBackwaren" format="color" />
+    <attr name="colorBackwarenL" format="color" />
+    <attr name="colorKühlregalMilch" format="color" />
+    <attr name="colorKühlregalMilchL" format="color" />
+    <attr name="colorKühlregalFleisch" format="color" />
+    <attr name="colorKühlregalFleischL" format="color" />
+    <attr name="colorVegan" format="color" />
+    <attr name="colorVeganL" format="color" />
+    <attr name="colorTiefkühl" format="color" />
+    <attr name="colorTiefkühlL" format="color" />
+    <attr name="colorKonservenFertiges" format="color" />
+    <attr name="colorKonservenFertigesL" format="color" />
+    <attr name="colorFrühstück" format="color" />
+    <attr name="colorFrühstückL" format="color" />
+    <attr name="colorGewürze" format="color" />
+    <attr name="colorGewürzeL" format="color" />
+    <attr name="colorHaushalt" format="color" />
+    <attr name="colorHaushaltL" format="color" />
+    <attr name="colorSnacks" format="color" />
+    <attr name="colorSnacksL" format="color" />
+    <attr name="colorBackzutaten" format="color" />
+    <attr name="colorBackzutatenL" format="color" />
+    <attr name="colorDrogerieKosmetik" format="color" />
+    <attr name="colorDrogerieKosmetikL" format="color" />
+    <attr name="colorAlkoholTabak" format="color" />
+    <attr name="colorAlkoholTabakL" format="color" />
 
 </resources>

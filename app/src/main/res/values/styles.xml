@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppThemeDark" parent="Theme.AppCompat.NoActionBar">
         <item name="android:splitMotionEvents">false</item>
         <item name="android:windowEnableSplitTouch">false</item>
@@ -12,28 +13,22 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="colorControlHighlight">?attr/colorHint</item>
         <item name="colorControlNormal">?attr/colorOnBackGround</item>
-
         <item name="colorBackground">#121212</item>
         <item name="colorBackgroundElevated">#1C1C1C</item>
         <item name="colorHomePanel">#1C1C1C</item>
-
         <item name="colorHint">#757272</item>
         <item name="colorHyperLink">#23A8E4</item>
         <item name="colorOnBackGround">#F1F1F1</item>
         <item name="colorOnBackGroundTask">#F1F1F1</item>
         <item name="colorIconTint">?attr/colorOnBackGround</item>
-
         <item name="colorPrimary">#1C1C1C</item>
         <item name="colorPrimaryLight">#353535</item>
         <item name="colorPrimaryDark">#000000</item>
-
         <item name="colorGray">#1C1C1C</item>
         <item name="colorGrayL">#1C1C1C</item>
         <item name="colorGrayD">#2B2A2A</item>
-
         <item name="colorAccent">#0652A5</item>
         <item name="colorAccentClone">#0652A5</item>
-
         <item name="colorBackgroundListElement">#252525</item>
         <item name="colorBirthdayNotify">#1976D2</item>
         <item name="colorBirthdayNotifyDisabled">#313131</item>
@@ -45,33 +40,25 @@
         <item name="colorCheckedTask">#232323</item>
         <item name="colorGoToSleep">#CC212F</item>
         <item name="colorSun">#F4C01F</item>
-
         <item name="colorPriority1">#E62929</item>
         <item name="colorPriority2">#E89E2E</item>
         <item name="colorPriority3">#39BF33</item>
-
         <item name="colorPriority1darker">?attr/colorNoteRedDarker</item>
         <item name="colorPriority2darker">?attr/colorNoteYellowDarker</item>
         <item name="colorPriority3darker">#C31D6521</item>
-
         <item name="colorPriority1border">#E62929</item>
         <item name="colorPriority2border">#E89E2E</item>
         <item name="colorPriority3border">#39BF33</item>
-
         <item name="colorPriorityButtonBackground1">?attr/colorBackgroundElevated</item>
         <item name="colorPriorityButtonBackground2">?attr/colorBackgroundElevated</item>
         <item name="colorPriorityButtonBackground3">?attr/colorBackgroundElevated</item>
-
         <item name="colorPriorityButtonText1">?attr/colorPriority1</item>
         <item name="colorPriorityButtonText2">?attr/colorPriority2</item>
         <item name="colorPriorityButtonText3">?attr/colorPriority3</item>
-
         <item name="colorRoundAccentBackground">?attr/colorBackgroundElevated</item>
         <item name="colorRoundAccentBorder">?attr/colorAccent</item>
-
         <item name="colorRoundRedBackground">?attr/colorBackgroundElevated</item>
         <item name="colorRoundRedBorder">?attr/colorButtonCancel</item>
-
         <item name="colorNoteRed">#C52D2D</item>
         <item name="colorNoteOrange">#CD501F</item>
         <item name="colorNoteYellow">#E4A13B</item>
@@ -82,7 +69,6 @@
         <item name="colorNoteDarkBlue">#4C5CEF</item>
         <item name="colorNotePurple">#BA2B7D</item>
         <item name="colorNoteDarkPurple">#9428D8</item>
-
         <item name="colorNoteRedDarker">#8C1616</item>
         <item name="colorNoteOrangeDarker">#B4461A</item>
         <item name="colorNoteYellowDarker">#BF8002</item>
@@ -93,7 +79,6 @@
         <item name="colorNoteDarkBlueDarker">#162AAD</item>
         <item name="colorNotePurpleDarker">#4D2B80</item>
         <item name="colorNoteDarkPurpleDarker">#9521AF</item>
-
         <item name="colorMonth1">#024B98</item>
         <item name="colorMonth2">#1584C1</item>
         <item name="colorMonth3">#036C3B</item>
@@ -106,7 +91,6 @@
         <item name="colorMonth10">#972C8C</item>
         <item name="colorMonth11">#8935DC</item>
         <item name="colorMonth12">#4F36A8</item>
-
         <item name="colorSonstiges">#243E6A</item>
         <item name="colorSonstigesL">#446DBF</item>
         <item name="colorObstundGemüse">#C43C6A19</item>
@@ -143,7 +127,6 @@
         <item name="colorAlkoholTabakL">#362AAA</item>
     </style>
 
-
     <style name="AppThemeLight" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:splitMotionEvents">false</item>
@@ -158,28 +141,22 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="colorControlHighlight">#BDBDBD</item>
         <item name="colorControlNormal">#000000</item>
-
         <item name="colorBackgroundElevated">#FFFFFF</item>
         <item name="colorBackground">#FFFFFF</item>
         <item name="colorHomePanel">#FFFFFF</item>
-
         <item name="colorHint">#888888</item>
         <item name="colorOnBackGround">#1B1B1B</item>
         <item name="colorOnBackGroundTask">#FFFFFF</item>
         <item name="colorHyperLink">#23A8E4</item>
         <item name="colorIconTint">#4F4F4F</item>
-
         <item name="colorPrimary">#FFFFFF</item>
         <item name="colorPrimaryLight">#FFFFFF</item>
         <item name="colorPrimaryDark">#C19797</item>
-
         <item name="colorGray">#A5A1A1</item>
         <item name="colorGrayL">#A5A1A1</item>
         <item name="colorGrayD">#D3D3D3</item>
-
         <item name="colorAccent">#4FC3F7</item>
         <item name="colorAccentClone">#4FC3F7</item>
-
         <item name="colorBackgroundListElement">#E1E1E1</item>
         <item name="colorBirthdayNotify">#5FCFFB</item>
         <item name="colorBirthdayNotifyDisabled">#CDCDCD</item>
@@ -191,33 +168,25 @@
         <item name="colorCheckedTask">#BDBCBC</item>
         <item name="colorGoToSleep">#FF4A4A</item>
         <item name="colorSun">#F3A318</item>
-
         <item name="colorPriority1">#EC7380</item>
         <item name="colorPriority2">#FABB5D</item>
         <item name="colorPriority3">#85CF8A</item>
-
         <item name="colorPriority1darker">?attr/colorPriority1</item>
         <item name="colorPriority2darker">?attr/colorPriority2</item>
         <item name="colorPriority3darker">?attr/colorPriority3</item>
-
         <item name="colorPriority1border">?attr/colorPriority1</item>
         <item name="colorPriority2border">?attr/colorPriority2</item>
         <item name="colorPriority3border">?attr/colorPriority3</item>
-
         <item name="colorPriorityButtonBackground1">?attr/colorPriority1</item>
         <item name="colorPriorityButtonBackground2">?attr/colorPriority2</item>
         <item name="colorPriorityButtonBackground3">?attr/colorPriority3</item>
-
         <item name="colorPriorityButtonText1">?attr/colorBackground</item>
         <item name="colorPriorityButtonText2">?attr/colorBackground</item>
         <item name="colorPriorityButtonText3">?attr/colorBackground</item>
-
         <item name="colorRoundAccentBackground">?attr/colorAccent</item>
         <item name="colorRoundAccentBorder">?attr/colorAccent</item>
-
         <item name="colorRoundRedBackground">?attr/colorButtonCancel</item>
         <item name="colorRoundRedBorder">?attr/colorButtonCancel</item>
-
         <item name="colorNoteRed">#F06273</item>
         <item name="colorNoteOrange">#F49663</item>
         <item name="colorNoteYellow">#FFB649</item>
@@ -228,7 +197,6 @@
         <item name="colorNoteDarkBlue">#4975E3</item>
         <item name="colorNotePurple">#CA61BB</item>
         <item name="colorNoteDarkPurple">#9352CD</item>
-
         <item name="colorMonth1">#3590D8</item>
         <item name="colorMonth2">#48CFE1</item>
         <item name="colorMonth3">#3EBA8F</item>
@@ -241,7 +209,6 @@
         <item name="colorMonth10">#9D7DD6</item>
         <item name="colorMonth11">#7986CB</item>
         <item name="colorMonth12">#5966AE</item>
-
         <item name="colorSonstiges">#455C83</item>
         <item name="colorSonstigesL">#627393</item>
         <item name="colorObstundGemüse">#C42E9E15</item>
