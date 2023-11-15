@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorBackground"
-    >
+    android:background="?attr/colorBackground">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -21,12 +20,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clManageCustomItems"
                 android:layout_width="match_parent"
-                android:background="?attr/selectableItemBackground"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:background="?attr/selectableItemBackground"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCustomItems"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -36,7 +35,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/settingsShoppingCustomHint"
@@ -44,8 +43,7 @@
                     android:textSize="@dimen/font_size_small"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvCustomItems"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tvCustomItems" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,11 +56,11 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvOneCategory"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -76,22 +74,21 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/swExpandOneCategory"
-                    app:layout_constraintTop_toTopOf="@id/tvOneCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="@id/tvOneCategory"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    app:layout_constraintTop_toTopOf="@id/tvOneCategory" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCollapseCheckedCategories"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -105,23 +102,22 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/swCollapseCheckedSublists"
-                    app:layout_constraintTop_toTopOf="@id/tvCollapseCheckedCategories"
-                    app:layout_constraintBottom_toBottomOf="@id/tvCollapseCheckedCategories"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCollapseCheckedCategories"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvCollapseCheckedCategories"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvMoveCheckedToBottom"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -135,24 +131,22 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/swMoveCheckedCategoriesDown"
-                    app:layout_constraintTop_toTopOf="@id/tvMoveCheckedToBottom"
-                    app:layout_constraintBottom_toBottomOf="@id/tvMoveCheckedToBottom"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/tvMoveCheckedToBottom"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvMoveCheckedToBottom"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCloseAddItemDialog"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -172,25 +166,23 @@
                     app:layout_constraintTop_toTopOf="@id/tvCloseAddItemDialog"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/tvCloseAddItemDialog"
                     android:text="@string/settingsShoppingCloseHint"
                     android:textColor="?attr/colorHint"
-                    app:layout_constraintStart_toStartOf="@id/tvCloseAddItemDialog"/>
-
-
+                    app:layout_constraintStart_toStartOf="@id/tvCloseAddItemDialog"
+                    app:layout_constraintTop_toBottomOf="@id/tvCloseAddItemDialog" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvSuggestSimilarItems"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -201,7 +193,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -221,20 +213,15 @@
                     app:layout_constraintTop_toTopOf="@id/tvSuggestSimilarItems"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingHorizontal="20dp">
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:paddingHorizontal="20dp" />
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

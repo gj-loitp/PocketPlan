@@ -10,20 +10,20 @@ import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.data.shoppinglist.ShoppingFr
-import com.pocket_plan.j7_003.databinding.FragmentSettingsShoppingBinding
+import com.pocket_plan.j7_003.databinding.FSettingsShoppingBinding
 
 /**
  * A simple [Fragment] subclass.
  */
 class SettingsShoppingFr : Fragment() {
-    private var _fragmentBinding: FragmentSettingsShoppingBinding? = null
+    private var _fragmentBinding: FSettingsShoppingBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentSettingsShoppingBinding.inflate(inflater, container, false)
+        _fragmentBinding = FSettingsShoppingBinding.inflate(inflater, container, false)
 
         initializeDisplayValues()
         initializeListeners()

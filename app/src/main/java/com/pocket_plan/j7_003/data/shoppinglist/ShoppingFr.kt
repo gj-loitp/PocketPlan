@@ -15,14 +15,14 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.FragmentShoppingBinding
+import com.pocket_plan.j7_003.databinding.FShoppingBinding
 import com.pocket_plan.j7_003.databinding.VRowCategoryBinding
 import com.pocket_plan.j7_003.databinding.VRowItemBinding
 import java.util.Locale
 
 
 class ShoppingFr : Fragment() {
-    private var _fragmentBinding: FragmentShoppingBinding? = null
+    private var _fragmentBinding: FShoppingBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
     private lateinit var myActivity: MainActivity
     lateinit var myMultiShoppingFr: MultiShoppingFr
@@ -96,7 +96,7 @@ class ShoppingFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _fragmentBinding = FragmentShoppingBinding.inflate(inflater, container, false)
+        _fragmentBinding = FShoppingBinding.inflate(inflater, container, false)
 
         myActivity = activity as MainActivity
         query = null

@@ -14,13 +14,13 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.FragmentSettingsNotesBinding
+import com.pocket_plan.j7_003.databinding.FSettingsNotesBinding
 
 /**
  * A simple [Fragment] subclass.
  */
 class SettingsNotesFr : Fragment() {
-    private var _fragmentBinding: FragmentSettingsNotesBinding? = null
+    private var _fragmentBinding: FSettingsNotesBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     lateinit var myActivity: MainActivity
@@ -33,7 +33,7 @@ class SettingsNotesFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentSettingsNotesBinding.inflate(inflater, container, false)
+        _fragmentBinding = FSettingsNotesBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
 
         initializeAdapters()
