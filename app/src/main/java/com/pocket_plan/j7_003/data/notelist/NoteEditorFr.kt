@@ -27,14 +27,14 @@ import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogChooseColorBinding
 import com.pocket_plan.j7_003.databinding.DialogDiscardNoteEditBinding
 import com.pocket_plan.j7_003.databinding.DialogMoveNoteBinding
-import com.pocket_plan.j7_003.databinding.FragmentNoteEditorBinding
+import com.pocket_plan.j7_003.databinding.FNoteEditorBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import kotlin.random.Random
 
 
 class NoteEditorFr : Fragment() {
 
-    private var _fragmentBinding: FragmentNoteEditorBinding? = null
+    private var _fragmentBinding: FNoteEditorBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     private lateinit var myActivity: MainActivity
@@ -61,7 +61,7 @@ class NoteEditorFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentNoteEditorBinding.inflate(inflater, container, false)
+        _fragmentBinding = FNoteEditorBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
         myNoteFr = myActivity.getFragment(FT.NOTES) as NoteFr
 

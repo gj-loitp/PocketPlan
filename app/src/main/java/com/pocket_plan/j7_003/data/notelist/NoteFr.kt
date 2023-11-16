@@ -30,7 +30,7 @@ import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddNoteFolderBinding
-import com.pocket_plan.j7_003.databinding.FragmentNoteBinding
+import com.pocket_plan.j7_003.databinding.FNoteBinding
 import com.pocket_plan.j7_003.databinding.VRowNoteBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import java.util.Calendar
@@ -47,7 +47,7 @@ class NoteFr : Fragment() {
     lateinit var searchView: SearchView
     lateinit var noteListDirs: NoteDirList
     lateinit var myActivity: MainActivity
-    private var _frBinding: FragmentNoteBinding? = null
+    private var _frBinding: FNoteBinding? = null
     private val frBinding get() = _frBinding!!
 
     val darkBorderStyle = SettingsManager.getSetting(SettingId.DARK_BORDER_STYLE) as Double
@@ -80,7 +80,7 @@ class NoteFr : Fragment() {
         myActivity = (activity as MainActivity)
 
         //inflating layout for NoteFragment
-        _frBinding = FragmentNoteBinding.inflate(inflater)
+        _frBinding = FNoteBinding.inflate(inflater)
 
         //reset deletedNote to signal no undo is possible
         deletedNote = null

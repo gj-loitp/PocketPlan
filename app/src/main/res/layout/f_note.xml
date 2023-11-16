@@ -6,20 +6,19 @@
     android:layout_height="match_parent"
     android:background="?attr/colorBackground"
     android:paddingHorizontal="4dp"
-    tools:context=".data.notelist.NoteFr"
-    >
+    tools:context=".data.notelist.NoteFr">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_note"
+        android:id="@+id/recyclerViewNote"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:paddingTop="4dp"
         android:paddingBottom="100dp"
-        android:clipToPadding="false"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:scrollbars="vertical"
         tools:listitem="@layout/v_row_task" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,17 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pocket_plan.j7_003.App
-import com.pocket_plan.j7_003.databinding.FragmentSettingsAboutBinding
+import com.pocket_plan.j7_003.databinding.FSettingsAboutBinding
 
 class SettingsAboutFr : Fragment() {
 
-    private var _fragmentSettingsAboutBinding: FragmentSettingsAboutBinding? = null
+    private var _fragmentSettingsAboutBinding: FSettingsAboutBinding? = null
     private val fragmentSettingsAboutBinding get() = _fragmentSettingsAboutBinding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentSettingsAboutBinding = FragmentSettingsAboutBinding.inflate(inflater, container, false)
+        _fragmentSettingsAboutBinding = FSettingsAboutBinding.inflate(inflater, container, false)
 
         fragmentSettingsAboutBinding.clGithubLink.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RayLeaf-Studios/PocketPlan"))

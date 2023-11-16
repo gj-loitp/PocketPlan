@@ -12,7 +12,7 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.data.sleepreminder.SleepReminder
-import com.pocket_plan.j7_003.databinding.FragmentSettingsBackupBinding
+import com.pocket_plan.j7_003.databinding.FSettingsBackupBinding
 import com.pocket_plan.j7_003.system_interaction.handler.storage.StorageId
 import java.io.File
 
@@ -22,7 +22,7 @@ import java.io.File
 class BackUpActivity : AppCompatActivity() {
     private val eHandler = ExportHandler(this)
     private val iHandler = ImportHandler(this)
-    private lateinit var binding: FragmentSettingsBackupBinding
+    private lateinit var binding: FSettingsBackupBinding
 
 
     /**
@@ -38,7 +38,7 @@ class BackUpActivity : AppCompatActivity() {
         setTheme(themeToSet)
         super.onCreate(savedInstanceState)
 
-        binding = FragmentSettingsBackupBinding.inflate(layoutInflater)
+        binding = FSettingsBackupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val toolBar = binding.tbBackup
 
