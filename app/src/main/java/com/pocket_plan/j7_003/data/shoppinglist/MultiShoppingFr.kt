@@ -21,8 +21,8 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogAddItemBinding
-import com.pocket_plan.j7_003.databinding.DialogAddShoppingListBinding
+import com.pocket_plan.j7_003.databinding.DlgAddItemBinding
+import com.pocket_plan.j7_003.databinding.DlgAddShoppingListBinding
 import com.pocket_plan.j7_003.databinding.FMultiShoppingBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import java.util.Collections
@@ -38,7 +38,7 @@ class MultiShoppingFr : Fragment() {
     private var unitChanged: Boolean = false
 
     private lateinit var addItemDialog: AlertDialog
-    private lateinit var dialogAddItemBinding: DialogAddItemBinding
+    private lateinit var dialogAddItemBinding: DlgAddItemBinding
     lateinit var autoCompleteTv: AutoCompleteTextView
 
     var editing: Boolean = false
@@ -235,7 +235,7 @@ class MultiShoppingFr : Fragment() {
 
     private fun dialogRenameCurrentList() {
         //inflate the dialog with custom view
-        val dialogAddShoppingListBinding = DialogAddShoppingListBinding.inflate(layoutInflater)
+        val dialogAddShoppingListBinding = DlgAddShoppingListBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -280,7 +280,7 @@ class MultiShoppingFr : Fragment() {
 
     private fun dialogAddShoppingList() {
         //inflate the dialog with custom view
-        val dialogAddShoppingListBinding = DialogAddShoppingListBinding.inflate(layoutInflater)
+        val dialogAddShoppingListBinding = DlgAddShoppingListBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -444,7 +444,7 @@ class MultiShoppingFr : Fragment() {
 
 
         //inflate view for this dialog
-        dialogAddItemBinding = DialogAddItemBinding.inflate(layoutInflater)
+        dialogAddItemBinding = DlgAddItemBinding.inflate(layoutInflater)
 
         //Initialize dialogBuilder and set its title
         val myBuilder = myActivity.let { AlertDialog.Builder(it).setView(dialogAddItemBinding.root) }

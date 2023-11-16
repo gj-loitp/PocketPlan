@@ -29,7 +29,7 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogAddNoteFolderBinding
+import com.pocket_plan.j7_003.databinding.DlgAddNoteFolderBinding
 import com.pocket_plan.j7_003.databinding.FNoteBinding
 import com.pocket_plan.j7_003.databinding.VRowNoteBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
@@ -250,7 +250,7 @@ class NoteFr : Fragment() {
         val editFolder = noteListDirs.folderStack.peek() ?: return
 
         //inflate the dialog with custom view
-        val myDialogBinding = DialogAddNoteFolderBinding.inflate(layoutInflater)
+        val myDialogBinding = DlgAddNoteFolderBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -377,7 +377,7 @@ class NoteFr : Fragment() {
 
     private fun dialogAddNoteFolder() {
         //inflate the dialog with custom view
-        val myDialogBinding = DialogAddNoteFolderBinding.inflate(layoutInflater)
+        val myDialogBinding = DlgAddNoteFolderBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =

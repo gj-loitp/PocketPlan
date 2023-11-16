@@ -9,18 +9,16 @@
     android:paddingBottom="10dp">
 
     <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etAddShoppingList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="11"
-            android:inputType="textCapSentences"
-            android:isScrollContainer="false"
-            android:textColor="?attr/colorOnBackGround"
-            android:textColorHint="?attr/colorHint"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-        />
-
+        android:id="@+id/etAddShoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapSentences"
+        android:isScrollContainer="false"
+        android:maxLength="11"
+        android:textColor="?attr/colorOnBackGround"
+        android:textColorHint="?attr/colorHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnCancelShoppingList"
@@ -38,8 +36,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnAddShoppingList"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAddShoppingList"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/etAddShoppingList" />
 
     <Button
         android:id="@+id/btnAddShoppingList"
@@ -59,6 +56,5 @@
         app:layout_constraintStart_toEndOf="@+id/btnCancelShoppingList"
         app:layout_constraintTop_toBottomOf="@+id/etAddShoppingList"
         app:layout_constraintVertical_bias="0.0" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogAddBirthdayBinding
+import com.pocket_plan.j7_003.databinding.DlgAddBirthdayBinding
 import com.pocket_plan.j7_003.databinding.FBirthdayBinding
 import com.pocket_plan.j7_003.databinding.VRowBirthdayBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
@@ -292,7 +292,7 @@ class BirthdayFr : Fragment() {
         )
 
         //inflate the dialog with custom view
-        val myDialogBinding = DialogAddBirthdayBinding.inflate(layoutInflater)
+        val myDialogBinding = DlgAddBirthdayBinding.inflate(layoutInflater)
 
         //initialize references to ui elements
         val etName = myDialogBinding.etName
@@ -313,7 +313,9 @@ class BirthdayFr : Fragment() {
 
         //initialize name text field with birthday name
         etName.setText(editBirthdayHolder!!.name)
-        etName.setSelection(etName.text.length)
+        etName.text?.let {
+            etName.setSelection(it.length)
+        }
 
         //initialize color of tvNotifyMe depending on notification status
         if (editBirthdayHolder!!.notify) {
@@ -616,7 +618,7 @@ class BirthdayFr : Fragment() {
         date = LocalDate.now()
 
         //inflate the dialog with custom view
-        val myDialogBinding = DialogAddBirthdayBinding.inflate(layoutInflater)
+        val myDialogBinding = DlgAddBirthdayBinding.inflate(layoutInflater)
 
         //initialize references to ui elements
         val etName = myDialogBinding.etName
@@ -699,7 +701,9 @@ class BirthdayFr : Fragment() {
                     // only remove date from name line, if it was a complete date
                     if (yearPresent) {
                         etName.setText(text.substring(0, dateStringStartIndex).trim())
-                        etName.setSelection(etName.text.length)
+                        etName.text?.let {
+                            etName.setSelection(it.length)
+                        }
                         cbSaveBirthdayYear.isChecked = true
                         tvSaveYear.setTextColor(
                             myActivity.colorForAttr(R.attr.colorOnBackGround)

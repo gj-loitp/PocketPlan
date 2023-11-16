@@ -23,7 +23,7 @@ import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.home.HomeFr
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogAddTaskBinding
+import com.pocket_plan.j7_003.databinding.DlgAddTaskBinding
 import com.pocket_plan.j7_003.databinding.FTodoBinding
 import com.pocket_plan.j7_003.databinding.VRowTaskBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
@@ -41,7 +41,7 @@ class TodoFr : Fragment() {
     private lateinit var myActivity: MainActivity
 
     private lateinit var addTaskDialog: AlertDialog
-    private lateinit var dialogAddTaskBinding: DialogAddTaskBinding
+    private lateinit var dialogAddTaskBinding: DlgAddTaskBinding
     lateinit var myFragment: TodoFr
 
     companion object {
@@ -119,7 +119,7 @@ class TodoFr : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FTodoBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
@@ -150,7 +150,7 @@ class TodoFr : Fragment() {
 
                 override fun clearView(
                     recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder
+                    viewHolder: RecyclerView.ViewHolder,
                 ) {
                     //get current position in adapter
                     val currentPosition = viewHolder.bindingAdapterPosition
@@ -216,7 +216,7 @@ class TodoFr : Fragment() {
 
                 override fun onMove(
                     recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder
+                    viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder,
                 ): Boolean {
 
                     if (!moving) {
@@ -320,10 +320,10 @@ class TodoFr : Fragment() {
         updateDeleteTaskIcon()
     }
 
-    fun preloadAddTaskDialog(passedActivity: MainActivity, myLayoutInflater: LayoutInflater){
+    fun preloadAddTaskDialog(passedActivity: MainActivity, myLayoutInflater: LayoutInflater) {
         myActivity = passedActivity
         //inflate the dialog with custom view
-        dialogAddTaskBinding = DialogAddTaskBinding.inflate(myLayoutInflater)
+        dialogAddTaskBinding = DlgAddTaskBinding.inflate(myLayoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -371,7 +371,7 @@ class TodoFr : Fragment() {
 
                 addTaskDialog.dismiss()
 
-                if(MainActivity.previousFragmentStack.peek() == FT.HOME){
+                if (MainActivity.previousFragmentStack.peek() == FT.HOME) {
                     val homeFr = myActivity.getFragment(FT.HOME) as HomeFr
                     homeFr.updateTaskPanel(false)
                     myActivity.toast(myActivity.getString(R.string.homeNotificationTaskAdded))
@@ -441,10 +441,10 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
                 if (SettingsManager.getSetting(SettingId.DARK_BORDER_STYLE) == 3.0)
                     R.attr.colorOnBackGround
                 else when (listInstance.getTask(holder.bindingAdapterPosition).priority) {
-                        1 -> R.attr.colorPriority1
-                        2 -> R.attr.colorPriority2
-                        else -> R.attr.colorPriority3
-                    }
+                    1 -> R.attr.colorPriority1
+                    2 -> R.attr.colorPriority2
+                    else -> R.attr.colorPriority3
+                }
             } else {
                 //white text when in light theme
                 R.attr.colorBackground
@@ -455,10 +455,10 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
                 if (SettingsManager.getSetting(SettingId.DARK_BORDER_STYLE) != 3.0)
                     R.attr.colorBackgroundElevated
                 else when (listInstance.getTask(holder.bindingAdapterPosition).priority) {
-                        1 -> R.attr.colorPriority1darker
-                        2 -> R.attr.colorPriority2darker
-                        else -> R.attr.colorPriority3darker
-                    }
+                    1 -> R.attr.colorPriority1darker
+                    2 -> R.attr.colorPriority2darker
+                    else -> R.attr.colorPriority3darker
+                }
             } else {
                 //colored background in light theme
                 when (listInstance.getTask(holder.bindingAdapterPosition).priority) {
@@ -495,7 +495,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
         holder.binding.tvName.setOnClickListener {
 
             //inflate the dialog with custom view
-            val dialogAddTaskBinding = DialogAddTaskBinding.inflate(LayoutInflater.from(myActivity))
+            val dialogAddTaskBinding = DlgAddTaskBinding.inflate(LayoutInflater.from(myActivity))
 
             //AlertDialogBuilder
             val myBuilder = AlertDialog.Builder(myActivity).setView(dialogAddTaskBinding.root)
@@ -515,7 +515,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
             //write current task to textField
             dialogAddTaskBinding.etTitleAddTask.requestFocus()
             dialogAddTaskBinding.etTitleAddTask.setText(listInstance.getTask(holder.bindingAdapterPosition).title)
-            dialogAddTaskBinding.etTitleAddTask.setSelection(dialogAddTaskBinding.etTitleAddTask.text.length)
+            dialogAddTaskBinding.etTitleAddTask.setSelection(dialogAddTaskBinding.etTitleAddTask.text?.length ?: 0)
 
             //adds listeners to confirmButtons in addTaskDialog
             val taskConfirmButtons = arrayListOf(
@@ -526,7 +526,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
 
             dialogAddTaskBinding.etTitleAddTask.setOnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
-                    taskConfirmButtons[listInstance.getTask(holder.bindingAdapterPosition).priority-1].performClick()
+                    taskConfirmButtons[listInstance.getTask(holder.bindingAdapterPosition).priority - 1].performClick()
                     true
                 } else false
             }
@@ -579,7 +579,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
 
     override fun getItemCount() = TodoFr.todoListInstance.size
 
-    class TodoTaskViewHolder(rowTaskBinding: VRowTaskBinding) : RecyclerView.ViewHolder(rowTaskBinding.root){
+    class TodoTaskViewHolder(rowTaskBinding: VRowTaskBinding) : RecyclerView.ViewHolder(rowTaskBinding.root) {
         var binding = rowTaskBinding
     }
 }

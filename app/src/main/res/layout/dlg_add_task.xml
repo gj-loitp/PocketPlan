@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorBackground"
-    android:paddingBottom="10dp"
-    android:paddingHorizontal="10dp"
     android:orientation="vertical"
-    >
+    android:paddingHorizontal="10dp"
+    android:paddingBottom="10dp">
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etTitleAddTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,9 +24,9 @@
         android:id="@+id/btnConfirm1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="3dp"
-        android:layout_marginHorizontal="5dp"
         android:background="@drawable/dc_round_corner1"
         android:elevation="@dimen/btnElevation"
         android:text="@string/tasksPriority1"
@@ -75,7 +74,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnConfirm2"
         app:layout_constraintTop_toBottomOf="@+id/etTitleAddTask" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
