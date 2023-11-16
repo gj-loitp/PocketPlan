@@ -57,10 +57,6 @@
             </intent-filter>
         </receiver>
         <receiver android:name="com.pocket_plan.j7_003.system_interaction.receiver.NotificationReceiver" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
