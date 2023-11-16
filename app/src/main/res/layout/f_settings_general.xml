@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorBackground"
-    >
+    android:background="?attr/colorBackground">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="15dp"
                 android:paddingHorizontal="20dp"
-                >
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvSystemTheme"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -35,40 +34,35 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:text="@string/settingsGeneralSystemThemeHint"
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvThemeHint"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:text="@string/settingsGeneralSystemThemeHint"
                     android:textColor="?attr/colorHint"
                     android:textSize="@dimen/font_size_small"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvSystemTheme"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tvSystemTheme" />
 
                 <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swSystemTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:id="@+id/swSystemTheme"/>
-
-
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
                 android:id="@+id/clTheme"
-                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="20dp">
+                android:background="?attr/selectableItemBackground"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvTheme"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -79,7 +73,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCurrentTheme"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -88,10 +82,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/spTheme"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvTheme"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tvTheme" />
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,20 +95,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                </Spinner>
-
+                </androidx.appcompat.widget.AppCompatSpinner>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
                 android:id="@+id/clShapes"
-                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:paddingHorizontal="20dp">
+                android:background="?attr/selectableItemBackground"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvShapes"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -125,7 +117,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCurrentShape"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -133,10 +125,9 @@
                     android:textSize="@dimen/font_size_small"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvShapes"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tvShapes" />
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spShapes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -147,21 +138,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                </Spinner>
-
+                </androidx.appcompat.widget.AppCompatSpinner>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
                 android:id="@+id/clLanguage"
-                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
                 android:layout_marginBottom="5dp"
-                android:paddingHorizontal="20dp">
+                android:background="?attr/selectableItemBackground"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvLanguage"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -171,7 +161,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCurrentLanguage"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -179,10 +169,9 @@
                     android:textSize="@dimen/font_size_small"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvLanguage"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tvLanguage" />
 
-                <Spinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spLanguages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,37 +182,27 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                </Spinner>
-
+                </androidx.appcompat.widget.AppCompatSpinner>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-
-
-
-
-
             <View
+                android:id="@+id/dividerAboveCrBorder"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:id="@+id/dividerAboveCrBorder"
                 android:background="?android:attr/listDivider"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="56dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
                 android:id="@+id/crBorderTheme"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
                 android:layout_marginVertical="5dp"
                 android:paddingHorizontal="20dp"
-                >
+                android:paddingVertical="10dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -233,49 +212,45 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView4"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/settingsGeneralBorderHint"
                     android:textColor="?attr/colorHint"
                     android:textSize="@dimen/font_size_small"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <RadioGroup
                     android:id="@+id/rgDarkBorderStyle"
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/rbBorderLess"
-                        android:text="@string/settingsGeneralBorderless"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@string/settingsGeneralBorderless" />
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/rbColoredBorder"
-                        android:text="@string/settingsGeneralColoredBorder"
-                        android:layout_marginTop="15dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/settingsGeneralColoredBorder" />
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/rbFullColor"
-                        android:text="@string/settingsGeneralFilled"
-                        android:layout_marginTop="15dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/settingsGeneralFilled" />
 
                 </RadioGroup>
-
-
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
@@ -286,20 +261,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/rgDarkBorderStyle">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
                         android:padding="5dp"
                         android:text="@string/settingsGeneralSampleText"
-                        android:layout_margin="1dp"
                         android:textColor="?attr/colorGoToSleep"
                         android:textSize="@dimen/font_size_medium">
 
-                    </TextView>
-
+                    </androidx.appcompat.widget.AppCompatTextView>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView2"
@@ -311,7 +284,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -319,7 +291,7 @@
                         app:cardBackgroundColor="?attr/colorBackgroundElevated"
                         app:cardCornerRadius="@dimen/cornerRadius">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
@@ -327,8 +299,7 @@
                             android:textColor="?attr/colorGoToSleep"
                             android:textSize="@dimen/font_size_medium">
 
-                        </TextView>
-
+                        </androidx.appcompat.widget.AppCompatTextView>
 
                     </androidx.cardview.widget.CardView>
                 </androidx.cardview.widget.CardView>
@@ -337,13 +308,13 @@
                     android:id="@+id/cardView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:cardBackgroundColor="?attr/colorGoToSleep"
                     app:cardCornerRadius="@dimen/cornerRadius"
-                    android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="1dp"
@@ -352,15 +323,11 @@
                         android:textColor="?attr/colorOnBackGround"
                         android:textSize="@dimen/font_size_medium">
 
-                    </TextView>
-
+                    </androidx.appcompat.widget.AppCompatTextView>
 
                 </androidx.cardview.widget.CardView>
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
             <View
                 android:layout_width="match_parent"
@@ -372,11 +339,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="20dp"
                 android:paddingHorizontal="20dp"
-                >
+                android:paddingVertical="20dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvShake"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -387,7 +353,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/settingsGeneralShakeHomeExplanation"
@@ -397,13 +363,12 @@
                     app:layout_constraintTop_toBottomOf="@id/tvShake" />
 
                 <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swShakeTaskInHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:id="@+id/swShakeTaskInHome" />
-
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -415,31 +380,30 @@
                 tools:layout_editor_absoluteY="56dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clResetToDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/clResetToDefault"
-                android:paddingVertical="20dp"
                 android:paddingHorizontal="20dp"
-                >
+                android:paddingVertical="20dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
-                    app:tint="?attr/colorGoToSleep"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_action_restore"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorGoToSleep" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
                     android:text="@string/settingsGeneralResetToDefault"
                     android:textColor="?attr/colorGoToSleep"
                     android:textSize="@dimen/font_size_small"
                     android:textStyle="bold"
-                    android:paddingStart="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -447,9 +411,8 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </LinearLayout>
-
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

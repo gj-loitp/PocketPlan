@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
-import com.pocket_plan.j7_003.databinding.FragmentSettingsHowToBinding
+import com.pocket_plan.j7_003.databinding.FSettingsHowToBinding
 import com.pocket_plan.j7_003.databinding.VRowHowtoBinding
 import com.pocket_plan.j7_003.databinding.VRowHowtoCatBinding
 
@@ -20,7 +20,7 @@ class HowToElement(val subNameId: Int, val explanationId: Int, var expanded: Boo
 
 class SettingsHowTo : Fragment() {
 
-    private var _fragmentSettingsHowToBinding: FragmentSettingsHowToBinding? = null
+    private var _fragmentSettingsHowToBinding: FSettingsHowToBinding? = null
     private val fragmentSettingsHowToBinding get() = _fragmentSettingsHowToBinding!!
 
     lateinit var myAdapter: HowToAdapter
@@ -66,8 +66,8 @@ class SettingsHowTo : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         myActivity = activity as MainActivity
-        _fragmentSettingsHowToBinding = FragmentSettingsHowToBinding.inflate(inflater, container, false)
-        val myRecycler = fragmentSettingsHowToBinding.recyclerViewHowto
+        _fragmentSettingsHowToBinding = FSettingsHowToBinding.inflate(inflater, container, false)
+        val myRecycler = fragmentSettingsHowToBinding.recyclerViewHowTo
 
         myAdapter = HowToAdapter(this, myActivity)
         myRecycler.adapter = myAdapter

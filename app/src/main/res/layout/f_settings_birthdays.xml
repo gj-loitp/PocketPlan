@@ -3,28 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorBackground"
-    >
+    android:background="?attr/colorBackground">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="10dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvOneCategory"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -36,7 +34,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,16 +51,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvOneCategory" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvNorth"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -73,7 +70,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -91,16 +88,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvNorth" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:paddingVertical="15dp"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="15dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvPreview"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -114,12 +110,11 @@
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/swPreview"
-                    app:layout_constraintTop_toTopOf="@id/tvPreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="@id/tvPreview"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    app:layout_constraintTop_toTopOf="@id/tvPreview" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -128,10 +123,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingBottom="20dp"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="20dp">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvBirthdayTime"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -142,7 +137,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvBirthdayNotifTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -150,16 +145,10 @@
                     app:layout_constraintStart_toStartOf="@id/tvBirthdayTime"
                     app:layout_constraintTop_toBottomOf="@id/tvBirthdayTime" />
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
-        </LinearLayout>
-
-
-
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

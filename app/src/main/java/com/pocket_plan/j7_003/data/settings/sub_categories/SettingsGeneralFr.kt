@@ -13,14 +13,14 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.FragmentSettingsGeneralBinding
+import com.pocket_plan.j7_003.databinding.FSettingsGeneralBinding
 
 /**
  * A simple [Fragment] subclass.
  */
 class SettingsGeneralFr : Fragment() {
-    private var _fragmentSettingsGeneralBinding: FragmentSettingsGeneralBinding? = null
-    private val fragmentSettingsGeneralBinding: FragmentSettingsGeneralBinding get() = _fragmentSettingsGeneralBinding!!
+    private var _fragmentSettingsGeneralBinding: FSettingsGeneralBinding? = null
+    private val fragmentSettingsGeneralBinding: FSettingsGeneralBinding get() = _fragmentSettingsGeneralBinding!!
 
     private lateinit var myActivity: MainActivity
 
@@ -33,7 +33,7 @@ class SettingsGeneralFr : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _fragmentSettingsGeneralBinding =
-            FragmentSettingsGeneralBinding.inflate(inflater, container, false)
+            FSettingsGeneralBinding.inflate(inflater, container, false)
 
         myActivity = activity as MainActivity
 

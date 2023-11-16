@@ -12,11 +12,11 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.FragmentSettingsBirthdaysBinding
+import com.pocket_plan.j7_003.databinding.FSettingsBirthdaysBinding
 import com.pocket_plan.j7_003.system_interaction.handler.notifications.AlarmHandler
 
 class SettingsBirthdays : Fragment() {
-    private var _fragmentSettingsBirthdaysBinding: FragmentSettingsBirthdaysBinding? = null
+    private var _fragmentSettingsBirthdaysBinding: FSettingsBirthdaysBinding? = null
     private val fragmentSettingsBirthdaysBinding get() = _fragmentSettingsBirthdaysBinding!!
 
     private val dark = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
@@ -25,7 +25,7 @@ class SettingsBirthdays : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentSettingsBirthdaysBinding = FragmentSettingsBirthdaysBinding.inflate(inflater, container, false)
+        _fragmentSettingsBirthdaysBinding = FSettingsBirthdaysBinding.inflate(inflater, container, false)
 
         initializeDisplayValues()
         initializeListeners()
