@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorBackground"
-    >
+    android:background="?attr/colorBackground">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -27,7 +26,7 @@
                 android:paddingStart="20dp"
                 tools:ignore="RtlSymmetry">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -37,8 +36,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -52,7 +50,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingNotes"
                 android:layout_width="match_parent"
@@ -62,7 +59,7 @@
                 android:paddingStart="20dp"
                 tools:ignore="RtlSymmetry">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,8 +69,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -87,8 +83,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingShopping"
                 android:layout_width="match_parent"
@@ -98,7 +92,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="0dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivShopping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,7 +102,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -123,7 +117,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingBirthdays"
                 android:layout_width="match_parent"
@@ -133,7 +126,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="0dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivBirthday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,7 +136,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -158,7 +151,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingBackup"
                 android:layout_width="match_parent"
@@ -168,7 +160,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="0dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivBackup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,7 +170,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -193,8 +185,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingAbout"
                 android:layout_width="match_parent"
@@ -204,7 +194,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="0dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivAbout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -214,7 +204,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorIconTint" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -234,9 +224,8 @@
                 android:layout_height="50dp"
                 android:paddingHorizontal="20dp" />
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

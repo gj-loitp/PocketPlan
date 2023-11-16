@@ -9,12 +9,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.data.fragmenttags.FT
-import com.pocket_plan.j7_003.databinding.FragmentSettingsMainBinding
+import com.pocket_plan.j7_003.databinding.FSettingsMainBinding
 import com.pocket_plan.j7_003.system_interaction.handler.share.BackUpActivity
 
 class SettingsMainFr : Fragment() {
 
-    private var _fragmentSettingsMainBinding: FragmentSettingsMainBinding? = null
+    private var _fragmentSettingsMainBinding: FSettingsMainBinding? = null
     private val fragmentSettingsMainBinding get() = _fragmentSettingsMainBinding!!
 
     private lateinit var myActivity: MainActivity
@@ -31,7 +31,7 @@ class SettingsMainFr : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         myActivity = activity as MainActivity
-        _fragmentSettingsMainBinding = FragmentSettingsMainBinding.inflate(inflater, container, false)
+        _fragmentSettingsMainBinding = FSettingsMainBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         initializeComponents(fragmentSettingsMainBinding)
         initializeListeners()
@@ -39,7 +39,7 @@ class SettingsMainFr : Fragment() {
         return fragmentSettingsMainBinding.root
     }
 
-    private fun initializeComponents(fragmentSettingsMainBinding: FragmentSettingsMainBinding) {
+    private fun initializeComponents(fragmentSettingsMainBinding: FSettingsMainBinding) {
         clSettingAbout = fragmentSettingsMainBinding.clSettingAbout
         clSettingBackup = fragmentSettingsMainBinding.clSettingBackup
         clSettingShopping = fragmentSettingsMainBinding.clSettingShopping
