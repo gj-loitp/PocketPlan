@@ -20,7 +20,7 @@ import com.pocket_plan.j7_003.MainActivity
 import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogPickTimeBinding
+import com.pocket_plan.j7_003.databinding.DlgPickTimeBinding
 import com.pocket_plan.j7_003.databinding.FSleepBinding
 import com.pocket_plan.j7_003.databinding.VRowSleepBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
@@ -190,7 +190,7 @@ class SleepFr : Fragment() {
             /**
              * pick sleep duration for ALL days
              */
-            val dialogPickTimeBinding = DialogPickTimeBinding.inflate(layoutInflater)
+            val dialogPickTimeBinding = DlgPickTimeBinding.inflate(layoutInflater)
 
             dialogPickTimeBinding.npHour.minValue = 0
             dialogPickTimeBinding.npHour.maxValue = 23
@@ -367,7 +367,7 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
         }
 
         holder.binding.clTapFieldDuration.setOnClickListener {
-            val dialogPickTimeBinding = DialogPickTimeBinding.inflate(LayoutInflater.from(myActivity))
+            val dialogPickTimeBinding = DlgPickTimeBinding.inflate(LayoutInflater.from(myActivity))
 
             dialogPickTimeBinding.npHour.minValue = 0
             dialogPickTimeBinding.npHour.maxValue = 23

@@ -24,9 +24,9 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.fragmenttags.FT
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
-import com.pocket_plan.j7_003.databinding.DialogChooseColorBinding
-import com.pocket_plan.j7_003.databinding.DialogDiscardNoteEditBinding
-import com.pocket_plan.j7_003.databinding.DialogMoveNoteBinding
+import com.pocket_plan.j7_003.databinding.DlgChooseColorBinding
+import com.pocket_plan.j7_003.databinding.DlgDiscardNoteEditBinding
+import com.pocket_plan.j7_003.databinding.DlgMoveNoteBinding
 import com.pocket_plan.j7_003.databinding.FNoteEditorBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import kotlin.random.Random
@@ -301,7 +301,7 @@ class NoteEditorFr : Fragment() {
         }
         dialogOpened = true
 
-        val dialogDiscardNoteEdit = DialogDiscardNoteEditBinding.inflate(layoutInflater)
+        val dialogDiscardNoteEdit = DlgDiscardNoteEditBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -364,7 +364,7 @@ class NoteEditorFr : Fragment() {
 
     private fun dialogMoveNote() {
         //inflate the dialog with custom view
-        val dialogMoveNoteBinding = DialogMoveNoteBinding.inflate(layoutInflater)
+        val dialogMoveNoteBinding = DlgMoveNoteBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder =
@@ -419,7 +419,7 @@ class NoteEditorFr : Fragment() {
     @SuppressLint("InflateParams")
     private fun dialogColorChooser() {
         //inflate the dialog with custom view
-        val dialogChooseColorBinding = DialogChooseColorBinding.inflate(layoutInflater)
+        val dialogChooseColorBinding = DlgChooseColorBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(myActivity).setView(dialogChooseColorBinding.root)

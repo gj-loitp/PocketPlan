@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
-    android:background="?attr/colorBackground">
+    android:background="?attr/colorBackground"
+    android:padding="20dp">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHourMinuteDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/npHour" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHourMinuteAttachment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,9 +40,9 @@
 
     <NumberPicker
         android:id="@+id/npMinute"
-        android:descendantFocusability="blocksDescendants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
         app:layout_constraintStart_toEndOf="@+id/tvHourMinuteDivider"
         app:layout_constraintTop_toTopOf="parent" />
 

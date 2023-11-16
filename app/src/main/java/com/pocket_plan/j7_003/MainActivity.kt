@@ -53,8 +53,8 @@ import com.pocket_plan.j7_003.data.sleepreminder.SleepFr
 import com.pocket_plan.j7_003.data.todolist.TodoFr
 import com.pocket_plan.j7_003.data.todolist.TodoList
 import com.pocket_plan.j7_003.data.todolist.TodoTaskAdapter
-import com.pocket_plan.j7_003.databinding.DialogConfirmBinding
-import com.pocket_plan.j7_003.databinding.DrawerLayoutBinding
+import com.pocket_plan.j7_003.databinding.DlgConfirmBinding
+import com.pocket_plan.j7_003.databinding.VDrawerLayoutBinding
 import com.pocket_plan.j7_003.databinding.VHeaderNavigationDrawerBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import com.pocket_plan.j7_003.system_interaction.handler.notifications.AlarmHandler
@@ -65,7 +65,7 @@ import java.util.Stack
 class MainActivity : AppCompatActivity() {
 
     lateinit var toolbar: Toolbar
-    private lateinit var drawerLayoutBinding: DrawerLayoutBinding
+    private lateinit var drawerLayoutBinding: VDrawerLayoutBinding
 
     private lateinit var mDrawerToggle: ActionBarDrawerToggle
 
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
 
         //create drawer_layout
         super.onCreate(savedInstanceState)
-        drawerLayoutBinding = DrawerLayoutBinding.inflate(layoutInflater)
+        drawerLayoutBinding = VDrawerLayoutBinding.inflate(layoutInflater)
         setContentView(drawerLayoutBinding.root)
 
         //IMPORTANT: ORDER IS CRITICAL HERE
@@ -240,7 +240,7 @@ class MainActivity : AppCompatActivity() {
         mDrawerToggle.syncState()
 
         //initialize bottom navigation
-        bottomNavigation = findViewById(R.id.btm_nav)
+        bottomNavigation = findViewById(R.id.btmNav)
 
         multiShoppingFr = MultiShoppingFr()
         shoppingListWrapper = ShoppingListWrapper(getString(R.string.menuTitleShopping))
@@ -649,7 +649,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment != null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.frame_layout, fragment, fragmentTag.name)
+                .replace(R.id.frameLayout, fragment, fragmentTag.name)
                 .setTransition(fragmentTransition)
                 .commit()
         }
@@ -763,7 +763,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun dialogConfirm(title: String, action: () -> Unit, hint: String = "") {
-        val dialogConfirmBinding = DialogConfirmBinding.inflate(layoutInflater)
+        val dialogConfirmBinding = DlgConfirmBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(this).setView(dialogConfirmBinding.root)
