@@ -20,7 +20,7 @@ import com.pocket_plan.j7_003.R
 import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddBirthdayBinding
-import com.pocket_plan.j7_003.databinding.FragmentBirthdayBinding
+import com.pocket_plan.j7_003.databinding.FBirthdayBinding
 import com.pocket_plan.j7_003.databinding.VRowBirthdayBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import org.threeten.bp.LocalDate
@@ -39,7 +39,7 @@ class BirthdayFr : Fragment() {
     lateinit var birthdayListInstance: BirthdayList
 
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
-    private var _frBinding: FragmentBirthdayBinding? = null
+    private var _frBinding: FBirthdayBinding? = null
     private val frBinding get() = _frBinding!!
 
     //initialize recycler view
@@ -214,7 +214,7 @@ class BirthdayFr : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
-        _frBinding = FragmentBirthdayBinding.inflate(inflater, container, false)
+        _frBinding = FBirthdayBinding.inflate(inflater, container, false)
         val view = frBinding.root
 
         date = LocalDate.now()

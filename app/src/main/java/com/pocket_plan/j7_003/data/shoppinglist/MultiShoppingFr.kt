@@ -23,7 +23,7 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.databinding.DialogAddItemBinding
 import com.pocket_plan.j7_003.databinding.DialogAddShoppingListBinding
-import com.pocket_plan.j7_003.databinding.FragmentMultiShoppingBinding
+import com.pocket_plan.j7_003.databinding.FMultiShoppingBinding
 import com.pocket_plan.j7_003.databinding.VTitleDialogBinding
 import java.util.Collections
 import kotlin.math.abs
@@ -84,7 +84,7 @@ class MultiShoppingFr : Fragment() {
         initializeShoppingFragments()
 
         // Inflate the layout for this fragment
-        val fragmentMultiShoppingBinding = FragmentMultiShoppingBinding.inflate(layoutInflater)
+        val fragmentMultiShoppingBinding = FMultiShoppingBinding.inflate(layoutInflater)
 
         //setup pager and adapter
         shoppingPager = fragmentMultiShoppingBinding.shoppingPager
@@ -97,7 +97,7 @@ class MultiShoppingFr : Fragment() {
 
         //create and register onPageChangeCallback on shoppingPager
 
-        tabLayout = fragmentMultiShoppingBinding.tabLayout
+        tabLayout = fragmentMultiShoppingBinding.tabLayOut
         val onTabSelectedListener = object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {

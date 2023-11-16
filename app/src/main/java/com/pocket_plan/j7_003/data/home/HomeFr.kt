@@ -20,14 +20,14 @@ import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.data.sleepreminder.SleepFr
 import com.pocket_plan.j7_003.data.sleepreminder.SleepReminder
 import com.pocket_plan.j7_003.data.todolist.TodoFr
-import com.pocket_plan.j7_003.databinding.FragmentHomeBinding
+import com.pocket_plan.j7_003.databinding.FHomeBinding
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class HomeFr : Fragment() {
-    private var _fragmentBinding: FragmentHomeBinding? = null
+    private var _fragmentBinding: FHomeBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     private lateinit var myActivity: MainActivity
@@ -42,7 +42,7 @@ class HomeFr : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        _fragmentBinding = FHomeBinding.inflate(inflater, container, false)
         myActivity = (activity as MainActivity)
 
         cr = myActivity.resources.getDimension(R.dimen.cornerRadius)

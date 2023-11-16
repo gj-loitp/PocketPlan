@@ -19,11 +19,11 @@ import com.pocket_plan.j7_003.data.settings.SettingId
 import com.pocket_plan.j7_003.data.settings.SettingsManager
 import com.pocket_plan.j7_003.data.shoppinglist.ItemTemplate
 import com.pocket_plan.j7_003.data.shoppinglist.MultiShoppingFr
-import com.pocket_plan.j7_003.databinding.FragmentCustomItemsBinding
+import com.pocket_plan.j7_003.databinding.FCustomItemsBinding
 import com.pocket_plan.j7_003.databinding.VRowCustomItemBinding
 
 class CustomItemFr : Fragment() {
-    private var _fragmentBinding: FragmentCustomItemsBinding? = null
+    private var _fragmentBinding: FCustomItemsBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
 
     private lateinit var myShoppingFr: MultiShoppingFr
@@ -42,7 +42,7 @@ class CustomItemFr : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _fragmentBinding = FragmentCustomItemsBinding.inflate(inflater, container, false)
+        _fragmentBinding = FCustomItemsBinding.inflate(inflater, container, false)
 
         myActivity = activity as MainActivity
         myShoppingFr = myActivity.getFragment(FT.SHOPPING) as MultiShoppingFr
