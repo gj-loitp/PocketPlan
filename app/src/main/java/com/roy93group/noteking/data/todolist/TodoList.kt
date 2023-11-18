@@ -6,16 +6,16 @@ import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 
-class TodoList: ArrayList<Task>(), Checkable{
-   init {
-       StorageHandler.createJsonFile(StorageId.TASKS)
-       fetchFromFile()
-   }
+class TodoList : ArrayList<Task>(), Checkable {
+    init {
+        StorageHandler.createJsonFile(StorageId.TASKS)
+        fetchFromFile()
+    }
 
     /**
      * Helper function to add a task object, used for undoing deletions
      */
-    fun addFullTask(task: Task): Int{
+    fun addFullTask(task: Task): Int {
         this.add(task)
         sortTasks()
         save()
@@ -37,7 +37,12 @@ class TodoList: ArrayList<Task>(), Checkable{
      * @param priority The tasks new priority.
      * @param title The new title of the task.
      */
-    fun editTask(position: Int, priority: Int, title: String, isChecked: Boolean) : Int{
+    fun editTask(
+        position: Int,
+        priority: Int,
+        title: String,
+        isChecked: Boolean,
+    ): Int {
         val editableTask: Task = getTask(position)
 
         editableTask.title = title
@@ -61,16 +66,16 @@ class TodoList: ArrayList<Task>(), Checkable{
         this.sortWith(compareBy({ it.isChecked }, { it.priority }))
     }
 
-    fun somethingIsChecked(): Boolean{
+    fun somethingIsChecked(): Boolean {
         this.forEach { task ->
-            if(task.isChecked){
+            if (task.isChecked) {
                 return true
             }
         }
         return false
     }
 
-    fun uncheckAll(){
+    fun uncheckAll() {
         this.forEach { task ->
             task.isChecked = false
         }
@@ -78,7 +83,7 @@ class TodoList: ArrayList<Task>(), Checkable{
         save()
     }
 
-    fun deleteCheckedTasks(): Int{
+    fun deleteCheckedTasks(): Int {
         val toBeDeleted = ArrayList<Task>()
 
         this.forEach { n ->
@@ -97,8 +102,8 @@ class TodoList: ArrayList<Task>(), Checkable{
 
     fun save() {
         StorageHandler.saveAsJsonToFile(
-            StorageHandler.files[StorageId.TASKS],
-            this
+            file = StorageHandler.files[StorageId.TASKS],
+            any = this
         )
     }
 
@@ -107,12 +112,14 @@ class TodoList: ArrayList<Task>(), Checkable{
 
         this.addAll(
             GsonBuilder().create().fromJson(
-                jsonString, object : TypeToken<ArrayList<Task>>() {}.type))
+                jsonString, object : TypeToken<ArrayList<Task>>() {}.type
+            )
+        )
     }
 
     override fun check() {
         this.forEach {
-            if(it.priority == null || it.isChecked == null || it.title == null){
+            if (it.priority == null || it.isChecked == null || it.title == null) {
                 throw NullPointerException()
             }
         }

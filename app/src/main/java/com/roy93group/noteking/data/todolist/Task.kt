@@ -1,7 +1,9 @@
 package com.roy93group.noteking.data.todolist
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 class Task(
     @SerializedName(value = "t")
     var title: String,
@@ -10,5 +12,5 @@ class Task(
     var priority: Int,
 
     @SerializedName(value = "i")
-    var isChecked: Boolean
+    var isChecked: Boolean,
 )
