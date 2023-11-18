@@ -41,7 +41,11 @@ class ImportHandler(private val parentActivity: Activity) {
      * @param inputStream An input stream to the file picked by the user.
      * @param file A file to write the picked files content to.
      */
-    fun importFromJson(id: StorageId, inputStream: InputStream, file: File) {
+    fun importFromJson(
+        id: StorageId,
+        inputStream: InputStream,
+        file: File,
+    ) {
         // used to copy the content of the picked file
         val outputStream = file.outputStream()
 
@@ -63,12 +67,18 @@ class ImportHandler(private val parentActivity: Activity) {
         val oldFile = File("${fileDir}old_${id.s}")
 
         // copies the current modules file content to the rollback file
-        oldFile.writeText(StorageHandler.files[id]!!.readText())
+        StorageHandler.files[id]?.let {
+            oldFile.writeText(it.readText())
+        }
         // overwrites the content of the modules file with the selected files content
-        StorageHandler.files[id]!!.writeText(file.readText())
+        StorageHandler.files[id]?.let {
+            it.writeText(file.readText())
+        }
 
         if (!testFiles()) { // rollbacks the file if the file couldn't be read correctly
-            StorageHandler.files[id]!!.writeText(oldFile.readText())
+            StorageHandler.files[id]?.let {
+                it.writeText(oldFile.readText())
+            }
         }
 
         // deletes the rollback file
@@ -86,7 +96,10 @@ class ImportHandler(private val parentActivity: Activity) {
      * @param zipInputStream An input stream to the zip file picked by the user.
      * @param file A file to write the picked files content to.
      */
-    fun importFromZip(zipInputStream: InputStream, file: File) {
+    fun importFromZip(
+        zipInputStream: InputStream,
+        file: File,
+    ) {
         // used to copy the content of the picked file
         val outputStream = file.outputStream()
 
@@ -118,7 +131,7 @@ class ImportHandler(private val parentActivity: Activity) {
         oldDir.mkdir()
 
         // copy content of each module file to a rollback file in the /old/ directory
-        File("${parentActivity.filesDir}/").listFiles()!!.forEach { oldFile ->
+        File("${parentActivity.filesDir}/").listFiles()?.forEach { oldFile ->
             if (oldFile.extension == "json") {
                 File("${parentActivity.filesDir}/old/${oldFile.name}")
                     .writeText(oldFile.readText())
@@ -150,7 +163,7 @@ class ImportHandler(private val parentActivity: Activity) {
 
         // test of all file, if it fails all files are rolled back
         if (!testFiles()) {
-            File("${parentActivity.filesDir}/old/").listFiles()!!.forEach { currentFile ->
+            File("${parentActivity.filesDir}/old/").listFiles()?.forEach { currentFile ->
                 File("${parentActivity.filesDir}/${currentFile.name}").writeText(currentFile.readText())
             }
         }
@@ -160,7 +173,7 @@ class ImportHandler(private val parentActivity: Activity) {
     }
 
     internal fun browse(fileType: String, id: StorageId) {
-        browse(fileType, id.i)
+        browse(fileType = fileType, id = id.i)
     }
 
     internal fun browse(fileType: String, id: Int) {
@@ -168,7 +181,9 @@ class ImportHandler(private val parentActivity: Activity) {
         chooseFileIntent.type = "application/$fileType"
         chooseFileIntent.addCategory(Intent.CATEGORY_OPENABLE)
         parentActivity.startActivityForResult(
-            Intent.createChooser(chooseFileIntent, parentActivity.getString(R.string.settingsBackupChooseFile)), id
+            Intent.createChooser(/* target = */ chooseFileIntent, /* title = */
+                parentActivity.getString(R.string.settingsBackupChooseFile)
+            ), id
         )
     }
 
@@ -183,16 +198,23 @@ class ImportHandler(private val parentActivity: Activity) {
             SettingsManager.init()
             SettingsManager.check()
 
-
             SleepReminder(parentActivity).check()
             UserItemTemplateList().check()
 
-            Toast.makeText(parentActivity, parentActivity.getString(R.string.settingsBackupImportSuccessful), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                /* context = */ parentActivity,
+                /* text = */ parentActivity.getString(R.string.settingsBackupImportSuccessful),
+                /* duration = */ Toast.LENGTH_SHORT
+            ).show()
 
             true
         } catch (e: Exception) {
             Log.e("IMPORT FAILED", e.toString())
-            Toast.makeText(parentActivity, parentActivity.getString(R.string.settingsBackupImportFailed), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                /* context = */ parentActivity,
+                /* text = */ parentActivity.getString(R.string.settingsBackupImportFailed),
+                /* duration = */ Toast.LENGTH_SHORT
+            ).show()
             false
         }
     }

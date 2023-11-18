@@ -12,8 +12,7 @@ class StorageHandler {
         fun saveAsJsonToFile(file: File?, any: Any) = file?.writeText(Gson().toJson(any))
 
         fun createFile(identifier: StorageId, fileName: String) {
-            files[identifier] =
-                setStorageLocation(fileName)
+            files[identifier] = setStorageLocation(fileName)
 
             if (files[identifier]?.exists() == null || files[identifier]?.exists() == false) {
                 files[identifier]?.createNewFile()
@@ -28,8 +27,7 @@ class StorageHandler {
             }
         }
 
-        private fun setStorageLocation(fileName: String): File =
-            File(path, fileName)
+        private fun setStorageLocation(fileName: String): File = File(path, fileName)
 
     }
 }
