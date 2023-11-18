@@ -317,7 +317,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
                 return@setOnLongClickListener true
             }
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             holder.binding.root.startAnimation(animationShake)
             return@setOnLongClickListener true
         }
@@ -383,7 +383,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
         holder.binding.subRecyclerView.setOnLongClickListener {
             if (myFragment.myMultiShoppingFr.searching) return@setOnLongClickListener true
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             holder.itemView.startAnimation(animationShake)
             true
         }
@@ -421,7 +421,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
         holder.binding.clTapExpand.setOnLongClickListener {
             if (myFragment.myMultiShoppingFr.searching) return@setOnLongClickListener true
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             holder.itemView.startAnimation(animationShake)
             true
         }
@@ -614,7 +614,7 @@ class SublistAdapter(
         holder.binding.root.setOnLongClickListener {
             if (myFragment.myMultiShoppingFr.searching) return@setOnLongClickListener true
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             parentHolder.binding.root.startAnimation(animationShake)
             true
         }
@@ -754,7 +754,7 @@ class SublistAdapter(
         holder.binding.clItemTapField.setOnLongClickListener {
             if (myFragment.myMultiShoppingFr.searching) return@setOnLongClickListener true
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             parentHolder.itemView.startAnimation(animationShake)
             true
         }

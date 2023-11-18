@@ -268,14 +268,14 @@ class SleepFr : Fragment() {
     private fun animationShowCustom() {
         fragmentBinding.panelNotCustom.visibility = View.GONE
         val animationHide =
-            AnimationUtils.loadAnimation(myActivity, R.anim.scale_down_reverse)
+            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down_reverse)
         animationHide.duration = 350
         animationHide.fillAfter = false
         fragmentBinding.panelNotCustom.startAnimation(animationHide)
 
         fragmentBinding.panelCustom.visibility = View.VISIBLE
         val animationShow =
-            AnimationUtils.loadAnimation(myActivity, R.anim.scale_down)
+            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
         animationShow.duration = 700
         animationShow.fillAfter = false
         fragmentBinding.panelCustom.startAnimation(animationShow)
@@ -284,7 +284,7 @@ class SleepFr : Fragment() {
     private fun animationShowRegular() {
         fragmentBinding.panelCustom.visibility = View.GONE
         val animationHide =
-            AnimationUtils.loadAnimation(myActivity, R.anim.scale_down_reverse)
+            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down_reverse)
         animationHide.duration = 700
         animationHide.fillAfter = false
         fragmentBinding.panelCustom.startAnimation(animationHide)
@@ -294,7 +294,7 @@ class SleepFr : Fragment() {
 
         fragmentBinding.panelNotCustom.visibility = View.VISIBLE
         val animationShow =
-            AnimationUtils.loadAnimation(myActivity, R.anim.scale_down)
+            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
         animationShow.duration = 350
         animationShow.fillAfter = false
         animationShow.startOffset = 280

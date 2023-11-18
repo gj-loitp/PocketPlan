@@ -355,7 +355,7 @@ class TodoFr : Fragment() {
                 dialogAddTaskBinding.etTitleAddTask.setText("")
                 if (title.trim().isEmpty()) {
                     val animationShake =
-                        AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                        AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                     dialogAddTaskBinding.etTitleAddTask.startAnimation(animationShake)
                     return@setOnClickListener
                 }
@@ -417,7 +417,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
         //Set Long click listener to initiate re-sorting
         holder.binding.tvName.setOnLongClickListener {
             val animationShake =
-                AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
             holder.binding.root.startAnimation(animationShake)
             true
         }
@@ -536,7 +536,7 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
                 button.setOnClickListener Button@{
                     if (dialogAddTaskBinding.etTitleAddTask.text.toString().trim() == "") {
                         val animationShake =
-                            AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                            AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                         dialogAddTaskBinding.etTitleAddTask.startAnimation(animationShake)
                         return@Button
                     }

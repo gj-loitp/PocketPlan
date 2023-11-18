@@ -160,7 +160,7 @@ class NoteEditorFr : Fragment() {
 
                 if (noteContent == "" && noteTitle.trim() == "") {
                     val animationShake =
-                        AnimationUtils.loadAnimation(myActivity, R.anim.shake_small)
+                        AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_small)
                     fragmentBinding.etNoteContent.startAnimation(animationShake)
                     fragmentBinding.etNoteTitle.startAnimation(animationShake)
                     return true

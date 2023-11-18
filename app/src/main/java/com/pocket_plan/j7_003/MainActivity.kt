@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() {
             }
             allowSpin = false
             val animationSpin =
-                AnimationUtils.loadAnimation(this, R.anim.icon_easter_egg)
+                AnimationUtils.loadAnimation(this, R.anim.anim_icon_easter_egg)
 
             animationSpin.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) {

@@ -549,9 +549,9 @@ class BirthdayFr : Fragment() {
 
         etDaysToRemind.setOnClickListener {
             if (!cbNotifyMe.isChecked) {
-                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.shake2)
+                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake2)
                 tvNotifyMe.startAnimation(animationShake)
-                val animationShakeCb = AnimationUtils.loadAnimation(myActivity, R.anim.shake2)
+                val animationShakeCb = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake2)
                 cbNotifyMe.startAnimation(animationShakeCb)
             }
         }
@@ -577,7 +577,7 @@ class BirthdayFr : Fragment() {
 
             //tell user to enter a name if none is entered
             if (name.trim() == "") {
-                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 etName.startAnimation(animationShake)
                 return@setOnClickListener
             }
@@ -871,9 +871,9 @@ class BirthdayFr : Fragment() {
 
         etDaysToRemind.setOnClickListener {
             if (!cbNotifyMe.isChecked) {
-                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.shake2)
+                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake2)
                 tvNotifyMe.startAnimation(animationShake)
-                val animationShakeCb = AnimationUtils.loadAnimation(myActivity, R.anim.shake2)
+                val animationShakeCb = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake2)
                 cbNotifyMe.startAnimation(animationShakeCb)
             }
         }
@@ -900,14 +900,14 @@ class BirthdayFr : Fragment() {
 
             //tell user to enter a name if none is entered
             if (name.trim() == "") {
-                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 etName.startAnimation(animationShake)
                 return@setOnClickListener
             }
 
 
             if (!yearChanged) {
-                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                val animationShake = AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 tvBirthdayDate.startAnimation(animationShake)
                 return@setOnClickListener
             }

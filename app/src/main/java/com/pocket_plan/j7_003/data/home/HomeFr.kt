@@ -169,7 +169,7 @@ class HomeFr : Fragment() {
 
             if (myShake) {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake_long)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake_long)
                 fragmentBinding.ivTasksHome.startAnimation(animationShake)
             }
 

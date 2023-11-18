@@ -262,7 +262,7 @@ class MultiShoppingFr : Fragment() {
             val taken = MainActivity.shoppingListWrapper.contains(newName)
             if (newName.trim() == "" || taken) {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 dialogAddShoppingListBinding.etAddShoppingList.startAnimation(animationShake)
                 return@setOnClickListener
             }
@@ -301,7 +301,7 @@ class MultiShoppingFr : Fragment() {
             val addResult = MainActivity.shoppingListWrapper.add(newName)
             if (newName.trim() == "" || !addResult) {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 dialogAddShoppingListBinding.etAddShoppingList.startAnimation(animationShake)
                 return@setOnClickListener
             }
@@ -611,7 +611,7 @@ class MultiShoppingFr : Fragment() {
             //No item string entered => play shake animation
             if (nameInput.trim() == "") {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 dialogAddItemBinding.actvItem.startAnimation(animationShake)
                 return@setOnClickListener
             }

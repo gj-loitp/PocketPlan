@@ -353,7 +353,7 @@ class NoteFr : Fragment() {
             val addResult = noteListDirs.editFolder(newName, folderColor)
             if (!addResult) {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 myDialogBinding.etAddNoteFolder.startAnimation(animationShake)
                 return@setOnClickListener
             }
@@ -483,7 +483,7 @@ class NoteFr : Fragment() {
             val addResult = noteListDirs.addNoteDir(Note(newName, folderColor, NoteList()))
             if (!addResult) {
                 val animationShake =
-                    AnimationUtils.loadAnimation(myActivity, R.anim.shake)
+                    AnimationUtils.loadAnimation(myActivity, R.anim.anim_shake)
                 myDialogBinding.etAddNoteFolder.startAnimation(animationShake)
                 return@setOnClickListener
             }
