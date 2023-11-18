@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
 import android.graphics.Paint
 import android.graphics.drawable.GradientDrawable
@@ -20,7 +20,6 @@ import com.roy93group.noteking.databinding.VRowCategoryBinding
 import com.roy93group.noteking.databinding.VRowItemBinding
 import java.util.Locale
 
-
 class ShoppingFr : Fragment() {
     private var _fragmentBinding: FShoppingBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
@@ -33,16 +32,13 @@ class ShoppingFr : Fragment() {
     lateinit var myAdapter: ShoppingListAdapter
 
     companion object {
-
         var suggestSimilar: Boolean =
             SettingsManager.getSetting(SettingId.SUGGEST_SIMILAR_ITEMS) as Boolean
-
         lateinit var layoutManager: LinearLayoutManager
-
         var offsetTop: Int = 0
         var firstPos: Int = 0
         var expandOne: Boolean = false
-        var collapseCheckedSublists: Boolean = false
+        var collapseCheckedSubLists: Boolean = false
 
         @JvmStatic
         fun newInstance() =
@@ -58,7 +54,6 @@ class ShoppingFr : Fragment() {
     }
 
     fun getCategoryVisibility(category: Pair<String, ArrayList<ShoppingItem>>): Boolean {
-
         val categoryName =
             myActivity.resources.getStringArray(R.array.categoryNames)[myActivity.resources.getStringArray(
                 R.array.categoryCodes
@@ -104,7 +99,7 @@ class ShoppingFr : Fragment() {
 
         //load settings
         expandOne = SettingsManager.getSetting(SettingId.EXPAND_ONE_CATEGORY) as Boolean
-        collapseCheckedSublists =
+        collapseCheckedSubLists =
             SettingsManager.getSetting(SettingId.COLLAPSE_CHECKED_SUBLISTS) as Boolean
 
         //if expandOne Setting = true, collapse all categories
@@ -116,7 +111,6 @@ class ShoppingFr : Fragment() {
             }
         }
 
-
         //Initialize references to recycler and its adapter
         val myRecycler = fragmentBinding.recyclerViewShopping
 
@@ -125,7 +119,6 @@ class ShoppingFr : Fragment() {
         layoutManager = LinearLayoutManager(activity)
         myRecycler.layoutManager = layoutManager
         myRecycler.setHasFixedSize(true)
-
 
         //ItemTouchHelper to support drag and drop reordering
         val itemTouchHelper = ItemTouchHelper(
@@ -194,7 +187,7 @@ class ShoppingFr : Fragment() {
 
                         //if setting says to collapse all sub lists, the new checked state is all checked,
                         //and its currently expanded, collapse it
-                        if (collapseCheckedSublists && newAllChecked && shoppingListInstance.isTagExpanded(
+                        if (collapseCheckedSubLists && newAllChecked && shoppingListInstance.isTagExpanded(
                                 tag
                             )
                         ) {
@@ -270,10 +263,9 @@ class ShoppingFr : Fragment() {
         offsetTop = 0
         if (firstPos >= 0) {
             val firstView = layoutManager.findViewByPosition(firstPos)
-            offsetTop =
-                layoutManager.getDecoratedTop(firstView!!) - layoutManager.getTopDecorationHeight(
-                    firstView
-                )
+            offsetTop = layoutManager.getDecoratedTop(firstView!!) - layoutManager.getTopDecorationHeight(
+                firstView
+            )
         }
     }
 
@@ -298,10 +290,8 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
     private val myFragment = shoppingFr
     private val myActivity = mainActivity
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
-    private val collapseCheckedSublists =
-        SettingsManager.getSetting(SettingId.COLLAPSE_CHECKED_SUBLISTS) as Boolean
-    private val moveCheckedSublistsDown =
-        SettingsManager.getSetting(SettingId.MOVE_CHECKED_DOWN) as Boolean
+    private val collapseCheckedSubLists = SettingsManager.getSetting(SettingId.COLLAPSE_CHECKED_SUBLISTS) as Boolean
+    private val moveCheckedSubListsDown = SettingsManager.getSetting(SettingId.MOVE_CHECKED_DOWN) as Boolean
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)
     private val density = myActivity.resources.displayMetrics.density
 
@@ -430,7 +420,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
         holder.binding.tvNumberOfItems.setOnClickListener {
             //get new checked state of all items (result)
             val newAllChecked = shoppingListInstance.equalizeCheckedStates(tag)
-            if (collapseCheckedSublists) {
+            if (collapseCheckedSubLists) {
                 if (newAllChecked && shoppingListInstance.isTagExpanded(tag)) {
                     shoppingListInstance.flipExpansionState(tag)
                 } else if (!newAllChecked && !shoppingListInstance.isTagExpanded(tag)) {
@@ -453,7 +443,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
 
             notifyItemChanged(holder.bindingAdapterPosition)
 
-            if (moveCheckedSublistsDown) {
+            if (moveCheckedSubListsDown) {
                 val sublistMoveInfo = myFragment.shoppingListInstance.sortCategoriesByChecked(tag)
                 if (sublistMoveInfo != null) {
                     myFragment.prepareForMove()
@@ -480,10 +470,8 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
             val colorOnBackground =
                 myActivity.colorForAttr(R.attr.colorOnBackGround)
 
-
             val colorCategory =
                 myActivity.colorForAttr(R.attr.colorCategory)
-
 
             //get pair of color ids for right categories
             val gradientPair: Pair<Int, Int> = when (tag) {
@@ -533,9 +521,7 @@ class ShoppingListAdapter(mainActivity: MainActivity, shoppingFr: ShoppingFr) :
             holder.binding.ivCheckMark.visibility = View.GONE
         } else {
             //get title color
-            val colorTitle =
-                myActivity.colorForAttr(R.attr.colorCheckedCategoryTitle)
-
+            val colorTitle = myActivity.colorForAttr(R.attr.colorCheckedCategoryTitle)
 
             //create gradient drawable for checked category background
             val myGradientDrawable = GradientDrawable(
@@ -601,7 +587,7 @@ class SublistAdapter(
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)
 
     //setting if checked sublists should be moved below unchecked sublists
-    private val moveCheckedSublistsDown =
+    private val moveCheckedSubListsDown =
         SettingsManager.getSetting(SettingId.MOVE_CHECKED_DOWN) as Boolean
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -618,7 +604,6 @@ class SublistAdapter(
             parentHolder.binding.root.startAnimation(animationShake)
             true
         }
-
 
         //get shopping item
         val item = myFragment.shoppingListInstance.getItem(tag, position)!!
@@ -697,7 +682,6 @@ class SublistAdapter(
         //set background of item
         holder.itemView.background = myGradientDrawable
 
-
         //Onclick Listener for checkBox
         holder.binding.clItemTapField.setOnClickListener {
 
@@ -720,7 +704,7 @@ class SublistAdapter(
 
             //If setting says to collapse checked sublists, and current sublist is fully checked,
             //collapse it and notify item change
-            if (ShoppingFr.collapseCheckedSublists && myFragment.shoppingListInstance.areAllChecked(
+            if (ShoppingFr.collapseCheckedSubLists && myFragment.shoppingListInstance.areAllChecked(
                     holder.tag
                 )
             ) {
@@ -737,7 +721,7 @@ class SublistAdapter(
 
             //if the setting moveCheckedSublistsDown is true, sort categories by their checked state
             //and animate the move from old to new position
-            if (moveCheckedSublistsDown) {
+            if (moveCheckedSubListsDown) {
                 val sublistMoveInfo = myFragment.shoppingListInstance.sortCategoriesByChecked(tag)
                 if (sublistMoveInfo != null) {
                     myFragment.prepareForMove()
@@ -815,7 +799,7 @@ class SwipeItemToDelete(direction: Int, shoppingFr: ShoppingFr) :
         } else {
             //sublist changed length =>
 
-            if (ShoppingFr.collapseCheckedSublists && myFragment.shoppingListInstance.areAllChecked(
+            if (ShoppingFr.collapseCheckedSubLists && myFragment.shoppingListInstance.areAllChecked(
                     parsed.tag
                 ) && !previouslyAllChecked
             ) {

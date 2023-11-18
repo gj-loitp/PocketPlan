@@ -9,7 +9,7 @@ import com.roy93group.noteking.MainActivity
 import com.roy93group.noteking.data.fragmenttags.FT
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.shoppingList.ShoppingFr
+import com.roy93group.noteking.data.shoppinglist.ShoppingFr
 import com.roy93group.noteking.databinding.FSettingsShoppingBinding
 
 /**

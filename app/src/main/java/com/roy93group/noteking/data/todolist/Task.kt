@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.todoList
+package com.roy93group.noteking.data.todolist
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName

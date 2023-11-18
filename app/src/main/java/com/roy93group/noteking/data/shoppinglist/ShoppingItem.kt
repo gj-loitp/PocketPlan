@@ -1,7 +1,9 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class ShoppingItem(
     @SerializedName(value = "n")
     var name: String?,
@@ -19,7 +21,7 @@ data class ShoppingItem(
     var unit: String?,
 
     @SerializedName(value = "c")
-    var checked: Boolean)
-{
-    constructor(tag: String, checked: Boolean, position: String?): this(null, tag, null, position, null, checked)
+    var checked: Boolean,
+) {
+    constructor(tag: String, checked: Boolean, position: String?) : this(null, tag, null, position, null, checked)
 }

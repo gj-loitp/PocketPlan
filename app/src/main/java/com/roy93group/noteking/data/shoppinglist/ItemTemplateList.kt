@@ -1,5 +1,6 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
+import androidx.annotation.Keep
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.App
@@ -18,14 +19,12 @@ class ItemTemplateList : ArrayList<ItemTemplate>() {
      * @return Returns the template if found, null otherwise.
      */
     fun getTemplateByName(name: String): ItemTemplate? {
-
         this.forEach { e ->
             if (e.n.equals(name, ignoreCase = true)) {
                 return e
             }
         }
         return null
-
     }
 
     private fun loadFromAssets() {
@@ -42,7 +41,7 @@ class ItemTemplateList : ArrayList<ItemTemplate>() {
         val jsonString = App.instance.assets.open(fileName).bufferedReader().readText()
 
         val list: ArrayList<TMPTemplate> = GsonBuilder().create()
-                .fromJson(jsonString, object : TypeToken<ArrayList<TMPTemplate>>() {}.type)
+            .fromJson(jsonString, object : TypeToken<ArrayList<TMPTemplate>>() {}.type)
 
         list.forEach { e ->
             this.add(ItemTemplate(e.n, e.c, "x"))
@@ -52,4 +51,5 @@ class ItemTemplateList : ArrayList<ItemTemplate>() {
     private class TMPTemplate(val n: String, val c: String)
 }
 
+@Keep
 data class ItemTemplate(var n: String, var c: String, var s: String)

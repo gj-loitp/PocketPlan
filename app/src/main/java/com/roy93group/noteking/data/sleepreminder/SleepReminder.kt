@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.sleepReminder
+package com.roy93group.noteking.data.sleepreminder
 
 import android.content.Context
 import androidx.annotation.Keep

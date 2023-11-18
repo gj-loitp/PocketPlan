@@ -7,7 +7,7 @@ import com.roy93group.noteking.systemInteraction.handler.noti.AlarmHandler
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.sleepReminder.SleepReminder
+import com.roy93group.noteking.data.sleepreminder.SleepReminder
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 
 class RebootReceiver : BroadcastReceiver() {

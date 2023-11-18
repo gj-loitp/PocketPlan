@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -34,7 +34,6 @@ class MultiShoppingFr : Fragment() {
     private lateinit var myMenu: Menu
     private lateinit var myActivity: MainActivity
 
-
     private var unitChanged: Boolean = false
 
     private lateinit var addItemDialog: AlertDialog
@@ -49,7 +48,7 @@ class MultiShoppingFr : Fragment() {
     var activeDeletedItems = ArrayDeque<ShoppingItem?>()
 
     lateinit var shoppingFragments: ArrayList<ShoppingFr>
-    private var currentpos = 0
+    private var currentPos = 0
     private lateinit var activeShoppingFr: ShoppingFr
 
     private lateinit var pagerAdapter: ScreenSlidePagerAdapter
@@ -70,14 +69,15 @@ class MultiShoppingFr : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         myActivity = activity as MainActivity
 
         //reset parameters when fragment is opened again
         shoppingFragments = ArrayList()
-        currentpos = 0
+        currentPos = 0
         editTag = ""
         editPos = 0
 
@@ -103,7 +103,7 @@ class MultiShoppingFr : Fragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab != null) {
                     shoppingPager.currentItem = tab.position
-                    currentpos = tab.position
+                    currentPos = tab.position
                 }
             }
 
@@ -152,7 +152,6 @@ class MultiShoppingFr : Fragment() {
         return newFr
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         myMenu = menu
         inflater.inflate(R.menu.menu_shopping, menu)
@@ -184,8 +183,6 @@ class MultiShoppingFr : Fragment() {
 
         //apply textListener to SearchView
         searchView.setOnQueryTextListener(textListener)
-
-
         searchView.setOnCloseListener {
             myActivity.myBtnAdd.visibility = View.VISIBLE
             //reset title
@@ -201,7 +198,6 @@ class MultiShoppingFr : Fragment() {
             activeShoppingFr.myAdapter.notifyDataSetChanged()
             true
         }
-
         searchView.setOnSearchClickListener {
             myActivity.myBtnAdd.visibility = View.GONE
             //removes title from toolbar
@@ -218,8 +214,8 @@ class MultiShoppingFr : Fragment() {
 
         val pageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                deletedItems[currentpos] = activeDeletedItems
-                currentpos = position
+                deletedItems[currentPos] = activeDeletedItems
+                currentPos = position
                 activeShoppingFr = shoppingFragments[position]
                 activeShoppingFr.query = null
                 activeDeletedItems = deletedItems[position]
@@ -238,10 +234,9 @@ class MultiShoppingFr : Fragment() {
         val dialogAddShoppingListBinding = DlgAddShoppingListBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
-        val myBuilder =
-            myActivity.let { it1 ->
-                AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
-            }
+        val myBuilder = myActivity.let { it1 ->
+            AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
+        }
 
         val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = getString(R.string.shoppingDialogRenameList)
@@ -253,7 +248,7 @@ class MultiShoppingFr : Fragment() {
         myAlertDialog?.show()
 
         //show current name
-        val oldName = MainActivity.shoppingListWrapper[currentpos].first
+        val oldName = MainActivity.shoppingListWrapper[currentPos].first
         dialogAddShoppingListBinding.etAddShoppingList.setText(oldName)
 
         dialogAddShoppingListBinding.btnAddShoppingList.setOnClickListener {
@@ -268,7 +263,7 @@ class MultiShoppingFr : Fragment() {
             }
             MainActivity.shoppingListWrapper.rename(oldName, newName)
             activeShoppingFr.shoppingListName = newName
-            tabLayout.getTabAt(currentpos)?.text = newName
+            tabLayout.getTabAt(currentPos)?.text = newName
             myAlertDialog?.dismiss()
         }
 
@@ -283,10 +278,9 @@ class MultiShoppingFr : Fragment() {
         val dialogAddShoppingListBinding = DlgAddShoppingListBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
-        val myBuilder =
-            myActivity.let { it1 ->
-                AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
-            }
+        val myBuilder = myActivity.let { it1 ->
+            AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
+        }
         val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingOptionAddList)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
@@ -341,7 +335,7 @@ class MultiShoppingFr : Fragment() {
                     shoppingFragments.remove(activeShoppingFr)
                     shoppingPager.adapter = ScreenSlidePagerAdapter(myActivity)
                     //This automatically selects the tab left of the deleted tab
-                    tabLayout.removeTabAt(currentpos)
+                    tabLayout.removeTabAt(currentPos)
                     if (MainActivity.shoppingListWrapper.size == 1) {
                         tabLayout.visibility = View.GONE
                     }
@@ -430,7 +424,6 @@ class MultiShoppingFr : Fragment() {
         autoCompleteTv.setAdapter(customAdapter)
     }
 
-
     /**
      * Prepare layout and adapters for addItemDialog to decrease loading time
      */
@@ -476,7 +469,7 @@ class MultiShoppingFr : Fragment() {
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long
+                id: Long,
             ) {
                 if (position != spCategory.tag) {
                     lastSelectedCategoryIndex = position
@@ -501,7 +494,7 @@ class MultiShoppingFr : Fragment() {
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long
+                id: Long,
             ) {
                 if (spItemUnit.tag != position && position != 0) {
                     unitChanged = true
@@ -515,11 +508,9 @@ class MultiShoppingFr : Fragment() {
 
         }
 
-
         //initialize autocompleteTextView
         autoCompleteTv = dialogAddItemBinding.actvItem
         refreshItemNamesAndAutoCompleteAdapter()
-
 
         //request focus in item name text field
         autoCompleteTv.requestFocus()
@@ -716,8 +707,7 @@ class MultiShoppingFr : Fragment() {
             }
         }
 
-        val imm =
-            myActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm = myActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(autoCompleteTv, InputMethodManager.SHOW_IMPLICIT)
     }
 
@@ -726,8 +716,7 @@ class MultiShoppingFr : Fragment() {
      */
     fun openAddItemDialog() {
         //set dialog title to "add item"
-        myActivity.titleDialogBinding.tvDialogTitle.text =
-            myActivity.getString(R.string.shoppingAddItemTitle)
+        myActivity.titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingAddItemTitle)
 
         //Clear item autoCompleteTextView
         dialogAddItemBinding.actvItem.setText("")
@@ -736,8 +725,7 @@ class MultiShoppingFr : Fragment() {
         dialogAddItemBinding.actvItem.requestFocus()
 
         //set confirm button text to "add"
-        dialogAddItemBinding.btnAddItemToList.text =
-            myActivity.getString(R.string.birthdayDialogAdd)
+        dialogAddItemBinding.btnAddItemToList.text = myActivity.getString(R.string.birthdayDialogAdd)
 
         dialogAddItemBinding.spItemUnit.tag = 0
         dialogAddItemBinding.spItemUnit.setSelection(0)
@@ -753,12 +741,10 @@ class MultiShoppingFr : Fragment() {
 
     fun openEditItemDialog(item: ShoppingItem) {
         //set dialog title to "editing"
-        myActivity.titleDialogBinding.tvDialogTitle.text =
-            myActivity.getString(R.string.shoppingEditItemTitle)
+        myActivity.titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingEditItemTitle)
 
         //set confirm Button text to "save"
-        dialogAddItemBinding.btnAddItemToList.text =
-            resources.getString(R.string.noteDiscardDialogSave)
+        dialogAddItemBinding.btnAddItemToList.text = resources.getString(R.string.noteDiscardDialogSave)
 
         //show item name
         dialogAddItemBinding.actvItem.setText(item.name)
@@ -881,7 +867,6 @@ class MultiShoppingFr : Fragment() {
 
     }
 
-
     private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         override fun getItemCount(): Int = MainActivity.shoppingListWrapper.size
 
@@ -896,10 +881,8 @@ class AutoCompleteAdapter(
     context: Context,
     resource: Int,
     textViewResourceId: Int = 0,
-    items: List<String> = listOf()
+    items: List<String> = listOf(),
 ) : ArrayAdapter<Any>(context, resource, textViewResourceId, items) {
-
-
     internal var itemNames: MutableList<String> = mutableListOf()
     internal var suggestions: MutableList<String> = mutableListOf()
     var imWorking: Boolean = false

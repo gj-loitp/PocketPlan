@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
@@ -9,7 +9,7 @@ import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 /**
  * A simple wrapper for shopping lists to easily manage multiple instances of them.
  */
-class ShoppingListWrapper(defaultListName: String = ""): ArrayList<Pair<String, ShoppingList>>(), Checkable {
+class ShoppingListWrapper(defaultListName: String = "") : ArrayList<Pair<String, ShoppingList>>(), Checkable {
     private val defaultName = defaultListName
 
     init {
@@ -80,10 +80,8 @@ class ShoppingListWrapper(defaultListName: String = ""): ArrayList<Pair<String, 
             if (it.first == name)
                 toDelete = it
         }
-
         val success = this.remove(toDelete)
         save()
-
         return success
     }
 
@@ -113,7 +111,7 @@ class ShoppingListWrapper(defaultListName: String = ""): ArrayList<Pair<String, 
      */
     fun contains(name: String): Boolean {
         this.forEach {
-        if (it.first.equals(name.trim(), ignoreCase = true))
+            if (it.first.equals(name.trim(), ignoreCase = true))
                 return true
         }
         return false
@@ -121,18 +119,18 @@ class ShoppingListWrapper(defaultListName: String = ""): ArrayList<Pair<String, 
 
     fun save() {
         StorageHandler.saveAsJsonToFile(
-            StorageHandler.files[StorageId.SHOPPING_LISTS],
-            this
+            file = StorageHandler.files[StorageId.SHOPPING_LISTS],
+            any = this
         )
     }
 
     private fun fetchList() {
         val jsonString = StorageHandler.files[StorageId.SHOPPING_LISTS]?.readText()
         val list: ArrayList<Pair<String, ShoppingList>> = GsonBuilder().create().fromJson(
-                jsonString,
-                object : TypeToken<ArrayList<Pair<String, ShoppingList>>>() {}.type
-            )
-        list.forEach{
+            jsonString,
+            object : TypeToken<ArrayList<Pair<String, ShoppingList>>>() {}.type
+        )
+        list.forEach {
             it.second.setWrapper(this)
         }
         this.addAll(list)

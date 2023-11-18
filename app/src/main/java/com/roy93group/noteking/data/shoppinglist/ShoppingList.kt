@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
 import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.data.settings.SettingId
@@ -11,6 +11,7 @@ class ShoppingList(private var wrapper: ShoppingListWrapper?) :
     fun setWrapper(newWrapper: ShoppingListWrapper) {
         this.wrapper = newWrapper
     }
+
     /**
      * Adds a given ShoppingElement to this list, according to its given tag.
      * If no element of the given tag existed before, the list generate a new sublist,
@@ -60,8 +61,8 @@ class ShoppingList(private var wrapper: ShoppingListWrapper?) :
 
         super.add(
             Pair(
-                element.tag,
-                arrayListOf(ShoppingItem(element.tag, sublistExpanded, numUnchecked.toString()))
+                first = element.tag,
+                second = arrayListOf(ShoppingItem(element.tag, sublistExpanded, numUnchecked.toString()))
             )
         )
 
@@ -298,7 +299,7 @@ class ShoppingList(private var wrapper: ShoppingListWrapper?) :
     fun removeItem(
         tag: String,
         sublistPosition: Int,
-        removeSublist: Boolean = true
+        removeSublist: Boolean = true,
     ): Pair<ShoppingItem?, Boolean> {
         var removedItem: ShoppingItem? = null
         var sublistGotDeleted = false
@@ -345,7 +346,6 @@ class ShoppingList(private var wrapper: ShoppingListWrapper?) :
      */
     fun sortCategoriesByChecked(tag: String): Pair<Int, Int>? {
         val oldPosition = getTagIndex(tag)
-//        this.sortWith(compareBy( { areAllChecked(it.first) }, { it.second[0].amount!!.toInt() }))
         this.sortBy { areAllChecked(it.first) }
 
         var numUnchecked = 0
@@ -353,7 +353,9 @@ class ShoppingList(private var wrapper: ShoppingListWrapper?) :
             if (!areAllChecked(it.first))
                 numUnchecked++
         }
-        this.subList(0, numUnchecked).sortBy { it.second[0].amount!!.toInt() }
+        this.subList(0, numUnchecked).sortBy {
+            it.second[0].amount?.toIntOrNull() ?: 0
+        }
 
         save()
         val returnPair = Pair(oldPosition, getTagIndex(tag))

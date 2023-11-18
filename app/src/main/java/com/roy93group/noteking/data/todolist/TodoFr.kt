@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.todoList
+package com.roy93group.noteking.data.todolist
 
 import android.annotation.SuppressLint
 import android.graphics.Paint

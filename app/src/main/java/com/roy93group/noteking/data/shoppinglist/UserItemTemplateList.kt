@@ -1,14 +1,12 @@
-package com.roy93group.noteking.data.shoppingList
+package com.roy93group.noteking.data.shoppinglist
 
-import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
-import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.data.Checkable
-import java.lang.NullPointerException
-import kotlin.collections.ArrayList
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 
-class UserItemTemplateList: ArrayList<ItemTemplate>(), Checkable {
+class UserItemTemplateList : ArrayList<ItemTemplate>(), Checkable {
     init {
         StorageHandler.createJsonFile(StorageId.USER_TEMPLATE_LIST)
         fetchList()
@@ -59,7 +57,8 @@ class UserItemTemplateList: ArrayList<ItemTemplate>(), Checkable {
         }
 
         StorageHandler.saveAsJsonToFile(
-            StorageHandler.files[StorageId.USER_TEMPLATE_LIST], list)
+            StorageHandler.files[StorageId.USER_TEMPLATE_LIST], list
+        )
     }
 
     private fun fetchList() {
@@ -68,8 +67,11 @@ class UserItemTemplateList: ArrayList<ItemTemplate>(), Checkable {
 
         list.addAll(
             GsonBuilder().create()
-            .fromJson(jsonString,
-                object : TypeToken<ArrayList<TMPTemplate>>() {}.type))
+                .fromJson(
+                    jsonString,
+                    object : TypeToken<ArrayList<TMPTemplate>>() {}.type
+                )
+        )
 
         list.forEach { e ->
             this.add(ItemTemplate(e.n, e.c, e.s))
@@ -79,10 +81,7 @@ class UserItemTemplateList: ArrayList<ItemTemplate>(), Checkable {
     private class TMPTemplate(val n: String, val c: String, val s: String)
 
     override fun check() {
-        this.forEach {
-            if(it == null){
-                throw NullPointerException()
-            }
+        this.forEach { _ ->
         }
     }
 
