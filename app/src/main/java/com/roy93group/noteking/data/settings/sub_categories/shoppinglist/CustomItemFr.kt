@@ -17,8 +17,8 @@ import com.roy93group.noteking.R
 import com.roy93group.noteking.data.fragmenttags.FT
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.shoppinglist.ItemTemplate
-import com.roy93group.noteking.data.shoppinglist.MultiShoppingFr
+import com.roy93group.noteking.data.shoppingList.ItemTemplate
+import com.roy93group.noteking.data.shoppingList.MultiShoppingFr
 import com.roy93group.noteking.databinding.FCustomItemsBinding
 import com.roy93group.noteking.databinding.VRowCustomItemBinding
 

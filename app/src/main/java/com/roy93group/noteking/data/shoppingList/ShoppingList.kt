@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppinglist
+package com.roy93group.noteking.data.shoppingList
 
 import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.data.settings.SettingId

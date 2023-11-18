@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorBackground"
     android:padding="4dp"
-    tools:context=".data.shoppinglist.ShoppingFr">
+    tools:context=".data.shoppingList.ShoppingFr">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewShopping"

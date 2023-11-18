@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorBackground"
     android:paddingHorizontal="4dp"
-    tools:context=".data.todolist.TodoFr">
+    tools:context=".data.todoList.TodoFr">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewToDo"

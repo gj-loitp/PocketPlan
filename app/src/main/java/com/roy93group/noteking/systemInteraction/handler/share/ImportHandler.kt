@@ -8,10 +8,10 @@ import com.roy93group.noteking.R
 import com.roy93group.noteking.data.birthdaylist.BirthdayList
 import com.roy93group.noteking.data.notelist.NoteDirList
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.shoppinglist.ShoppingListWrapper
-import com.roy93group.noteking.data.shoppinglist.UserItemTemplateList
-import com.roy93group.noteking.data.sleepreminder.SleepReminder
-import com.roy93group.noteking.data.todolist.TodoList
+import com.roy93group.noteking.data.shoppingList.ShoppingListWrapper
+import com.roy93group.noteking.data.shoppingList.UserItemTemplateList
+import com.roy93group.noteking.data.sleepReminder.SleepReminder
+import com.roy93group.noteking.data.todoList.TodoList
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.io.File

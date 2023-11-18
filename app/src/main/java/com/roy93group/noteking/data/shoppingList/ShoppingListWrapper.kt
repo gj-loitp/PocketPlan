@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppinglist
+package com.roy93group.noteking.data.shoppingList
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken

@@ -17,9 +17,9 @@ import com.roy93group.noteking.data.notelist.NoteEditorFr
 import com.roy93group.noteking.data.notelist.NoteFr
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.sleepreminder.SleepFr
-import com.roy93group.noteking.data.sleepreminder.SleepReminder
-import com.roy93group.noteking.data.todolist.TodoFr
+import com.roy93group.noteking.data.sleepReminder.SleepFr
+import com.roy93group.noteking.data.sleepReminder.SleepReminder
+import com.roy93group.noteking.data.todoList.TodoFr
 import com.roy93group.noteking.databinding.FHomeBinding
 
 

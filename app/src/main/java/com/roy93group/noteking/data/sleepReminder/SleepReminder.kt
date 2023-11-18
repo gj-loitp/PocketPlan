@@ -1,6 +1,7 @@
-package com.roy93group.noteking.data.sleepreminder
+package com.roy93group.noteking.data.sleepReminder
 
 import android.content.Context
+import androidx.annotation.Keep
 import com.roy93group.noteking.data.settings.SettingsManager
 import com.roy93group.noteking.systemInteraction.handler.noti.AlarmHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
@@ -21,7 +22,7 @@ import kotlin.math.abs
 /**
  * A simple class to handle different Reminders for a sleep schedule
  */
-class SleepReminder(passedContext: Context) : Checkable{
+class SleepReminder(passedContext: Context) : Checkable {
     var myContext = passedContext
     var daysAreCustom: Boolean = SettingsManager.getSetting(SettingId.DAYS_ARE_CUSTOM) as Boolean
     var reminder = HashMap<DayOfWeek, Reminder>(7)
@@ -224,8 +225,8 @@ class SleepReminder(passedContext: Context) : Checkable{
         }
 
         return Pair(
-            closestReminder,
-            priorReminder!!
+            first = closestReminder,
+            second = priorReminder!!
         )
     }
 
@@ -266,7 +267,7 @@ class SleepReminder(passedContext: Context) : Checkable{
 
     override fun check() {
         reminder.forEach {
-            if(it.key == null || it.value == null){
+            if (it.key == null || it.value == null) {
                 throw NullPointerException()
             }
         }
@@ -276,11 +277,12 @@ class SleepReminder(passedContext: Context) : Checkable{
      * A simple local class which instances are used to remind the user
      * of his sleeping habits.
      */
+    @Keep
     inner class Reminder(
         @SerializedName(value = "w")
         private val weekday: DayOfWeek,
         @Transient
-        var mySleepReminder: SleepReminder
+        var mySleepReminder: SleepReminder,
     ) {
         @SerializedName(value = "i")
         var isSet: Boolean = false

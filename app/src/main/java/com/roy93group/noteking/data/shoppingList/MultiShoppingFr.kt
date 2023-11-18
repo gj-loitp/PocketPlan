@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppinglist
+package com.roy93group.noteking.data.shoppingList
 
 import android.annotation.SuppressLint
 import android.content.Context

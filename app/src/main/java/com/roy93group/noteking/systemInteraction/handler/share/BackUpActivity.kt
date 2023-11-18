@@ -12,7 +12,7 @@ import com.roy93group.noteking.MainActivity
 import com.roy93group.noteking.R
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.sleepreminder.SleepReminder
+import com.roy93group.noteking.data.sleepReminder.SleepReminder
 import com.roy93group.noteking.databinding.FSettingsBackupBinding
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.io.File

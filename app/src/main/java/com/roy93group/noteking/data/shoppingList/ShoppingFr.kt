@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.shoppinglist
+package com.roy93group.noteking.data.shoppingList
 
 import android.graphics.Paint
 import android.graphics.drawable.GradientDrawable

@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.sleepreminder
+package com.roy93group.noteking.data.sleepReminder
 
 import android.annotation.SuppressLint
 import android.app.TimePickerDialog
@@ -26,10 +26,6 @@ import com.roy93group.noteking.databinding.VRowSleepBinding
 import com.roy93group.noteking.databinding.VTitleDialogBinding
 import org.threeten.bp.DayOfWeek
 
-/**
- * A simple [Fragment] subclass.
- */
-
 class SleepFr : Fragment() {
 
     private var _fragmentBinding: FSleepBinding? = null
@@ -52,7 +48,7 @@ class SleepFr : Fragment() {
     @SuppressLint("InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FSleepBinding.inflate(inflater, container, false)
 
@@ -144,7 +140,6 @@ class SleepFr : Fragment() {
          * for regular sleep duration
          */
 
-
         regularCheckBoxList = arrayListOf(
             fragmentBinding.cbMonday, fragmentBinding.cbTuesday, fragmentBinding.cbWednesday,
             fragmentBinding.cbThursday, fragmentBinding.cbFriday, fragmentBinding.cbSaturday, fragmentBinding.cbSunday
@@ -160,19 +155,20 @@ class SleepFr : Fragment() {
                 }
             val tpd = when (dark) {
                 true -> TimePickerDialog(
-                    myActivity,
-                    timeSetListener,
-                    sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeHour()!!,
-                    sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeMinute()!!,
-                    true
+                    /* context = */ myActivity,
+                    /* listener = */ timeSetListener,
+                    /* hourOfDay = */ sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeHour()!!,
+                    /* minute = */ sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeMinute()!!,
+                    /* is24HourView = */ true
                 )
+
                 else -> TimePickerDialog(
-                    myActivity,
-                    R.style.DialogTheme,
-                    timeSetListener,
-                    sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeHour()!!,
-                    sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeMinute()!!,
-                    true
+                    /* context = */ myActivity,
+                    /* themeResId = */ R.style.DialogTheme,
+                    /* listener = */ timeSetListener,
+                    /* hourOfDay = */ sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeHour()!!,
+                    /* minute = */ sleepReminderInstance.reminder[DayOfWeek.MONDAY]?.getWakeMinute()!!,
+                    /* is24HourView = */ true
                 )
             }
             tpd.show()
@@ -274,8 +270,7 @@ class SleepFr : Fragment() {
         fragmentBinding.panelNotCustom.startAnimation(animationHide)
 
         fragmentBinding.panelCustom.visibility = View.VISIBLE
-        val animationShow =
-            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
+        val animationShow = AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
         animationShow.duration = 700
         animationShow.fillAfter = false
         fragmentBinding.panelCustom.startAnimation(animationShow)
@@ -283,8 +278,7 @@ class SleepFr : Fragment() {
 
     private fun animationShowRegular() {
         fragmentBinding.panelCustom.visibility = View.GONE
-        val animationHide =
-            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down_reverse)
+        val animationHide = AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down_reverse)
         animationHide.duration = 700
         animationHide.fillAfter = false
         fragmentBinding.panelCustom.startAnimation(animationHide)
@@ -293,8 +287,7 @@ class SleepFr : Fragment() {
         params.marginStart = 20000
 
         fragmentBinding.panelNotCustom.visibility = View.VISIBLE
-        val animationShow =
-            AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
+        val animationShow = AnimationUtils.loadAnimation(myActivity, R.anim.anim_scale_down)
         animationShow.duration = 350
         animationShow.fillAfter = false
         animationShow.startOffset = 280
@@ -309,7 +302,6 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
     private val dark = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)
-
 
     private var dayStrings = arrayOf(
         myActivity.resources.getString(R.string.sleepMon),
@@ -339,17 +331,13 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
         holder.binding.tvDayString.text = dayStrings[position]
 
         //initialize the checked State of the reminder checkBox
-        holder.binding.cbRemindMe.isChecked =
-            myFragment.sleepReminderInstance.reminder[day]?.isSet!!
+        holder.binding.cbRemindMe.isChecked = myFragment.sleepReminderInstance.reminder[day]?.isSet!!
 
         //initialize wake up time string
-        holder.binding.tvWakeTimeRow.text =
-            myFragment.sleepReminderInstance.reminder[day]?.getWakeUpTimeString()
+        holder.binding.tvWakeTimeRow.text = myFragment.sleepReminderInstance.reminder[day]?.getWakeUpTimeString()
 
         //initialize duration string
-        holder.binding.tvDurationRow.text =
-            myFragment.sleepReminderInstance.reminder[day]?.getDurationTimeString()
-
+        holder.binding.tvDurationRow.text = myFragment.sleepReminderInstance.reminder[day]?.getDurationTimeString()
 
         //listener for checkbox enabling reminder
         holder.binding.cbRemindMe.setOnClickListener {
@@ -388,16 +376,13 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
             val myAlertDialog2 = myBuilder2.create()
             myAlertDialog2.show()
 
-            dialogPickTimeBinding.npHour.value =
-                myFragment.sleepReminderInstance.reminder[day]?.getDurationHour()!!
-            dialogPickTimeBinding.npMinute.value =
-                myFragment.sleepReminderInstance.reminder[day]?.getDurationMinute()!!
-
+            dialogPickTimeBinding.npHour.value = myFragment.sleepReminderInstance.reminder[day]?.getDurationHour()!!
+            dialogPickTimeBinding.npMinute.value = myFragment.sleepReminderInstance.reminder[day]?.getDurationMinute()!!
             dialogPickTimeBinding.btnApplyTime.setOnClickListener {
                 myFragment.sleepReminderInstance.editDurationAtDay(
-                    day,
-                    dialogPickTimeBinding.npHour.value,
-                    dialogPickTimeBinding.npMinute.value
+                    day = day,
+                    hour = dialogPickTimeBinding.npHour.value,
+                    minute = dialogPickTimeBinding.npMinute.value
                 )
                 myAlertDialog2.dismiss()
                 SleepFr.myAdapter.notifyItemChanged(position)
@@ -414,20 +399,21 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
             val tpd = when (dark) {
                 true ->
                     TimePickerDialog(
-                        myActivity,
-                        timeSetListener,
-                        myFragment.sleepReminderInstance.reminder[day]?.getWakeHour()!!,
-                        myFragment.sleepReminderInstance.reminder[day]?.getWakeMinute()!!,
-                        true
+                        /* context = */ myActivity,
+                        /* listener = */ timeSetListener,
+                        /* hourOfDay = */ myFragment.sleepReminderInstance.reminder[day]?.getWakeHour()!!,
+                        /* minute = */ myFragment.sleepReminderInstance.reminder[day]?.getWakeMinute()!!,
+                        /* is24HourView = */ true
                     )
+
                 else ->
                     TimePickerDialog(
-                        myActivity,
-                        R.style.DialogTheme,
-                        timeSetListener,
-                        myFragment.sleepReminderInstance.reminder[day]?.getWakeHour()!!,
-                        myFragment.sleepReminderInstance.reminder[day]?.getWakeMinute()!!,
-                        true
+                        /* context = */ myActivity,
+                        /* themeResId = */ R.style.DialogTheme,
+                        /* listener = */ timeSetListener,
+                        /* hourOfDay = */ myFragment.sleepReminderInstance.reminder[day]?.getWakeHour()!!,
+                        /* minute = */ myFragment.sleepReminderInstance.reminder[day]?.getWakeMinute()!!,
+                        /* is24HourView = */ true
                     )
             }
             tpd.show()

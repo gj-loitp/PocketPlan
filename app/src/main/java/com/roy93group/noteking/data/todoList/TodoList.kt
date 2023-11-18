@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.todolist
+package com.roy93group.noteking.data.todoList
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
