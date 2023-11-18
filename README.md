@@ -7,13 +7,13 @@ All data, including the settings, can be exported as a local backup. PocketPlan 
 
 Check out the [Contribution guidelines](https://github.com/estep248/PocketPlan/blob/master/CONTRIBUTING.md) if you would like to contribute to this project.
 
-<a href="https://play.google.com/store/apps/details?id=com.pocket_plan.j7_003">
+<a href="https://play.google.com/store/apps/details?id=com.roy93group.noteking">
     <img alt="Get it on Google Play"
         height="80"
         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/>
 </a>
 
-<a href="https://f-droid.org/packages/com.pocket_plan.j7_003/">
+<a href="https://f-droid.org/packages/com.roy93group.j7_003/">
     <img alt="Get it F-Droid"
         height="80"
         src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"/>

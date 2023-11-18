@@ -50,14 +50,14 @@
             android:parentActivityName=".MainActivity" />
 
         <receiver
-            android:name="com.pocket_plan.j7_003.system_interaction.receiver.RebootReceiver"
+            android:name="com.roy93group.noteking.system_interaction.receiver.RebootReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.pocket_plan.j7_003.system_interaction.receiver.NotificationReceiver" />
+        <receiver android:name="com.roy93group.noteking.system_interaction.receiver.NotificationReceiver" />
     </application>
 
 </manifest>

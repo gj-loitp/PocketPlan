@@ -6,7 +6,7 @@ android {
 //    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.pocket_plan.j7_003"
+        applicationId "com.roy93group.noteking"
         minSdkVersion 23
         targetSdkVersion 34
 
@@ -42,7 +42,7 @@ android {
         viewBinding true
     }
 
-    namespace 'com.pocket_plan.j7_003'
+    namespace 'com.roy93group.noteking'
     lint {
         disable 'ContentDescription', 'NotifyDataSetChanged', 'InflateParams'
     }
