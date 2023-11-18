@@ -19,7 +19,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.roy93group.noteking.MainActivity
-import com.roy93group.noteking.PreferenceIDs
+import com.roy93group.common.PreferenceIDs
 import com.roy93group.noteking.R
 import com.roy93group.noteking.data.fragmenttags.FT
 import com.roy93group.noteking.data.settings.SettingId

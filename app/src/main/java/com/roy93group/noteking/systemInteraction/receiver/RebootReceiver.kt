@@ -1,14 +1,14 @@
-package com.roy93group.noteking.system_interaction.receiver
+package com.roy93group.noteking.systemInteraction.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.roy93group.noteking.system_interaction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 import com.roy93group.noteking.data.sleepreminder.SleepReminder
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 
 class RebootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

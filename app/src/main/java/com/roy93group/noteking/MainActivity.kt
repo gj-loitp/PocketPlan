@@ -30,6 +30,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.threetenabp.AndroidThreeTen
+import com.roy93group.common.PreferenceIDs
 import com.roy93group.noteking.data.birthdaylist.BirthdayFr
 import com.roy93group.noteking.data.birthdaylist.BirthdayList
 import com.roy93group.noteking.data.fragmenttags.FT
@@ -57,8 +58,8 @@ import com.roy93group.noteking.databinding.DlgConfirmBinding
 import com.roy93group.noteking.databinding.VDrawerLayoutBinding
 import com.roy93group.noteking.databinding.VHeaderNavigationDrawerBinding
 import com.roy93group.noteking.databinding.VTitleDialogBinding
-import com.roy93group.noteking.system_interaction.handler.notifications.AlarmHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import java.util.Locale
 import java.util.Stack
 

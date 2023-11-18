@@ -2,9 +2,9 @@ package com.roy93group.noteking.data.sleepreminder
 
 import android.content.Context
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.system_interaction.handler.notifications.AlarmHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName

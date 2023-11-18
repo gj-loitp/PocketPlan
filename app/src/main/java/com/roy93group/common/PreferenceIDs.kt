@@ -1,4 +1,4 @@
-package com.roy93group.noteking
+package com.roy93group.common
 
 enum class PreferenceIDs(val id: String) {
     EDIT_NOTE_CONTENT("editNoteContent"),

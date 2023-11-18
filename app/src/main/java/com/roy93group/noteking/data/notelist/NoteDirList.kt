@@ -5,8 +5,8 @@ import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.util.LinkedList
 import java.util.Locale
 import java.util.Stack

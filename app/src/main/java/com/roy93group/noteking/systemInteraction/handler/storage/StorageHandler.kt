@@ -1,4 +1,4 @@
-package com.roy93group.noteking.system_interaction.handler.storage
+package com.roy93group.noteking.systemInteraction.handler.storage
 
 import com.google.gson.Gson
 import java.io.File

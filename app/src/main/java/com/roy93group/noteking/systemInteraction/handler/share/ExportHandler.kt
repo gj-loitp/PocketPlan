@@ -1,11 +1,11 @@
-package com.roy93group.noteking.system_interaction.handler.share
+package com.roy93group.noteking.systemInteraction.handler.share
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.roy93group.noteking.BuildConfig
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.io.File
 import java.io.FileOutputStream
 import org.threeten.bp.LocalDate

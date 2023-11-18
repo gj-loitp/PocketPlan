@@ -1,4 +1,4 @@
-package com.roy93group.noteking.system_interaction.handler.share
+package com.roy93group.noteking.systemInteraction.handler.share
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,7 @@ import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 import com.roy93group.noteking.data.sleepreminder.SleepReminder
 import com.roy93group.noteking.databinding.FSettingsBackupBinding
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.io.File
 
 /**

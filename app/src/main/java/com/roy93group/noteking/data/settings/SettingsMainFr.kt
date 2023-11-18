@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.roy93group.noteking.MainActivity
 import com.roy93group.noteking.data.fragmenttags.FT
 import com.roy93group.noteking.databinding.FSettingsMainBinding
-import com.roy93group.noteking.system_interaction.handler.share.BackUpActivity
+import com.roy93group.noteking.systemInteraction.handler.share.BackUpActivity
 
 class SettingsMainFr : Fragment() {
 

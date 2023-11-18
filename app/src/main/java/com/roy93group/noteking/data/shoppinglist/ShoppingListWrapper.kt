@@ -3,8 +3,8 @@ package com.roy93group.noteking.data.shoppinglist
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.data.Checkable
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 
 /**
  * A simple wrapper for shopping lists to easily manage multiple instances of them.

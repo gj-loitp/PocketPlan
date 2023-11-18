@@ -1,4 +1,4 @@
-package com.roy93group.noteking.system_interaction.handler.storage
+package com.roy93group.noteking.systemInteraction.handler.storage
 
 enum class StorageId(val s: String, val i: Int) {
     SHOPPING("ShoppingList.json", 8),

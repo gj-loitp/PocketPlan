@@ -1,4 +1,4 @@
-package com.roy93group.noteking.system_interaction.handler.share
+package com.roy93group.noteking.systemInteraction.handler.share
 
 import android.app.Activity
 import android.content.Intent
@@ -12,8 +12,8 @@ import com.roy93group.noteking.data.shoppinglist.ShoppingListWrapper
 import com.roy93group.noteking.data.shoppinglist.UserItemTemplateList
 import com.roy93group.noteking.data.sleepreminder.SleepReminder
 import com.roy93group.noteking.data.todolist.TodoList
-import com.roy93group.noteking.system_interaction.handler.storage.StorageHandler
-import com.roy93group.noteking.system_interaction.handler.storage.StorageId
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
+import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 import java.io.File
 import java.io.InputStream
 import java.util.*

@@ -1,11 +1,11 @@
-package com.roy93group.noteking.system_interaction.handler.notifications
+package com.roy93group.noteking.systemInteraction.handler.notifications
 
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import com.roy93group.noteking.system_interaction.receiver.NotificationReceiver
+import com.roy93group.noteking.systemInteraction.receiver.NotificationReceiver
 import org.threeten.bp.DayOfWeek
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneId

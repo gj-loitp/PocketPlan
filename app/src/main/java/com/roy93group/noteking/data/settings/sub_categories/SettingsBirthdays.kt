@@ -13,7 +13,7 @@ import com.roy93group.noteking.R
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 import com.roy93group.noteking.databinding.FSettingsBirthdaysBinding
-import com.roy93group.noteking.system_interaction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
 
 class SettingsBirthdays : Fragment() {
     private var _fragmentSettingsBirthdaysBinding: FSettingsBirthdaysBinding? = null
