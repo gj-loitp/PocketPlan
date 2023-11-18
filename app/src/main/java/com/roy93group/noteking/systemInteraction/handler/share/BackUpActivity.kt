@@ -1,5 +1,6 @@
 package com.roy93group.noteking.systemInteraction.handler.share
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -24,7 +25,6 @@ class BackUpActivity : AppCompatActivity() {
     private val iHandler = ImportHandler(this)
     private lateinit var binding: FSettingsBackupBinding
 
-
     /**
      * Called at creation of the activity and handles the displayed buttons,
      * text and listeners for the logic.
@@ -46,8 +46,9 @@ class BackUpActivity : AppCompatActivity() {
 
         //Spinner for single file export
         val spExportOneAdapter = ArrayAdapter(
-            this, android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.fileOptions)
+            /* context = */ this,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.fileOptions)
         )
 
         spExportOneAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -55,8 +56,9 @@ class BackUpActivity : AppCompatActivity() {
 
         //Spinner for single file import
         val spImportOneAdapter = ArrayAdapter(
-            this, android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.fileOptions)
+            /* context = */ this,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.fileOptions)
         )
 
         spImportOneAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -74,31 +76,25 @@ class BackUpActivity : AppCompatActivity() {
         binding.clExport.setOnClickListener {
             eHandler.shareAll()
         }
-
         binding.clImport.setOnClickListener {
             iHandler.browse("zip", 7)
         }
-
         binding.tvExport.setOnClickListener {
             val storageId = StorageId.getByI(binding.spExportOne.selectedItemPosition)
-
             if (storageId != null) {
                 eHandler.shareById(storageId)
             }
 
         }
-
         binding.tvImport.setOnClickListener {
             val storageId = StorageId.getByI(binding.spImportOne.selectedItemPosition)
-
             if (storageId != null) {
                 iHandler.browse("json", storageId)
             }
 
         }
-
         binding.clShowAdvancedBackup.setOnClickListener {
-            if(binding.llSettingsAdvanced.visibility == View.VISIBLE){
+            if (binding.llSettingsAdvanced.visibility == View.VISIBLE) {
                 binding.llSettingsAdvanced.visibility = View.GONE
                 binding.icShowAdvancedBackup.rotation = 0f
             } else {
@@ -113,7 +109,11 @@ class BackUpActivity : AppCompatActivity() {
      * Called when the file picker activity (from the ImportHandler) returns.
      */
     @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?,
+    ) {
         super.onActivityResult(requestCode, resultCode, data)
 
         // if no file was selected or the picking was interrupted/cancelled
@@ -170,12 +170,13 @@ class BackUpActivity : AppCompatActivity() {
         }
     }
 
-    private fun startMainActivity(){
+    private fun startMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("NotificationEntry", "backup")
         startActivity(intent)
     }
 
+    @SuppressLint("MissingSuperCall")
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         startMainActivity()

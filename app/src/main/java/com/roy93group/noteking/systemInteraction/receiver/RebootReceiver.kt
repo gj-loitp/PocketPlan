@@ -3,7 +3,7 @@ package com.roy93group.noteking.systemInteraction.receiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.noti.AlarmHandler
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager

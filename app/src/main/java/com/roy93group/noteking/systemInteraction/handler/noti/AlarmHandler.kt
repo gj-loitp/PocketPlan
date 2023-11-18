@@ -1,5 +1,6 @@
-package com.roy93group.noteking.systemInteraction.handler.notifications
+package com.roy93group.noteking.systemInteraction.handler.noti
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -12,6 +13,7 @@ import org.threeten.bp.ZoneId
 
 class AlarmHandler {
     companion object {
+        @SuppressLint("ScheduleExactAlarm")
         fun setBirthdayAlarms(time: String = "12:00", context: Context) {
             try {
                 val hour = time.split(":")[0].toInt()
@@ -21,10 +23,10 @@ class AlarmHandler {
 
                 val pendingIntent =
                     PendingIntent.getBroadcast(
-                        context,
-                        100,
-                        intent,
-                        PendingIntent.FLAG_UPDATE_CURRENT xor PendingIntent.FLAG_IMMUTABLE
+                        /* context = */ context,
+                        /* requestCode = */ 100,
+                        /* intent = */ intent,
+                        /* flags = */ PendingIntent.FLAG_UPDATE_CURRENT xor PendingIntent.FLAG_IMMUTABLE
                     )
 
                 val alarmManager =
@@ -44,10 +46,6 @@ class AlarmHandler {
                     .withHour(hour).withMinute(minute)
                     .withSecond(0).withNano(0)
 
-                // debug
-//            val debugTime = LocalDateTime.now().plusSeconds(30)
-//            notificationTime = debugTime
-
                 val epochTimeToReminder =
                     notificationTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 
@@ -58,12 +56,18 @@ class AlarmHandler {
                     pendingIntent
                 )
 
-            } catch (e: Exception) {/* no-op */}
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
 
+        @SuppressLint("ScheduleExactAlarm")
         fun setNewSleepReminderAlarm(
-            context: Context, dayOfWeek: DayOfWeek,
-            reminderTime: LocalDateTime, requestCode: Int, isSet: Boolean
+            context: Context,
+            dayOfWeek: DayOfWeek,
+            reminderTime: LocalDateTime,
+            requestCode: Int,
+            isSet: Boolean,
         ) {
             val intent = Intent(context, NotificationReceiver::class.java)
 

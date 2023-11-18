@@ -58,7 +58,7 @@ import com.roy93group.noteking.databinding.DlgConfirmBinding
 import com.roy93group.noteking.databinding.VDrawerLayoutBinding
 import com.roy93group.noteking.databinding.VHeaderNavigationDrawerBinding
 import com.roy93group.noteking.databinding.VTitleDialogBinding
-import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.noti.AlarmHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import java.util.Locale
 import java.util.Stack

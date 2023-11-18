@@ -10,8 +10,8 @@ import com.roy93group.noteking.data.birthdaylist.BirthdayList
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 import com.roy93group.noteking.data.sleepreminder.SleepReminder
-import com.roy93group.noteking.systemInteraction.handler.notifications.AlarmHandler
-import com.roy93group.noteking.systemInteraction.handler.notifications.NotificationHandler
+import com.roy93group.noteking.systemInteraction.handler.noti.AlarmHandler
+import com.roy93group.noteking.systemInteraction.handler.noti.NotificationHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import org.threeten.bp.LocalDate
 

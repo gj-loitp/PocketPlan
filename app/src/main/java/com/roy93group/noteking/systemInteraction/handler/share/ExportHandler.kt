@@ -21,25 +21,27 @@ class ExportHandler(private val parentActivity: AppCompatActivity) {
     /**
      * Used to share logs if they exist on the device.
      */
-    fun shareLog() {
-        val file = File(parentActivity.filesDir, "Log.txt")
-
-        if (!file.exists()) {
-            return
-        }
-
-        val uri = FileProvider.getUriForFile(parentActivity,
-            "${parentActivity.applicationContext.packageName}.provider", file)
-
-        val sharingIntent = Intent(Intent.ACTION_SEND)
-        sharingIntent.type = "application/text"
-
-        sharingIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri)
-
-        // actual start of sharing
-        parentActivity.startActivity(Intent.createChooser(sharingIntent, "Share via"))
-    }
+//    fun shareLog() {
+//        val file = File(parentActivity.filesDir, "Log.txt")
+//
+//        if (!file.exists()) {
+//            return
+//        }
+//
+//        val uri = FileProvider.getUriForFile(
+//            parentActivity,
+//            "${parentActivity.applicationContext.packageName}.provider", file
+//        )
+//
+//        val sharingIntent = Intent(Intent.ACTION_SEND)
+//        sharingIntent.type = "application/text"
+//
+//        sharingIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+//        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri)
+//
+//        // actual start of sharing
+//        parentActivity.startActivity(Intent.createChooser(sharingIntent, "Share via"))
+//    }
 
     /**
      * Starts an activity to share a zip file, containing all save files.
@@ -48,8 +50,10 @@ class ExportHandler(private val parentActivity: AppCompatActivity) {
         backUpAsZip()   // creates and adds the backup file object to the StorageHandler
 
         // a uri to the backup file
-        val uri = FileProvider.getUriForFile(parentActivity,
-            "${BuildConfig.APPLICATION_ID}.provider", zipFile)
+        val uri = FileProvider.getUriForFile(
+            /* context = */ parentActivity,
+            /* authority = */ "${BuildConfig.APPLICATION_ID}.provider", /* file = */ zipFile
+        )
 
         // the intent used to share the zip archived backup
         val sharingIntent = Intent(Intent.ACTION_SEND)
@@ -68,8 +72,12 @@ class ExportHandler(private val parentActivity: AppCompatActivity) {
      */
     fun shareById(id: StorageId) {
         // a uri to the backup file
-        val uri = FileProvider.getUriForFile(parentActivity,
-            "${parentActivity.applicationContext.packageName}.provider", StorageHandler.files[id]!!)
+        val uri = FileProvider.getUriForFile(
+            /* context = */ parentActivity,
+            /* authority = */
+            "${parentActivity.applicationContext.packageName}.provider", /* file = */
+            StorageHandler.files[id]!!
+        )
 
         // the intent used to share the zip archived backup
         val sharingIntent = Intent(Intent.ACTION_SEND)
@@ -83,13 +91,15 @@ class ExportHandler(private val parentActivity: AppCompatActivity) {
     }
 
     private fun backUpAsZip() {
-        zipFile = File(parentActivity.filesDir.absolutePath,
-            "pocket_plan_${BuildConfig.VERSION_NAME}_backup_${LocalDate.now()}.zip")
+        zipFile = File(
+            /* parent = */ parentActivity.filesDir.absolutePath,
+            /* child = */ "pocket_plan_${BuildConfig.VERSION_NAME}_backup_${LocalDate.now()}.zip"
+        )
         val outputStream = FileOutputStream(zipFile)
         val zipStream = ZipOutputStream(outputStream)
 
         StorageHandler.files.forEach { (_, file) ->
-            writeToZipFile(zipStream, file)
+            writeToZipFile(zipStream = zipStream, file = file)
         }
 
         zipStream.close()

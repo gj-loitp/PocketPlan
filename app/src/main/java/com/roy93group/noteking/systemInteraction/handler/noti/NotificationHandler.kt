@@ -1,4 +1,4 @@
-package com.roy93group.noteking.systemInteraction.handler.notifications
+package com.roy93group.noteking.systemInteraction.handler.noti
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -16,8 +16,16 @@ class NotificationHandler {
     companion object {
         @Suppress("DEPRECATION")
         fun createNotification(
-            channelId: String, name: String, requestCode: Int, contentTitle: String, contentText: String,
-            icon: Int, intentValue: String, myContext: Context, timeOutMs: Long = 0) {
+            channelId: String,
+            name: String,
+            requestCode: Int,
+            contentTitle: String,
+            contentText: String,
+            icon: Int,
+            intentValue: String,
+            myContext: Context,
+            timeOutMs: Long = 0,
+        ) {
 
             val notificationManager =
                 myContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -28,10 +36,10 @@ class NotificationHandler {
             repeatingIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
 
             val pendingIntent = PendingIntent.getActivity(
-                myContext,
-                requestCode,
-                repeatingIntent,
-                PendingIntent.FLAG_ONE_SHOT xor PendingIntent.FLAG_IMMUTABLE
+                /* context = */ myContext,
+                /* requestCode = */ requestCode,
+                /* intent = */ repeatingIntent,
+                /* flags = */ PendingIntent.FLAG_ONE_SHOT xor PendingIntent.FLAG_IMMUTABLE
             )
 
             val builder: Notification.Builder
