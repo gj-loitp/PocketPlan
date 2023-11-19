@@ -9,7 +9,7 @@
         android:right="1dp"
         android:top="1dp" />
 
-    <corners android:radius="5dp" />
+    <corners android:radius="@dimen/cornerRadius45" />
 
     <stroke
         android:width="2dip"
