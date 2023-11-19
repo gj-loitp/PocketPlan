@@ -22,16 +22,14 @@ import com.roy93group.noteking.databinding.FSettingsNotesBinding
 class SettingsNotesFr : Fragment() {
     private var _fragmentBinding: FSettingsNotesBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
-
     lateinit var myActivity: MainActivity
-
     private var initialDisplayNoteLines: Boolean = true
     private var initialDisplayNoteColumns: Boolean = true
     private var initialDisplayFontSize: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FSettingsNotesBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
@@ -47,27 +45,27 @@ class SettingsNotesFr : Fragment() {
         //NOTES
         //Spinner for amount of noteLines to be displayed
         val spAdapterNoteLines = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.noteLines)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.noteLines)
         )
         spAdapterNoteLines.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentBinding.spNoteLines.adapter = spAdapterNoteLines
 
         //Spinner for amount of note columns
         val spAdapterNoteColumns = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.noteColumns)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.noteColumns)
         )
         spAdapterNoteColumns.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentBinding.spNoteColumns.adapter = spAdapterNoteColumns
 
         //Spinner for amount of note columns
         val spAdapterEditorFontSize = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.fontSizes)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.fontSizes)
         )
         spAdapterEditorFontSize.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentBinding.spEditorFontSize.adapter = spAdapterEditorFontSize
@@ -76,16 +74,16 @@ class SettingsNotesFr : Fragment() {
 
     private fun initializeDisplayValues() {
         val noteLinesStringIndex = when (SettingsManager.getSetting(SettingId.NOTE_LINES)) {
-                //0 = show no lines
-                0.0 -> 1
-                //n = show n lines
-                1.0 -> 2
-                3.0 -> 3
-                5.0 -> 4
-                10.0 -> 5
-                20.0 -> 6
-                //else case is -1 => show all lines
-                else -> 0
+            //0 = show no lines
+            0.0 -> 1
+            //n = show n lines
+            1.0 -> 2
+            3.0 -> 3
+            5.0 -> 4
+            10.0 -> 5
+            20.0 -> 6
+            //else case is -1 => show all lines
+            else -> 0
         }
         fragmentBinding.spNoteLines.setSelection(noteLinesStringIndex)
         fragmentBinding.tvCurrentNoteLines.text = resources.getStringArray(R.array.noteLines)[noteLinesStringIndex]
@@ -97,33 +95,39 @@ class SettingsNotesFr : Fragment() {
         fragmentBinding.tvCurrentNoteColumns.text = columnOptions[columnIndex]
 
         val fontSizeOptions = resources.getStringArray(R.array.fontSizes)
-        fontSizeOptions.forEachIndexed {i, it ->
+        fontSizeOptions.forEachIndexed { i, it ->
             fontSizeOptions[i] = it.trim()
         }
-        val fontSizeOptionsStringIndex = fontSizeOptions.indexOf(SettingsManager.getSetting(SettingId.FONT_SIZE).toString().trim())
+        val fontSizeOptionsStringIndex =
+            fontSizeOptions.indexOf(SettingsManager.getSetting(SettingId.FONT_SIZE).toString().trim())
         fragmentBinding.spEditorFontSize.setSelection(fontSizeOptionsStringIndex)
         fragmentBinding.tvCurrentNoteEditorFontSize.text = fontSizeOptions[fontSizeOptionsStringIndex]
         fragmentBinding.tvEditorSample.textSize = fontSizeOptions[fontSizeOptionsStringIndex].toFloat()
 
         fragmentBinding.swAllowSwipe.isChecked = SettingsManager.getSetting(SettingId.NOTES_SWIPE_DELETE) as Boolean
-        fragmentBinding.swRandomizeNoteColors.isChecked = SettingsManager.getSetting(SettingId.RANDOMIZE_NOTE_COLORS) as Boolean
-        fragmentBinding.swShowContained.isChecked = SettingsManager.getSetting(SettingId.NOTES_SHOW_CONTAINED) as Boolean
-        fragmentBinding.swMoveUpCurrentNote.isChecked = SettingsManager.getSetting(SettingId.NOTES_MOVE_UP_CURRENT) as Boolean
+        fragmentBinding.swRandomizeNoteColors.isChecked =
+            SettingsManager.getSetting(SettingId.RANDOMIZE_NOTE_COLORS) as Boolean
+        fragmentBinding.swShowContained.isChecked =
+            SettingsManager.getSetting(SettingId.NOTES_SHOW_CONTAINED) as Boolean
+        fragmentBinding.swMoveUpCurrentNote.isChecked =
+            SettingsManager.getSetting(SettingId.NOTES_MOVE_UP_CURRENT) as Boolean
         fragmentBinding.swArchive.isChecked = SettingsManager.getSetting(SettingId.NOTES_ARCHIVE) as Boolean
         fragmentBinding.swFixedNoteSize.isChecked = SettingsManager.getSetting(SettingId.NOTES_FIXED_SIZE) as Boolean
-        fragmentBinding.swSortFoldersToTop.isChecked = SettingsManager.getSetting(SettingId.NOTES_DIRS_TO_TOP) as Boolean
+        fragmentBinding.swSortFoldersToTop.isChecked =
+            SettingsManager.getSetting(SettingId.NOTES_DIRS_TO_TOP) as Boolean
 
-        fragmentBinding.clNoteLines.visibility = when(fragmentBinding.swFixedNoteSize.isChecked){
+        fragmentBinding.clNoteLines.visibility = when (fragmentBinding.swFixedNoteSize.isChecked) {
             true -> View.GONE
             else -> View.VISIBLE
         }
 
         val archiveContent = PreferenceManager.getDefaultSharedPreferences(myActivity).getString("noteArchive", "")
         if (archiveContent != null) {
-            fragmentBinding.tvArchive.text = when(archiveContent.trim()==""){
+            fragmentBinding.tvArchive.text = when (archiveContent.trim() == "") {
                 true -> {
                     getString(R.string.settingsNotesNoArchived)
                 }
+
                 else -> {
                     archiveContent
                 }
@@ -139,13 +143,13 @@ class SettingsNotesFr : Fragment() {
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long
+                id: Long,
             ) {
-                if(initialDisplayNoteLines){
+                if (initialDisplayNoteLines) {
                     initialDisplayNoteLines = false
                     return
                 }
-                val setTo = when(fragmentBinding.spNoteLines.selectedItemPosition){
+                val setTo = when (fragmentBinding.spNoteLines.selectedItemPosition) {
                     0 -> -1.0
                     1 -> 0.0
                     2 -> 1.0
@@ -168,13 +172,13 @@ class SettingsNotesFr : Fragment() {
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long
+                id: Long,
             ) {
-                if(initialDisplayNoteColumns){
+                if (initialDisplayNoteColumns) {
                     initialDisplayNoteColumns = false
                     return
                 }
-                val value = when(fragmentBinding.spNoteColumns.selectedItemPosition){
+                val value = when (fragmentBinding.spNoteColumns.selectedItemPosition) {
                     0 -> "1"
                     1 -> "2"
                     else -> "3"
@@ -194,9 +198,9 @@ class SettingsNotesFr : Fragment() {
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long
+                id: Long,
             ) {
-                if(initialDisplayFontSize){
+                if (initialDisplayFontSize) {
                     initialDisplayFontSize = false
                     return
                 }
@@ -212,9 +216,9 @@ class SettingsNotesFr : Fragment() {
             }
         }
 
-        fragmentBinding.swFixedNoteSize.setOnClickListener{
+        fragmentBinding.swFixedNoteSize.setOnClickListener {
             SettingsManager.addSetting(SettingId.NOTES_FIXED_SIZE, fragmentBinding.swFixedNoteSize.isChecked)
-            fragmentBinding.clNoteLines.visibility = when(fragmentBinding.swFixedNoteSize.isChecked){
+            fragmentBinding.clNoteLines.visibility = when (fragmentBinding.swFixedNoteSize.isChecked) {
                 true -> View.GONE
                 else -> View.VISIBLE
             }
@@ -224,25 +228,25 @@ class SettingsNotesFr : Fragment() {
             SettingsManager.addSetting(SettingId.NOTES_SWIPE_DELETE, fragmentBinding.swAllowSwipe.isChecked)
         }
 
-        fragmentBinding.swRandomizeNoteColors.setOnClickListener{
+        fragmentBinding.swRandomizeNoteColors.setOnClickListener {
             SettingsManager.addSetting(SettingId.RANDOMIZE_NOTE_COLORS, fragmentBinding.swRandomizeNoteColors.isChecked)
         }
 
-        fragmentBinding.swShowContained.setOnClickListener{
+        fragmentBinding.swShowContained.setOnClickListener {
             SettingsManager.addSetting(SettingId.NOTES_SHOW_CONTAINED, fragmentBinding.swShowContained.isChecked)
         }
 
-        fragmentBinding.swMoveUpCurrentNote.setOnClickListener{
+        fragmentBinding.swMoveUpCurrentNote.setOnClickListener {
             SettingsManager.addSetting(SettingId.NOTES_MOVE_UP_CURRENT, fragmentBinding.swMoveUpCurrentNote.isChecked)
         }
 
-        fragmentBinding.swSortFoldersToTop.setOnClickListener{
+        fragmentBinding.swSortFoldersToTop.setOnClickListener {
             SettingsManager.addSetting(SettingId.NOTES_DIRS_TO_TOP, fragmentBinding.swSortFoldersToTop.isChecked)
             if (fragmentBinding.swSortFoldersToTop.isChecked)
                 MainActivity.mainNoteListDir.sortDirsToTop()
         }
 
-        fragmentBinding.swArchive.setOnClickListener{
+        fragmentBinding.swArchive.setOnClickListener {
             SettingsManager.addSetting(SettingId.NOTES_ARCHIVE, fragmentBinding.swArchive.isChecked)
         }
 
@@ -259,16 +263,16 @@ class SettingsNotesFr : Fragment() {
         }
 
         fragmentBinding.clShowArchive.setOnClickListener {
-            if(fragmentBinding.svArchive.visibility == View.VISIBLE){
+            if (fragmentBinding.svArchive.visibility == View.VISIBLE) {
                 fragmentBinding.svArchive.visibility = View.GONE
                 fragmentBinding.ivArchiveExpand.rotation = 0f
-            }else{
+            } else {
                 fragmentBinding.svArchive.visibility = View.VISIBLE
                 fragmentBinding.ivArchiveExpand.rotation = 180f
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     fragmentBinding.svNotesSettings.scrollToDescendant(fragmentBinding.svArchive)
-                }else{
-                //Todo proper scroll behavior for version < Q
+                } else {
+                    //Todo proper scroll behavior for version < Q
                     fragmentBinding.svArchive.fullScroll(ScrollView.FOCUS_DOWN)
                 }
             }

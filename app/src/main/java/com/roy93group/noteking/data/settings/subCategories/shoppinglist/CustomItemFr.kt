@@ -40,7 +40,7 @@ class CustomItemFr : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FCustomItemsBinding.inflate(inflater, container, false)
 
@@ -62,13 +62,13 @@ class CustomItemFr : Fragment() {
 
         val swipeHelperLeft = ItemTouchHelper(
             SwipeToDeleteCustomItem(
-                ItemTouchHelper.LEFT, myActivity
+                direction = ItemTouchHelper.LEFT, myActivity = myActivity
             )
         )
         swipeHelperLeft.attachToRecyclerView(myRecycler)
         val swipeHelperRight = ItemTouchHelper(
             SwipeToDeleteCustomItem(
-                ItemTouchHelper.RIGHT, myActivity
+                direction = ItemTouchHelper.RIGHT, myActivity = myActivity
             )
         )
         swipeHelperRight.attachToRecyclerView(myRecycler)
@@ -96,7 +96,9 @@ class CustomItemFr : Fragment() {
                 //Return if deletedItem = null, this should never happen
                 if (deletedItem == null) return true
                 //Re-Add item to userItemTemplateList
-                myActivity.userItemTemplateList.add(deletedItem!!)
+                deletedItem?.let {
+                    myActivity.userItemTemplateList.add(it)
+                }
                 myActivity.userItemTemplateList.save()
                 //Re-Add itemName to itemNameList
                 myActivity.multiShoppingFr.refreshItemNamesAndAutoCompleteAdapter()
@@ -140,7 +142,7 @@ class SwipeToDeleteCustomItem(direction: Int, val myActivity: MainActivity) :
     override fun onMove(
         recyclerView: RecyclerView,
         viewHolder: RecyclerView.ViewHolder,
-        target: RecyclerView.ViewHolder
+        target: RecyclerView.ViewHolder,
     ): Boolean {
         return false
     }
@@ -167,8 +169,7 @@ class SwipeToDeleteCustomItem(direction: Int, val myActivity: MainActivity) :
     }
 }
 
-class CustomItemAdapter(val myActivity: MainActivity) :
-    RecyclerView.Adapter<CustomItemAdapter.CustomItemViewHolder>() {
+class CustomItemAdapter(val myActivity: MainActivity) : RecyclerView.Adapter<CustomItemAdapter.CustomItemViewHolder>() {
 
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)

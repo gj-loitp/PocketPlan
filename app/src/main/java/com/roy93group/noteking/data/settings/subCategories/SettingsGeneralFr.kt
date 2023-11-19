@@ -29,11 +29,11 @@ class SettingsGeneralFr : Fragment() {
     private var initialDisplayLanguage: Boolean = true
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
-        _fragmentSettingsGeneralBinding =
-            FSettingsGeneralBinding.inflate(inflater, container, false)
+        _fragmentSettingsGeneralBinding = FSettingsGeneralBinding.inflate(inflater, container, false)
 
         myActivity = activity as MainActivity
 
@@ -60,32 +60,31 @@ class SettingsGeneralFr : Fragment() {
     private fun initializeAdapters() {
         //Spinner for color theme
         val spAdapterTheme = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.themes)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.themes)
         )
         spAdapterTheme.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentSettingsGeneralBinding.spTheme.adapter = spAdapterTheme
 
         //Spinner for shapes
         val spAdapterShapes = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.shapes)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.shapes)
         )
         spAdapterShapes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentSettingsGeneralBinding.spShapes.adapter = spAdapterShapes
 
         //Spinner for languages
         val spAdapterLanguages = ArrayAdapter(
-            myActivity,
-            android.R.layout.simple_list_item_1,
-            resources.getStringArray(R.array.languages)
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ resources.getStringArray(R.array.languages)
         )
         spAdapterLanguages.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         fragmentSettingsGeneralBinding.spLanguages.adapter = spAdapterLanguages
     }
-
 
     private fun initializeDisplayValues() {
         val spThemePosition = when (SettingsManager.getSetting(SettingId.THEME_DARK)) {
@@ -95,9 +94,7 @@ class SettingsGeneralFr : Fragment() {
             else -> 1
         }
         fragmentSettingsGeneralBinding.spTheme.setSelection(spThemePosition)
-        fragmentSettingsGeneralBinding.tvCurrentTheme.text =
-            resources.getStringArray(R.array.themes)[spThemePosition]
-
+        fragmentSettingsGeneralBinding.tvCurrentTheme.text = resources.getStringArray(R.array.themes)[spThemePosition]
 
         val spShapePosition = when (SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean) {
             //show "round" setting
@@ -106,8 +103,7 @@ class SettingsGeneralFr : Fragment() {
             else -> 0
         }
         fragmentSettingsGeneralBinding.spShapes.setSelection(spShapePosition)
-        fragmentSettingsGeneralBinding.tvCurrentShape.text =
-            resources.getStringArray(R.array.shapes)[spShapePosition]
+        fragmentSettingsGeneralBinding.tvCurrentShape.text = resources.getStringArray(R.array.shapes)[spShapePosition]
 
         val spLanguagePosition = when (SettingsManager.getSetting(SettingId.LANGUAGE)) {
             5.0 -> 5
@@ -120,7 +116,6 @@ class SettingsGeneralFr : Fragment() {
         fragmentSettingsGeneralBinding.spLanguages.setSelection(spLanguagePosition)
         fragmentSettingsGeneralBinding.tvCurrentLanguage.text =
             resources.getStringArray(R.array.languages)[spLanguagePosition]
-
 
         fragmentSettingsGeneralBinding.swShakeTaskInHome.isChecked =
             SettingsManager.getSetting(SettingId.SHAKE_TASK_HOME) as Boolean
@@ -143,7 +138,7 @@ class SettingsGeneralFr : Fragment() {
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
                     if (initialDisplayLanguage) {
                         initialDisplayLanguage = false
@@ -178,7 +173,7 @@ class SettingsGeneralFr : Fragment() {
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
                     if (initialDisplayTheme) {
                         initialDisplayTheme = false
@@ -225,7 +220,7 @@ class SettingsGeneralFr : Fragment() {
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
 
                     if (initialDisplayShapes) {
@@ -320,15 +315,12 @@ class SettingsGeneralFr : Fragment() {
         fragmentSettingsGeneralBinding.cardView3.setOnClickListener {
             fragmentSettingsGeneralBinding.rbFullColor.isChecked = true
         }
-
         fragmentSettingsGeneralBinding.clTheme.setOnClickListener {
             fragmentSettingsGeneralBinding.spTheme.performClick()
         }
-
         fragmentSettingsGeneralBinding.clShapes.setOnClickListener {
             fragmentSettingsGeneralBinding.spShapes.performClick()
         }
-
         fragmentSettingsGeneralBinding.clLanguage.setOnClickListener {
             fragmentSettingsGeneralBinding.spLanguages.performClick()
         }

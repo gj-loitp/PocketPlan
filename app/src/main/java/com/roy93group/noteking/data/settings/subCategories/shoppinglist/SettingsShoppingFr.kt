@@ -20,8 +20,9 @@ class SettingsShoppingFr : Fragment() {
     private val fragmentBinding get() = _fragmentBinding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FSettingsShoppingBinding.inflate(inflater, container, false)
 
@@ -32,7 +33,6 @@ class SettingsShoppingFr : Fragment() {
     }
 
     private fun initializeDisplayValues() {
-
         fragmentBinding.swExpandOneCategory.isChecked =
             SettingsManager.getSetting(SettingId.EXPAND_ONE_CATEGORY) as Boolean
 

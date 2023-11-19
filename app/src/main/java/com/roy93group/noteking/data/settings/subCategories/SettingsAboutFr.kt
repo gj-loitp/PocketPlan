@@ -15,8 +15,9 @@ class SettingsAboutFr : Fragment() {
     private var _fragmentSettingsAboutBinding: FSettingsAboutBinding? = null
     private val fragmentSettingsAboutBinding get() = _fragmentSettingsAboutBinding!!
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentSettingsAboutBinding = FSettingsAboutBinding.inflate(inflater, container, false)
 
@@ -26,8 +27,8 @@ class SettingsAboutFr : Fragment() {
         }
 
         fragmentSettingsAboutBinding.clSupportThisProject.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://paypal.me/rayleaf"))
-            startActivity(intent)
+//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://paypal.me/rayleaf"))
+//            startActivity(intent)
         }
 
         fragmentSettingsAboutBinding.tvStudioMail.setOnClickListener {
@@ -38,10 +39,9 @@ class SettingsAboutFr : Fragment() {
         }
 
         //display current version name
-        val versionString = "v "+ App.instance.packageManager.getPackageInfo(App.instance.packageName, 0).versionName
+        val versionString = "v " + App.instance.packageManager.getPackageInfo(App.instance.packageName, 0).versionName
         fragmentSettingsAboutBinding.tvVersionAbout.text = versionString
         return fragmentSettingsAboutBinding.root
     }
 
 }
-

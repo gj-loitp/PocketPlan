@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,9 +15,19 @@ import com.roy93group.noteking.databinding.FSettingsHowToBinding
 import com.roy93group.noteking.databinding.VRowHowtoBinding
 import com.roy93group.noteking.databinding.VRowHowtoCatBinding
 
-class HowToCategory(val nameId: Int, val iconId: Int, val elements: ArrayList<HowToElement>)
+@Keep
+class HowToCategory(
+    val nameId: Int,
+    val iconId: Int,
+    val elements: ArrayList<HowToElement>,
+)
 
-class HowToElement(val subNameId: Int, val explanationId: Int, var expanded: Boolean = false)
+@Keep
+class HowToElement(
+    val subNameId: Int,
+    val explanationId: Int,
+    var expanded: Boolean = false,
+)
 
 class SettingsHowTo : Fragment() {
 
@@ -27,43 +38,71 @@ class SettingsHowTo : Fragment() {
     lateinit var myActivity: MainActivity
 
     val howToList = arrayListOf(
-        HowToCategory(R.string.settingsBackupTitle, R.drawable.ic_action_backup, arrayListOf(
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoBackupExplanation),
-        )),
-        HowToCategory(R.string.menuTitleTasks, R.drawable.ic_action_todo, arrayListOf(
-            HowToElement(R.string.howtoSubEdit, R.string.howtoTodoEdit),
-            HowToElement(R.string.howtoSubDelete, R.string.howtoTodoDelete),
-            HowToElement(R.string.howtoSubRearrange, R.string.howtoTodoReorder),
-        )),
-        HowToCategory(R.string.menuTitleNotes, R.drawable.ic_action_notes, arrayListOf(
-            HowToElement(R.string.howtoSubEdit, R.string.howtoNoteEdit),
-            HowToElement(R.string.howtoSubFolders, R.string.howtoNoteFolder),
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoNoteExplanation),
-        )),
-        HowToCategory(R.string.menuTitleBirthdays, R.drawable.ic_action_birthday, arrayListOf(
-            HowToElement(R.string.howtoSubEdit, R.string.howtoBirthdaysEdit),
-            HowToElement(R.string.howtoSubDelete, R.string.howtoBirthdaysDelete),
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoBirthdaysExplanation),
-        )),
+        HowToCategory(
+            nameId = R.string.settingsBackupTitle,
+            iconId = R.drawable.ic_action_backup,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoBackupExplanation),
+            )
+        ),
+        HowToCategory(
+            nameId = R.string.menuTitleTasks,
+            iconId = R.drawable.ic_action_todo,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubEdit, R.string.howtoTodoEdit),
+                HowToElement(R.string.howtoSubDelete, R.string.howtoTodoDelete),
+                HowToElement(R.string.howtoSubRearrange, R.string.howtoTodoReorder),
+            )
+        ),
+        HowToCategory(
+            nameId = R.string.menuTitleNotes,
+            iconId = R.drawable.ic_action_notes,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubEdit, R.string.howtoNoteEdit),
+                HowToElement(R.string.howtoSubFolders, R.string.howtoNoteFolder),
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoNoteExplanation),
+            )
+        ),
+        HowToCategory(
+            nameId = R.string.menuTitleBirthdays,
+            iconId = R.drawable.ic_action_birthday,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubEdit, R.string.howtoBirthdaysEdit),
+                HowToElement(R.string.howtoSubDelete, R.string.howtoBirthdaysDelete),
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoBirthdaysExplanation),
+            )
+        ),
 
-        HowToCategory(R.string.menuTitleShopping, R.drawable.ic_action_shopping_cart, arrayListOf(
-            HowToElement(R.string.howtoSubDelete, R.string.howtoShoppingDelete),
-            HowToElement(R.string.howtoSubRearrange, R.string.howtoShoppingReorder),
-            HowToElement(R.string.howtoSubCheckCategory, R.string.howtoShoppingCheckCategories),
-            HowToElement(R.string.howtoSubLists, R.string.howtoShoppingLists),
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoShoppingExplanation),
-        )),
-        HowToCategory(R.string.menuTitleSleep, R.drawable.ic_action_sleepreminder, arrayListOf(
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoSleepExplanation)
-        )),
-                HowToCategory(R.string.menuTitleHome, R.drawable.ic_action_home, arrayListOf(
-            HowToElement(R.string.howtoSubExplanation, R.string.howtoHomeExplanation)
-        ))
+        HowToCategory(
+            nameId = R.string.menuTitleShopping,
+            iconId = R.drawable.ic_action_shopping_cart,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubDelete, R.string.howtoShoppingDelete),
+                HowToElement(R.string.howtoSubRearrange, R.string.howtoShoppingReorder),
+                HowToElement(R.string.howtoSubCheckCategory, R.string.howtoShoppingCheckCategories),
+                HowToElement(R.string.howtoSubLists, R.string.howtoShoppingLists),
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoShoppingExplanation),
+            )
+        ),
+        HowToCategory(
+            nameId = R.string.menuTitleSleep,
+            iconId = R.drawable.ic_action_sleepreminder,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoSleepExplanation)
+            )
+        ),
+        HowToCategory(
+            nameId = R.string.menuTitleHome,
+            iconId = R.drawable.ic_action_home,
+            elements = arrayListOf(
+                HowToElement(R.string.howtoSubExplanation, R.string.howtoHomeExplanation)
+            )
+        )
     )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         myActivity = activity as MainActivity
         _fragmentSettingsHowToBinding = FSettingsHowToBinding.inflate(inflater, container, false)
@@ -111,10 +150,15 @@ class HowToAdapter(private val myFragment: SettingsHowTo, val myActivity: MainAc
         var binding = rowHowtoCatBinding
     }
 }
+
 /**
  * SUB ADAPTER
  */
-class SubHowToAdapter(private val myFragment: SettingsHowTo, val category: HowToCategory, val myActivity: MainActivity) :
+class SubHowToAdapter(
+    private val myFragment: SettingsHowTo,
+    val category: HowToCategory,
+    val myActivity: MainActivity,
+) :
     RecyclerView.Adapter<SubHowToAdapter.SubHowToViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubHowToViewHolder {
@@ -135,7 +179,7 @@ class SubHowToAdapter(private val myFragment: SettingsHowTo, val category: HowTo
         holder.binding.tvHowToExplanation.text = itemExplanation
 
         //show howto element content, depending on expansion state
-        holder.binding.tvHowToExplanation.visibility = when(itemExpanded){
+        holder.binding.tvHowToExplanation.visibility = when (itemExpanded) {
             true -> View.VISIBLE
             else -> View.GONE
         }
@@ -159,5 +203,6 @@ class SubHowToAdapter(private val myFragment: SettingsHowTo, val category: HowTo
         var binding = itemViewBinding
     }
 }
+
 //Override for boolean inc function, to flip it using ++
 operator fun Boolean.inc() = !this

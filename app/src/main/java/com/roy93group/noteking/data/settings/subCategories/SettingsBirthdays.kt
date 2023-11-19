@@ -22,8 +22,9 @@ class SettingsBirthdays : Fragment() {
     private val dark = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentSettingsBirthdaysBinding = FSettingsBirthdaysBinding.inflate(inflater, container, false)
 
@@ -34,7 +35,6 @@ class SettingsBirthdays : Fragment() {
     }
 
     private fun initializeDisplayValues() {
-
         fragmentSettingsBirthdaysBinding.swShowMonth.isChecked =
             SettingsManager.getSetting(SettingId.BIRTHDAY_SHOW_MONTH) as Boolean
 
@@ -44,32 +44,38 @@ class SettingsBirthdays : Fragment() {
         fragmentSettingsBirthdaysBinding.swPreview.isChecked =
             SettingsManager.getSetting(SettingId.PREVIEW_BIRTHDAY) as Boolean
 
-        fragmentSettingsBirthdaysBinding.tvBirthdayNotifTime.text = SettingsManager.getSetting(SettingId.BIRTHDAY_NOTIFICATION_TIME) as String
+        fragmentSettingsBirthdaysBinding.tvBirthdayNotifTime.text =
+            SettingsManager.getSetting(SettingId.BIRTHDAY_NOTIFICATION_TIME) as String
     }
 
     private fun initializeListeners() {
         //Switch for only showing one category as expanded
         fragmentSettingsBirthdaysBinding.swShowMonth.setOnClickListener {
-            SettingsManager.addSetting(SettingId.BIRTHDAY_SHOW_MONTH, fragmentSettingsBirthdaysBinding.swShowMonth.isChecked)
+            SettingsManager.addSetting(
+                id = SettingId.BIRTHDAY_SHOW_MONTH,
+                any = fragmentSettingsBirthdaysBinding.swShowMonth.isChecked
+            )
         }
-
         fragmentSettingsBirthdaysBinding.swSouthColors.setOnClickListener {
-            SettingsManager.addSetting(SettingId.BIRTHDAY_COLORS_SOUTH, fragmentSettingsBirthdaysBinding.swSouthColors.isChecked)
+            SettingsManager.addSetting(
+                id = SettingId.BIRTHDAY_COLORS_SOUTH,
+                any = fragmentSettingsBirthdaysBinding.swSouthColors.isChecked
+            )
         }
-
         fragmentSettingsBirthdaysBinding.swPreview.setOnClickListener {
-            SettingsManager.addSetting(SettingId.PREVIEW_BIRTHDAY, fragmentSettingsBirthdaysBinding.swPreview.isChecked)
+            SettingsManager.addSetting(
+                id = SettingId.PREVIEW_BIRTHDAY,
+                any = fragmentSettingsBirthdaysBinding.swPreview.isChecked
+            )
         }
-
         fragmentSettingsBirthdaysBinding.clBirthdayTime.setOnClickListener {
-            val timeSetListener =
-                TimePickerDialog.OnTimeSetListener { _: TimePicker?, h: Int, m: Int ->
-                    //react to new time with h / m here
-                    val newTime = h.toString().padStart(2, '0') + ":" + m.toString().padStart(2, '0')
-                    SettingsManager.addSetting(SettingId.BIRTHDAY_NOTIFICATION_TIME, newTime)
-                    AlarmHandler.setBirthdayAlarms(newTime, activity as MainActivity)
-                    fragmentSettingsBirthdaysBinding.tvBirthdayNotifTime.text = newTime
-                }
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _: TimePicker?, h: Int, m: Int ->
+                //react to new time with h / m here
+                val newTime = h.toString().padStart(2, '0') + ":" + m.toString().padStart(2, '0')
+                SettingsManager.addSetting(SettingId.BIRTHDAY_NOTIFICATION_TIME, newTime)
+                AlarmHandler.setBirthdayAlarms(newTime, activity as MainActivity)
+                fragmentSettingsBirthdaysBinding.tvBirthdayNotifTime.text = newTime
+            }
             val oldTime = SettingsManager.getSetting(SettingId.BIRTHDAY_NOTIFICATION_TIME) as String
 
             val oldHour = oldTime.split(":")[0].toInt()
@@ -83,6 +89,7 @@ class SettingsBirthdays : Fragment() {
                     oldMin,
                     true
                 )
+
                 else -> TimePickerDialog(
                     activity,
                     R.style.DialogTheme,
