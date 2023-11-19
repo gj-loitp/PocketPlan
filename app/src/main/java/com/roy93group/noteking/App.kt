@@ -5,7 +5,6 @@ import android.app.Application
 //TODO firebase analytic
 //TODO why you see ad
 
-//TODO leak canary
 //TODO rate, more app, share app
 //TODO policy
 //TODO keystore
@@ -19,6 +18,7 @@ import android.app.Application
 //gen ic_launcher https://easyappicon.com/
 //proguard
 //update UI switch
+//leak canary
 
 class App : Application() {
 
