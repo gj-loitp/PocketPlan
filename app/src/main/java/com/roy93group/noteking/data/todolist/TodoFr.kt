@@ -310,13 +310,14 @@ class TodoFr : Fragment() {
 
         //AlertDialogBuilder
         val myBuilder = myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogAddTaskBinding.root) }
-        val titleDialogBinding = VTitleDialogBinding.inflate(myLayoutInflater)
-        myBuilder?.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(myLayoutInflater)
+//        myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
         myBuilder.create().let {
             addTaskDialog = it
         }
+        addTaskDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         addTaskDialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
         //adds listeners to confirmButtons in addTaskDialog
@@ -471,12 +472,13 @@ class TodoTaskAdapter(activity: MainActivity, private var myFragment: TodoFr) :
             //AlertDialogBuilder
             val myBuilder = AlertDialog.Builder(myActivity).setView(dialogAddTaskBinding.root)
 
-            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
-            titleDialogBinding.tvDialogTitle.text = myActivity.resources.getText(R.string.tasksEditTitle)
-            myBuilder.setCustomTitle(titleDialogBinding.root)
+//            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
+//            titleDialogBinding.tvDialogTitle.text = myActivity.resources.getText(R.string.tasksEditTitle)
+//            myBuilder.setCustomTitle(titleDialogBinding.root)
 
             //show dialog
             val myAlertDialog = myBuilder.create()
+            myAlertDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
             myAlertDialog.window?.setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
             )
