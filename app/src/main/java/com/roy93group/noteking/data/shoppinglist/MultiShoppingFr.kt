@@ -238,9 +238,9 @@ class MultiShoppingFr : Fragment() {
             AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
         }
 
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = getString(R.string.shoppingDialogRenameList)
-        myBuilder.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = getString(R.string.shoppingDialogRenameList)
+//        myBuilder.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
@@ -281,9 +281,9 @@ class MultiShoppingFr : Fragment() {
         val myBuilder = myActivity.let { it1 ->
             AlertDialog.Builder(it1).setView(dialogAddShoppingListBinding.root)
         }
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingOptionAddList)
-        myBuilder?.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingOptionAddList)
+//        myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
@@ -444,7 +444,7 @@ class MultiShoppingFr : Fragment() {
 
         val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.shoppingAddItemTitle)
-        myBuilder?.setCustomTitle(titleDialogBinding.root)
+//        myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         myBuilder.setCancelable(true)
         addItemDialog = myBuilder?.create()!!
@@ -735,6 +735,7 @@ class MultiShoppingFr : Fragment() {
         dialogAddItemBinding.etItemAmount.setText("1")
 
         //open keyboard
+        addItemDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         addItemDialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         addItemDialog.show()
     }
