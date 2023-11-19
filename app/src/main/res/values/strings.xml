@@ -378,5 +378,10 @@
     <string name="add_folder">Add folder</string>
     <string name="add_list">Add list</string>
     <string name="delete_note">Delete note</string>
+    <string name="rate_app">Rate app</string>
+    <string name="get_more_apps">Get more apps</string>
+    <string name="share_this_app">Share this app</string>
+    <string name="term_policy"><![CDATA[Term & Policy]]></string>
+    <string name="applovin">Applovin</string>
 
 </resources>

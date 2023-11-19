@@ -12,5 +12,24 @@
         android:id="@+id/menuItemSettings"
         android:icon="@drawable/ic_action_settings"
         android:title="@string/menuTitleSettings" />
-
+    <item
+        android:id="@+id/menuItemRateApp"
+        android:icon="@drawable/baseline_star_rate_24"
+        android:title="@string/rate_app" />
+    <item
+        android:id="@+id/menuItemMoreApp"
+        android:icon="@drawable/baseline_local_grocery_store_24"
+        android:title="@string/get_more_apps" />
+    <item
+        android:id="@+id/menuItemShareApp"
+        android:icon="@drawable/baseline_ios_share_24"
+        android:title="@string/share_this_app" />
+    <item
+        android:id="@+id/menuItemApplovin"
+        android:icon="@drawable/baseline_admin_panel_settings_24"
+        android:title="@string/applovin" />
+    <item
+        android:id="@+id/menuItemPolicyApp"
+        android:icon="@drawable/baseline_security_24"
+        android:title="@string/term_policy" />
 </menu>

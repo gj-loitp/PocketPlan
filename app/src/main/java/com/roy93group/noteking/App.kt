@@ -5,8 +5,6 @@ import android.app.Application
 //TODO firebase analytic
 //TODO why you see ad
 
-//TODO rate, more app, share app
-//TODO policy
 //TODO keystore
 //TODO rename app
 //TODO github
@@ -19,6 +17,8 @@ import android.app.Application
 //proguard
 //update UI switch
 //leak canary
+//rate, more app, share app
+//policy
 
 class App : Application() {
 
