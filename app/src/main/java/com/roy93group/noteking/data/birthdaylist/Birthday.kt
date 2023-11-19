@@ -1,9 +1,11 @@
 package com.roy93group.noteking.data.birthdaylist
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import org.threeten.bp.LocalDate
 import org.threeten.bp.temporal.ChronoUnit
 
+@Keep
 data class Birthday constructor(
     @SerializedName(value = "n")
     var name: String,
@@ -24,7 +26,8 @@ data class Birthday constructor(
     var expanded: Boolean,
 
     @SerializedName(value = "nt")
-    var notify: Boolean) {
+    var notify: Boolean,
+) {
 
     fun daysUntil(): Int {
         return ChronoUnit.DAYS.between(LocalDate.now(), asAdjustedLocalDate()).toInt()
@@ -45,14 +48,14 @@ data class Birthday constructor(
         val leapDay = day == 29 && month == 2
         val today = LocalDate.now()
         var dayToUse = day
-        if (leapDay && !today.isLeapYear){
+        if (leapDay && !today.isLeapYear) {
             dayToUse -= 1
         }
         var yearToUse = today.year
-        if(LocalDate.of(today.year, month, dayToUse).isBefore(today)){
+        if (LocalDate.of(today.year, month, dayToUse).isBefore(today)) {
             yearToUse += 1
         }
-        if(leapDay && LocalDate.of(yearToUse, 1, 1).isLeapYear){
+        if (leapDay && LocalDate.of(yearToUse, 1, 1).isLeapYear) {
             dayToUse = 29
         }
         return LocalDate.of(yearToUse, month, dayToUse)

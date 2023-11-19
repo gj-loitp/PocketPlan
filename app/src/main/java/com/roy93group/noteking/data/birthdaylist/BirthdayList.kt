@@ -25,10 +25,24 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
      * @param month  The month of the birthday
      * @param day The day of the birthday
      */
-    fun addBirthday(name: String, day: Int, month: Int, year: Int,
-        daysToRemind: Int, expanded: Boolean, notify: Boolean
+    fun addBirthday(
+        name: String,
+        day: Int,
+        month: Int,
+        year: Int,
+        daysToRemind: Int,
+        expanded: Boolean,
+        notify: Boolean,
     ): Pair<Int, Int> {
-        val newBirthday = Birthday(name, day, month, year, daysToRemind, expanded, notify)
+        val newBirthday = Birthday(
+            name = name,
+            day = day,
+            month = month,
+            year = year,
+            daysToRemind = daysToRemind,
+            expanded = expanded,
+            notify = notify
+        )
         return addFullBirthday(newBirthday)
     }
 
@@ -47,15 +61,15 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
         return Pair(startIndex - itemRange + 1, itemRange)
     }
 
-    fun disableAllReminders(){
-        this.forEach{
+    fun disableAllReminders() {
+        this.forEach {
             it.notify = false
         }
         save()
     }
 
-    fun enableAllReminders(){
-        this.forEach{
+    fun enableAllReminders() {
+        this.forEach {
             it.notify = true
         }
         save()
@@ -108,7 +122,7 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
         if (beforeMonth) {
             this.add(
                 Birthday(
-                    monthName, 1, today.monthValue, 0, -1 * today.monthValue,
+                    name = monthName, day = 1, month = today.monthValue, year = 0, daysToRemind = -1 * today.monthValue,
                     expanded = false, notify = false
                 )
             )
@@ -117,7 +131,11 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
         if (afterMonth) {
             this.add(
                 Birthday(
-                    monthName, today.dayOfMonth, today.monthValue, 0, -1 * today.monthValue,
+                    name = monthName,
+                    day = today.dayOfMonth,
+                    month = today.monthValue,
+                    year = 0,
+                    daysToRemind = -1 * today.monthValue,
                     expanded = false, notify = false
                 )
             )
@@ -129,7 +147,7 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
 
             this.add(
                 Birthday(
-                    name, 0, m, 0, -1 * m,
+                    name = name, day = 0, month = m, year = 0, daysToRemind = -1 * m,
                     expanded = false, notify = false
                 )
             )
@@ -146,7 +164,7 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
 
         var i = 0
         val spacerBirthday = Birthday(
-            "${localDate.year + 1}", 1, 1, 0, -200,
+            name = "${localDate.year + 1}", day = 1, month = 1, year = 0, daysToRemind = -200,
             expanded = false,
             notify = false
         )
@@ -181,12 +199,13 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
 
     fun getNextRelevantBirthday(): Birthday? {
         this.forEach { n ->
-            if (n.daysToRemind >= 0  && n.daysUntil() <= 30) {
+            if (n.daysToRemind >= 0 && n.daysUntil() <= 30) {
                 return n
             }
         }
         return null
     }
+
     /**
      * Collects all birthdays that are happening on the current day and returns
      * them as an list.
@@ -234,7 +253,7 @@ class BirthdayList(private val monthNames: Array<String>) : ArrayList<Birthday>(
 
     override fun check() {
         this.forEach {
-            if(it == null){
+            if (it == null) {
                 throw NullPointerException()
             }
         }

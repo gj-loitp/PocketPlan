@@ -28,23 +28,19 @@ import java.util.*
 import java.util.regex.Pattern
 import kotlin.math.abs
 
-
 /**
  * A simple [Fragment] subclass.
  */
-
 class BirthdayFr : Fragment() {
     //instance of birthday list, containing all the displayed birthdays
     lateinit var myActivity: MainActivity
     lateinit var birthdayListInstance: BirthdayList
-
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
     private var _frBinding: FBirthdayBinding? = null
     private val frBinding get() = _frBinding!!
 
     //initialize recycler view
     private lateinit var myRecycler: RecyclerView
-
     private val darkMode: Boolean = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
 
     //Current date to properly initialize date picker
@@ -212,7 +208,9 @@ class BirthdayFr : Fragment() {
 
     @SuppressLint("InflateParams")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _frBinding = FBirthdayBinding.inflate(inflater, container, false)
         val view = frBinding.root
@@ -236,12 +234,22 @@ class BirthdayFr : Fragment() {
         myRecycler.setHasFixedSize(true)
 
         //initialize and attach swipe helpers
-        val swipeHelperLeft =
-            ItemTouchHelper(SwipeToDeleteBirthday(myAdapter, ItemTouchHelper.LEFT, this))
+        val swipeHelperLeft = ItemTouchHelper(
+            SwipeToDeleteBirthday(
+                adapter = myAdapter,
+                direction = ItemTouchHelper.LEFT,
+                birthdayFr = this
+            )
+        )
         swipeHelperLeft.attachToRecyclerView(myRecycler)
 
-        val swipeHelperRight =
-            ItemTouchHelper(SwipeToDeleteBirthday(myAdapter, ItemTouchHelper.RIGHT, this))
+        val swipeHelperRight = ItemTouchHelper(
+            SwipeToDeleteBirthday(
+                adapter = myAdapter,
+                direction = ItemTouchHelper.RIGHT,
+                birthdayFr = this
+            )
+        )
         swipeHelperRight.attachToRecyclerView(myRecycler)
 
         return view
@@ -261,10 +269,8 @@ class BirthdayFr : Fragment() {
 
     fun updateBirthdayMenu() {
         myMenu.findItem(R.id.itemBirthdaysSearch).isVisible = birthdayListInstance.size > 0
-        myMenu.findItem(R.id.itemBirthdaysEnableReminders).isVisible =
-            birthdayListInstance.size > 0
-        myMenu.findItem(R.id.itemBirthdaysDisableReminders).isVisible =
-            birthdayListInstance.size > 0
+        myMenu.findItem(R.id.itemBirthdaysEnableReminders).isVisible = birthdayListInstance.size > 0
+        myMenu.findItem(R.id.itemBirthdaysDisableReminders).isVisible = birthdayListInstance.size > 0
     }
 
     fun updateUndoBirthdayIcon() {
@@ -284,11 +290,16 @@ class BirthdayFr : Fragment() {
 
     @SuppressLint("InflateParams", "NotifyDataSetChanged")
     fun openEditBirthdayDialog() {
+        if (editBirthdayHolder == null) {
+            return
+        }
         var yearChanged = false
 
         //set date to birthdays date
         date = LocalDate.of(
-            editBirthdayHolder!!.year, editBirthdayHolder!!.month, editBirthdayHolder!!.day
+            /* year = */ editBirthdayHolder!!.year,
+            /* month = */ editBirthdayHolder!!.month,
+            /* dayOfMonth = */ editBirthdayHolder!!.day
         )
 
         //inflate the dialog with custom view
@@ -371,9 +382,8 @@ class BirthdayFr : Fragment() {
         tvDaysPrior.text = daysPriorTextEdit
 
         //set the correct daysToRemind text
-        var cachedRemindText = editBirthdayHolder!!.daysToRemind.toString()
+        var cachedRemindText = editBirthdayHolder?.daysToRemind.toString()
         etDaysToRemind.setText(cachedRemindText)
-
 
         //correct focusable state of etDaysToRemind
         if (editBirthdayHolder!!.notify) {
@@ -556,15 +566,12 @@ class BirthdayFr : Fragment() {
             }
         }
 
-
         //AlertDialogBuilder
-        val myBuilder =
-            activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
+        val myBuilder = activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
         val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         myTitleDialogBinding.tvDialogTitle.text =
             resources.getText(R.string.birthdayDialogEditTitle)
         myBuilder?.setCustomTitle(myTitleDialogBinding.root)
-
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
@@ -821,7 +828,6 @@ class BirthdayFr : Fragment() {
             tvSaveYear.setTextColor(myActivity.colorForAttr(color))
         }
 
-
         val textWatcherReminder = object : TextWatcher {
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -879,8 +885,7 @@ class BirthdayFr : Fragment() {
         }
 
         //AlertDialogBuilder
-        val myBuilder =
-            activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
+        val myBuilder = activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
 //        val myTitle = layoutInflater.inflate(R.layout.title_dialog, null)
         val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         myTitleDialogBinding.tvDialogTitle.text = resources.getText(R.string.birthdayDialogAddTitle)
@@ -1016,7 +1021,6 @@ class SwipeToDeleteBirthday(
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) =
         adapter.deleteItem(viewHolder)
 }
-
 
 class BirthdayAdapter(
     birthdayFr: BirthdayFr, mainActivity: MainActivity, private var searchList: ArrayList<Birthday>,
