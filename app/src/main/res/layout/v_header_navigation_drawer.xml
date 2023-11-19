@@ -9,7 +9,7 @@
     android:paddingEnd="23dp"
     android:paddingBottom="20dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"
         android:layout_width="170dp"
         android:layout_height="170dp"
@@ -25,6 +25,7 @@
         android:id="@+id/tvAppTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingTop="8dp"
         android:text="@string/aboutAppName"
         android:textColor="?attr/colorOnBackGround"
@@ -36,6 +37,7 @@
         android:id="@+id/tvVersion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textColor="?attr/colorHint"
         android:textSize="@dimen/font_size_small"
         app:layout_constraintStart_toStartOf="parent"
