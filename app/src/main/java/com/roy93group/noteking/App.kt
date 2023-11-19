@@ -4,13 +4,11 @@ import android.app.Application
 
 //TODO firebase analytic
 //TODO why you see ad
-
-//TODO keystore
-//TODO rename app
-//TODO github
-//TODO license
 //TODO ad applovin
 //TODO vung bi mat de show applovin config
+
+//TODO keystore
+//TODO license
 
 //done
 //gen ic_launcher https://easyappicon.com/
@@ -19,6 +17,8 @@ import android.app.Application
 //leak canary
 //rate, more app, share app
 //policy
+//rename app
+//github
 
 class App : Application() {
 

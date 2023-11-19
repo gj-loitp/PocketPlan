@@ -122,6 +122,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvGit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/aboutSrcLink"
@@ -129,6 +130,15 @@
                     android:textSize="@dimen/font_size_very_small"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvViewOn" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/https_github_com_gj_loitp_pocketplan"
+                    android:textColor="?attr/colorHyperLink"
+                    android:textSize="@dimen/font_size_very_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGit" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

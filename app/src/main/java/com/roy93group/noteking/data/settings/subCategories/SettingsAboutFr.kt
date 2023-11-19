@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.roy93group.noteking.App
+import com.roy93group.noteking.R
 import com.roy93group.noteking.databinding.FSettingsAboutBinding
 
 class SettingsAboutFr : Fragment() {
@@ -22,7 +23,7 @@ class SettingsAboutFr : Fragment() {
         _fragmentSettingsAboutBinding = FSettingsAboutBinding.inflate(inflater, container, false)
 
         fragmentSettingsAboutBinding.clGithubLink.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RayLeaf-Studios/NoteKIng"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.aboutSrcLink)))
             startActivity(intent)
         }
 

@@ -8,7 +8,7 @@
     <string name="aboutFeedback">Feedback</string>
     <string name="aboutMailAddress" translatable="false">rayleaf.studios@gmail.com</string>
     <string name="aboutSourcecode">Sourcecode</string>
-    <string name="aboutSrcLink" translatable="false">https://github.com/RayLeaf-Studios/NoteKIng</string>
+    <string name="aboutSrcLink" translatable="false">https://github.com/RayLeaf-Studios/PocketPlan</string>
     <string name="aboutStudioName" translatable="false">RayLeaf Studios</string>
     <string name="aboutVersion">Version</string>
     <string name="aboutViewOnGithub">View on GitHub</string>
@@ -383,5 +383,6 @@
     <string name="share_this_app">Share this app</string>
     <string name="term_policy"><![CDATA[Term & Policy]]></string>
     <string name="applovin">Applovin</string>
+    <string name="https_github_com_gj_loitp_pocketplan">https://github.com/gj-loitp/PocketPlan</string>
 
 </resources>
