@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:background="?attr/colorBackground"
     android:orientation="vertical"
-    android:paddingHorizontal="10dp"
-    android:paddingBottom="10dp">
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etTitleAddTask"

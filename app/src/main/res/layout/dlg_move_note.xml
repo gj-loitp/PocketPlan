@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:background="?attr/colorBackground"
     android:orientation="vertical"
-    android:paddingHorizontal="13dp"
-    android:paddingBottom="13dp">
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView5"
