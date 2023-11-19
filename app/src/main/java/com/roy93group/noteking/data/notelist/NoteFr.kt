@@ -370,13 +370,14 @@ class NoteFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
-        val customTitleBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        val customTitleBinding = VTitleDialogBinding.inflate(layoutInflater)
         //Set "Add folder" title
-        customTitleBinding.tvDialogTitle.text = myActivity.getString(R.string.notesOptionAddFolder)
-        myBuilder?.setCustomTitle(customTitleBinding.root)
+//        customTitleBinding.tvDialogTitle.text = myActivity.getString(R.string.notesOptionAddFolder)
+//        myBuilder?.setCustomTitle(customTitleBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
+        myAlertDialog?.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         myAlertDialog?.show()
 
