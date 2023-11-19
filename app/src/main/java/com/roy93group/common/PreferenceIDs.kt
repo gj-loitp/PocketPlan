@@ -1,5 +1,8 @@
 package com.roy93group.common
 
+import androidx.annotation.Keep
+
+@Keep
 enum class PreferenceIDs(val id: String) {
     EDIT_NOTE_CONTENT("editNoteContent"),
     EDIT_NOTE_TITLE("editNoteTitle"),
