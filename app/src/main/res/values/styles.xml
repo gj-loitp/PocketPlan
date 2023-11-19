@@ -27,8 +27,8 @@
         <item name="colorGray">#1C1C1C</item>
         <item name="colorGrayL">#1C1C1C</item>
         <item name="colorGrayD">#2B2A2A</item>
-        <item name="colorAccent">#0652A5</item>
-        <item name="colorAccentClone">#0652A5</item>
+        <item name="colorAccent">#009688</item>
+        <item name="colorAccentClone">#009688</item>
         <item name="colorBackgroundListElement">#252525</item>
         <item name="colorBirthdayNotify">#1976D2</item>
         <item name="colorBirthdayNotifyDisabled">#313131</item>
