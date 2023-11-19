@@ -35,7 +35,6 @@
             android:textSize="@dimen/font_size_small" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clButtonsImpExp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
