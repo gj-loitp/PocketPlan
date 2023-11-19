@@ -287,6 +287,7 @@ class MultiShoppingFr : Fragment() {
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
+        myAlertDialog?.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         myAlertDialog?.show()
 

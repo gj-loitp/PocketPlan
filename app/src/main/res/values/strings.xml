@@ -376,5 +376,6 @@
     <string name="maintainer">Maintainer</string>
     <string name="roy93group">roy93group@gmail.com</string>
     <string name="add_folder">Add folder</string>
+    <string name="add_list">Add list</string>
 
 </resources>
