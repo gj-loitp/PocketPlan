@@ -887,12 +887,13 @@ class BirthdayFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder = activity?.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
 //        val myTitle = layoutInflater.inflate(R.layout.title_dialog, null)
-        val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        myTitleDialogBinding.tvDialogTitle.text = resources.getText(R.string.birthdayDialogAddTitle)
-        myBuilder?.setCustomTitle(myTitleDialogBinding.root)
+//        val myTitleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        myTitleDialogBinding.tvDialogTitle.text = resources.getText(R.string.birthdayDialogAddTitle)
+//        myBuilder?.setCustomTitle(myTitleDialogBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
+        myAlertDialog?.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         myAlertDialog?.show()
 
