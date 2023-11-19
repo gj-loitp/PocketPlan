@@ -4,7 +4,7 @@
     <item
         android:id="@+id/itemEditorDelete"
         android:icon="@drawable/ic_action_delete"
-        android:title=""
+        android:title="@string/delete_note"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itemEditorColor"
