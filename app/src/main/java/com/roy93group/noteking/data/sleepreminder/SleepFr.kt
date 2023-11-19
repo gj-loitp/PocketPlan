@@ -198,10 +198,9 @@ class SleepFr : Fragment() {
             dialogPickTimeBinding.tvHourMinuteAttachment.text = "m"
 
             val myBuilder = AlertDialog.Builder(myActivity).setView(dialogPickTimeBinding.root)
-            val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-
-            titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.sleepDuration)
-            myBuilder.setCustomTitle(titleDialogBinding.root)
+//            val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//            titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.sleepDuration)
+//            myBuilder.setCustomTitle(titleDialogBinding.root)
 
             val myAlertDialog = myBuilder.create()
             val dialogWindow = myAlertDialog.window
@@ -210,6 +209,7 @@ class SleepFr : Fragment() {
                 WindowManager.LayoutParams.WRAP_CONTENT
             )
             dialogWindow?.setGravity(Gravity.CENTER)
+            myAlertDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
             myAlertDialog.show()
 
             dialogPickTimeBinding.npHour.value =
@@ -367,13 +367,14 @@ class SleepAdapter(mainActivity: MainActivity, sleepFr: SleepFr) :
             dialogPickTimeBinding.tvHourMinuteAttachment.text = "m"
 
             val myBuilder2 = AlertDialog.Builder(myActivity).setView(dialogPickTimeBinding.root)
-            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
-            titleDialogBinding.tvDialogTitle.text = myActivity.getString(
-                R.string.sleepDurationDay
-            )
-            myBuilder2.setCustomTitle(titleDialogBinding.root)
+//            val titleDialogBinding = VTitleDialogBinding.inflate(LayoutInflater.from(myActivity))
+//            titleDialogBinding.tvDialogTitle.text = myActivity.getString(
+//                R.string.sleepDurationDay
+//            )
+//            myBuilder2.setCustomTitle(titleDialogBinding.root)
 
             val myAlertDialog2 = myBuilder2.create()
+            myAlertDialog2.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
             myAlertDialog2.show()
 
             dialogPickTimeBinding.npHour.value = myFragment.sleepReminderInstance.reminder[day]?.getDurationHour()!!
