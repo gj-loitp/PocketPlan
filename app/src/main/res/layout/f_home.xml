@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorBackground"
-    android:paddingHorizontal="10dp"
-    android:paddingBottom="10dp"
+    android:paddingHorizontal="16dp"
     tools:context=".data.home.HomeFr">
 
     <androidx.appcompat.widget.AppCompatImageView

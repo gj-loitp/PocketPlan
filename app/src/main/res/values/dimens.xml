@@ -4,7 +4,7 @@
     <dimen name="font_size_medium">17sp</dimen>
     <dimen name="font_size_small">15sp</dimen>
     <dimen name="font_size_very_small">13sp</dimen>
-    <dimen name="cornerRadius">7dp</dimen>
-    <dimen name="elevation">5dp</dimen>
-    <dimen name="btnElevation">3dp</dimen>
+    <dimen name="cornerRadius">16dp</dimen>
+    <dimen name="elevation">3dp</dimen>
+    <dimen name="btnElevation">8dp</dimen>
 </resources>
