@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.settings.sub_categories.shoppinglist
+package com.roy93group.noteking.data.settings.subCategories.shoppinglist
 
 import android.os.Bundle
 import android.view.LayoutInflater

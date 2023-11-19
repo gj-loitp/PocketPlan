@@ -43,9 +43,9 @@ import com.roy93group.noteking.data.settings.Languages
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsMainFr
 import com.roy93group.noteking.data.settings.SettingsManager
-import com.roy93group.noteking.data.settings.sub_categories.*
-import com.roy93group.noteking.data.settings.sub_categories.shoppinglist.CustomItemFr
-import com.roy93group.noteking.data.settings.sub_categories.shoppinglist.SettingsShoppingFr
+import com.roy93group.noteking.data.settings.subCategories.*
+import com.roy93group.noteking.data.settings.subCategories.shoppinglist.CustomItemFr
+import com.roy93group.noteking.data.settings.subCategories.shoppinglist.SettingsShoppingFr
 import com.roy93group.noteking.data.shoppinglist.ItemTemplateList
 import com.roy93group.noteking.data.shoppinglist.MultiShoppingFr
 import com.roy93group.noteking.data.shoppinglist.ShoppingListWrapper

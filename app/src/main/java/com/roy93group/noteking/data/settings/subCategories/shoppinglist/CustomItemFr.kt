@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.settings.sub_categories.shoppinglist
+package com.roy93group.noteking.data.settings.subCategories.shoppinglist
 
 import android.annotation.SuppressLint
 import android.os.Bundle

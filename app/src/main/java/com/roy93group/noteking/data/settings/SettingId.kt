@@ -2,7 +2,6 @@ package com.roy93group.noteking.data.settings
 
 import java.util.Locale
 
-
 enum class SettingId(val default: Any) {
     EXPAND_ONE_CATEGORY(false),
     COLLAPSE_CHECKED_SUBLISTS(true),

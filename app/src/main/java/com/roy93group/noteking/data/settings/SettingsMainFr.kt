@@ -13,14 +13,11 @@ import com.roy93group.noteking.databinding.FSettingsMainBinding
 import com.roy93group.noteking.systemInteraction.handler.share.BackUpActivity
 
 class SettingsMainFr : Fragment() {
-
     private var _fragmentSettingsMainBinding: FSettingsMainBinding? = null
     private val fragmentSettingsMainBinding get() = _fragmentSettingsMainBinding!!
-
     private lateinit var myActivity: MainActivity
     private lateinit var clSettingNotes: ConstraintLayout
     private lateinit var clSettingShopping: ConstraintLayout
-
     private lateinit var clSettingBackup: ConstraintLayout
     private lateinit var clSettingAbout: ConstraintLayout
     private lateinit var clSettingsGeneral: ConstraintLayout
@@ -28,14 +25,13 @@ class SettingsMainFr : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         myActivity = activity as MainActivity
         _fragmentSettingsMainBinding = FSettingsMainBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         initializeComponents(fragmentSettingsMainBinding)
         initializeListeners()
-
         return fragmentSettingsMainBinding.root
     }
 

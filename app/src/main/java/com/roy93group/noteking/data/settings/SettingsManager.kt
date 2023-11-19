@@ -51,7 +51,8 @@ class SettingsManager {
                 try {
                     SettingId.valueOf(settingId)
                     settings[settingId] = value
-                } catch (_: Exception) { /* no-op */ }
+                } catch (_: Exception) { /* no-op */
+                }
             }
         }
 
@@ -68,6 +69,5 @@ class SettingsManager {
         }
 
     }
-
 
 }

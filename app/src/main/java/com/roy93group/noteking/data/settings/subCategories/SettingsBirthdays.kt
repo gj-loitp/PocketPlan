@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.settings.sub_categories
+package com.roy93group.noteking.data.settings.subCategories
 
 import android.app.TimePickerDialog
 import android.os.Bundle

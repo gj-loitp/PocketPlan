@@ -1,6 +1,6 @@
 package com.roy93group.noteking.data.settings
 
-enum class Languages (val index: Double, val code: String) {
+enum class Languages(val index: Double, val code: String) {
     ENGLISH(0.0, "en"),
     GERMAN(1.0, "de"),
     FRENCH(2.0, "fr"),

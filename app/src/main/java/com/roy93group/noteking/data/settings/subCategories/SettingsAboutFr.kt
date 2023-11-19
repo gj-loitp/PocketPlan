@@ -1,4 +1,4 @@
-package com.roy93group.noteking.data.settings.sub_categories
+package com.roy93group.noteking.data.settings.subCategories
 
 import android.content.Intent
 import android.net.Uri
