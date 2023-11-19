@@ -151,7 +151,7 @@
         android:id="@+id/clAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="?attr/colorBackgroundElevated"
         android:clickable="true"
         android:focusable="true"

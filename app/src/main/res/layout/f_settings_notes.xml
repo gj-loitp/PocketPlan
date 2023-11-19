@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -73,7 +73,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -110,7 +110,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -183,7 +183,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -212,7 +212,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -243,7 +243,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -274,7 +274,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -307,7 +307,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -349,7 +349,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -399,7 +399,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -427,7 +427,7 @@
                 android:id="@+id/clShowArchive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView

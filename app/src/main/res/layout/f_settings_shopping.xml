@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -57,7 +57,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -85,7 +85,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -114,7 +114,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -143,7 +143,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -179,7 +179,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -217,7 +217,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingHorizontal="20dp" />
+                android:paddingHorizontal="16dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

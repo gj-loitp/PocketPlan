@@ -112,7 +112,7 @@
                 android:id="@+id/tvHintDays"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="16dp"
                 android:text="@string/sleepHint"
                 android:textColor="?attr/colorHint"
                 android:textSize="@dimen/font_size_small"

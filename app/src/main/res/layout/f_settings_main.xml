@@ -22,8 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 tools:ignore="RtlSymmetry">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -39,7 +39,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
+                    android:paddingStart="16dp"
                     android:text="@string/settingsGeneralTitle"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -55,8 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 tools:ignore="RtlSymmetry">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -72,7 +72,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
+                    android:paddingStart="16dp"
                     android:text="@string/settingsNotesTitle"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -88,8 +88,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 android:paddingEnd="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -105,8 +105,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:text="@string/settingsShoppingListTitle"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -122,8 +122,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 android:paddingEnd="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -139,8 +139,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:text="@string/menuTitleBirthdays"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -156,8 +156,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 android:paddingEnd="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -173,8 +173,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:text="@string/settingsBackupTitle"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -190,8 +190,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingVertical="20dp"
-                android:paddingStart="20dp"
+                android:paddingVertical="16dp"
+                android:paddingStart="16dp"
                 android:paddingEnd="0dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -207,8 +207,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
                     android:text="@string/menuTitleAbout"
                     android:textColor="?attr/colorOnBackGround"
                     android:textSize="@dimen/font_size_medium"
@@ -222,7 +222,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingHorizontal="20dp" />
+                android:paddingHorizontal="16dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -20,7 +20,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="15dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="?attr/selectableItemBackground"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -198,7 +198,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="16dp"
                 android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -338,8 +338,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvShake"
@@ -382,8 +382,8 @@
                 android:id="@+id/clResetToDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView2"

@@ -5,9 +5,9 @@
     android:background="?attr/colorBackgroundElevated"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingStart="20dp"
+    android:paddingStart="16dp"
     android:paddingEnd="23dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"
