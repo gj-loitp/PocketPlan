@@ -27,8 +27,8 @@
         <item name="colorGray">#1C1C1C</item>
         <item name="colorGrayL">#1C1C1C</item>
         <item name="colorGrayD">#2B2A2A</item>
-        <item name="colorAccent">#009688</item>
-        <item name="colorAccentClone">#009688</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="colorAccentClone">#ffffff</item>
         <item name="colorBackgroundListElement">#252525</item>
         <item name="colorBirthdayNotify">#1976D2</item>
         <item name="colorBirthdayNotifyDisabled">#313131</item>
@@ -155,8 +155,8 @@
         <item name="colorGray">#A5A1A1</item>
         <item name="colorGrayL">#A5A1A1</item>
         <item name="colorGrayD">#D3D3D3</item>
-        <item name="colorAccent">#009688</item>
-        <item name="colorAccentClone">#009688</item>
+        <item name="colorAccent">#000000</item>
+        <item name="colorAccentClone">#000000</item>
         <item name="colorBackgroundListElement">#E1E1E1</item>
         <item name="colorBirthdayNotify">#5FCFFB</item>
         <item name="colorBirthdayNotifyDisabled">#CDCDCD</item>
