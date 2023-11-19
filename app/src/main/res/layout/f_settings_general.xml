@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
                 android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView3"
@@ -225,7 +225,7 @@
                     android:id="@+id/rgDarkBorderStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -277,7 +277,7 @@
                     android:id="@+id/cardView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     app:cardBackgroundColor="?attr/colorGoToSleep"
                     app:cardCornerRadius="@dimen/cornerRadius"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -307,7 +307,7 @@
                     android:id="@+id/cardView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     app:cardBackgroundColor="?attr/colorGoToSleep"
                     app:cardCornerRadius="@dimen/cornerRadius"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -398,7 +398,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
+                    android:paddingStart="16dp"
                     android:text="@string/settingsGeneralResetToDefault"
                     android:textColor="?attr/colorGoToSleep"
                     android:textSize="@dimen/font_size_small"

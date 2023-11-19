@@ -21,7 +21,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -38,8 +38,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:paddingVertical="10dp">
+                android:layout_marginStart="16dp"
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvEstep"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -108,8 +108,8 @@
                 android:id="@+id/clGithubLink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:paddingVertical="10dp">
+                android:layout_marginStart="16dp"
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvViewOn"
@@ -135,7 +135,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -152,8 +152,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:paddingVertical="10dp">
+                android:layout_marginStart="16dp"
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="10dp"
+                android:paddingVertical="16dp"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -191,8 +191,8 @@
                 android:id="@+id/clSupportThisProject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:paddingVertical="10dp"
+                android:layout_marginStart="16dp"
+                android:paddingVertical="16dp"
                 android:visibility="gone"
                 tools:visibility="visible">
 
@@ -220,7 +220,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="11dp"
-                android:paddingVertical="10dp">
+                android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvVersionAbout"

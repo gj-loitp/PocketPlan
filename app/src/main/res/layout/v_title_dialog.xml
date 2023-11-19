@@ -10,7 +10,7 @@
         android:background="?attr/colorBackground"
         android:gravity="start"
         android:paddingStart="13dp"
-        android:paddingTop="10dp"
+        android:paddingTop="16dp"
         android:paddingEnd="0dp"
         android:text="@string/tasksAddTitle"
         android:textColor="?attr/colorOnBackGround"

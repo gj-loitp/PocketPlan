@@ -33,9 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="3dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:cardBackgroundColor="?attr/colorBackgroundElevated"
+        app:cardCornerRadius="@dimen/cornerRadius45"
         app:cardElevation="@dimen/elevation"
         app:layout_constraintTop_toBottomOf="@id/tvRemainingWakeTime">
 
@@ -74,9 +75,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="3dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="5dp"
         app:cardBackgroundColor="?attr/colorBackgroundElevated"
+        app:cardCornerRadius="@dimen/cornerRadius45"
         app:cardElevation="@dimen/elevation"
         app:layout_constraintTop_toBottomOf="@id/panelTasks">
 
