@@ -31,6 +31,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.roy93group.common.PreferenceIDs
+import com.roy93group.common.moreApp
+import com.roy93group.common.openBrowserPolicy
+import com.roy93group.common.rateApp
+import com.roy93group.common.shareApp
 import com.roy93group.noteking.data.birthdaylist.BirthdayFr
 import com.roy93group.noteking.data.birthdaylist.BirthdayList
 import com.roy93group.noteking.data.fragmenttags.FT
@@ -294,6 +298,26 @@ class MainActivity : AppCompatActivity() {
                 R.id.menuItemSettings -> changeToFragment(FT.SETTINGS)
                 R.id.menuSleepReminder -> changeToFragment(FT.SLEEP)
                 R.id.menuHelp -> changeToFragment(FT.SETTINGS_HOWTO)
+                R.id.menuItemRateApp -> {
+                    rateApp(packageName)
+                }
+
+                R.id.menuItemMoreApp -> {
+                    moreApp()
+                }
+
+                R.id.menuItemShareApp -> {
+                    shareApp()
+                }
+
+                R.id.menuItemApplovin -> {
+                    //TODO roy93~
+                    toast("This feature will be available soon.")
+                }
+
+                R.id.menuItemPolicyApp -> {
+                    openBrowserPolicy()
+                }
             }
             drawerLayoutBinding.drawerLayout.closeDrawer(GravityCompat.START)
             true

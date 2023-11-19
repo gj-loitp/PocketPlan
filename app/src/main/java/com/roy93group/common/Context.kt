@@ -64,13 +64,10 @@ fun Context?.openUrlInBrowser(
         return
     }
     try {
-        val defaultBrowser =
-            Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_BROWSER)
-        defaultBrowser.data = Uri.parse(url)
-        this.startActivity(defaultBrowser)
-    } catch (e: Exception) {
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         this.startActivity(i)
+    } catch (e: Exception) {
+        e.printStackTrace()
     }
 }
