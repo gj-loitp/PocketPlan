@@ -28,6 +28,10 @@
         android:id="@+id/menuItemApplovin"
         android:icon="@drawable/baseline_admin_panel_settings_24"
         android:title="@string/applovin" />
+<!--    <item-->
+<!--        android:id="@+id/menuItemLicense"-->
+<!--        android:icon="@drawable/baseline_admin_panel_settings_24"-->
+<!--        android:title="@string/license" />-->
     <item
         android:id="@+id/menuItemPolicyApp"
         android:icon="@drawable/baseline_security_24"

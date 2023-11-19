@@ -8,7 +8,6 @@ import android.app.Application
 //TODO vung bi mat de show applovin config
 
 //TODO keystore
-//TODO license
 
 //done
 //gen ic_launcher https://easyappicon.com/
@@ -19,6 +18,7 @@ import android.app.Application
 //policy
 //rename app
 //github
+//license
 
 class App : Application() {
 

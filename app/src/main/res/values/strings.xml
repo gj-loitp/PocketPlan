@@ -384,5 +384,6 @@
     <string name="term_policy"><![CDATA[Term & Policy]]></string>
     <string name="applovin">Applovin</string>
     <string name="https_github_com_gj_loitp_pocketplan">https://github.com/gj-loitp/PocketPlan</string>
+    <string name="license">License</string>
 
 </resources>

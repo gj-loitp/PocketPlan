@@ -31,8 +31,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.roy93group.common.PreferenceIDs
+import com.roy93group.common.URL_LICENSE
+import com.roy93group.common.URL_POLICY_NOTION
 import com.roy93group.common.moreApp
 import com.roy93group.common.openBrowserPolicy
+import com.roy93group.common.openUrlInBrowser
 import com.roy93group.common.rateApp
 import com.roy93group.common.shareApp
 import com.roy93group.noteking.data.birthdaylist.BirthdayFr
@@ -315,6 +318,9 @@ class MainActivity : AppCompatActivity() {
                     toast("This feature will be available soon.")
                 }
 
+//                R.id.menuItemLicense -> {
+//                    openUrlInBrowser(url = URL_LICENSE)
+//                }
                 R.id.menuItemPolicyApp -> {
                     openBrowserPolicy()
                 }

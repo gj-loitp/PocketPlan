@@ -52,6 +52,8 @@ fun Context?.sendEmail(
 const val URL_POLICY_NOTION =
     "https://loitp.notion.site/loitp/Privacy-Policy-319b1cd8783942fa8923d2a3c9bce60f/"
 
+const val URL_LICENSE = "https://raw.githubusercontent.com/gj-loitp/PocketPlan/master/LICENSE"
+
 fun Context.openBrowserPolicy(
 ) {
     this.openUrlInBrowser(url = URL_POLICY_NOTION)
