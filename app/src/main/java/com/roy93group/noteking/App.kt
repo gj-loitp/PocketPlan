@@ -14,11 +14,11 @@ import android.app.Application
 //TODO license
 //TODO ad applovin
 //TODO vung bi mat de show applovin config
-//TODO update UI switch
 
 //done
 //gen ic_launcher https://easyappicon.com/
 //proguard
+//update UI switch
 
 class App : Application() {
 

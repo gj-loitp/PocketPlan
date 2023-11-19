@@ -76,9 +76,13 @@
                     android:id="@+id/swExpandOneCategory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvOneCategory"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvOneCategory" />
+                    app:layout_constraintTop_toTopOf="@id/tvOneCategory"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,9 +108,13 @@
                     android:id="@+id/swCollapseCheckedSublists"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvCollapseCheckedCategories"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvCollapseCheckedCategories"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -133,9 +141,13 @@
                     android:id="@+id/swMoveCheckedCategoriesDown"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvMoveCheckedToBottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvMoveCheckedToBottom"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -161,9 +173,13 @@
                     android:id="@+id/swCloseAddItemDialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvCloseAddItemDialog"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -207,9 +223,13 @@
                     android:id="@+id/swSuggestSimilarItems"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvSuggestSimilarItems"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

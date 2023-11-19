@@ -47,9 +47,13 @@
                     android:id="@+id/swSystemTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -365,9 +369,13 @@
                     android:id="@+id/swShakeTaskInHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

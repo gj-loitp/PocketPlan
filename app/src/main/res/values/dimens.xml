@@ -8,4 +8,6 @@
     <dimen name="cornerRadius45">45dp</dimen>
     <dimen name="elevation">3dp</dimen>
     <dimen name="btnElevation">8dp</dimen>
+    <color name="white">#FFFFFF</color>
+    <color name="lightGrey">#D3D3D3</color>
 </resources>

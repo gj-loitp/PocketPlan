@@ -94,9 +94,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvRandomize"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvRandomize" />
+                    app:layout_constraintTop_toTopOf="@id/tvRandomize"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,9 +134,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvFixedNoteSize"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvFixedNoteSize" />
+                    app:layout_constraintTop_toTopOf="@id/tvFixedNoteSize"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -203,9 +211,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvAllowSwipeDelete"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvAllowSwipeDelete" />
+                    app:layout_constraintTop_toTopOf="@id/tvAllowSwipeDelete"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -234,9 +246,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvShowContained"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvShowContained" />
+                    app:layout_constraintTop_toTopOf="@id/tvShowContained"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -265,9 +281,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvSortFoldersTop"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvSortFoldersTop" />
+                    app:layout_constraintTop_toTopOf="@id/tvSortFoldersTop"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -296,9 +316,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvMoveUpCurrentNote"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvMoveUpCurrentNote" />
+                    app:layout_constraintTop_toTopOf="@id/tvMoveUpCurrentNote"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -381,9 +405,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="3dp"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

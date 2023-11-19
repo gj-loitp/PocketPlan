@@ -47,9 +47,13 @@
                     android:id="@+id/swShowMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@+id/textView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvOneCategory" />
+                    app:layout_constraintTop_toTopOf="@id/tvOneCategory"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -84,9 +88,13 @@
                     android:id="@+id/swSouthColors"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@+id/textView7"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvNorth" />
+                    app:layout_constraintTop_toTopOf="@id/tvNorth"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -112,9 +120,13 @@
                     android:id="@+id/swPreview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:thumb="@drawable/sw_thumb_selector"
                     app:layout_constraintBottom_toBottomOf="@id/tvPreview"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvPreview" />
+                    app:layout_constraintTop_toTopOf="@id/tvPreview"
+                    app:thumbTint="@color/white"
+                    app:track="@drawable/sw_track_selector"
+                    app:trackTintMode="multiply" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
