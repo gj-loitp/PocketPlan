@@ -22,25 +22,22 @@ import com.roy93group.noteking.data.sleepreminder.SleepReminder
 import com.roy93group.noteking.data.todolist.TodoFr
 import com.roy93group.noteking.databinding.FHomeBinding
 
-
 /**
  * A simple [Fragment] subclass.
  */
 class HomeFr : Fragment() {
     private var _fragmentBinding: FHomeBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
-
     private lateinit var myActivity: MainActivity
-
     private var cr = 0f
     private lateinit var myBirthdayFr: BirthdayFr
     private lateinit var mySleepFr: SleepFr
-
     private lateinit var timer: CountDownTimer
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FHomeBinding.inflate(inflater, container, false)
         myActivity = (activity as MainActivity)
@@ -74,14 +71,15 @@ class HomeFr : Fragment() {
         fragmentBinding.tvRemainingWakeTime.setOnClickListener { myActivity.changeToFragment(FT.SLEEP) }
         fragmentBinding.icSleepHome.setOnClickListener { myActivity.changeToFragment(FT.SLEEP) }
 
-
         //buttons to create new notes, tasks, terms or items from the home panel
         fragmentBinding.clAddNote.setOnClickListener {
             NoteFr.editNoteHolder = null
             NoteEditorFr.noteColor = NoteColors.GREEN
             myActivity.changeToFragment(FT.NOTE_EDITOR)
         }
-        fragmentBinding.clAddTask.setOnClickListener { myActivity.todoFr!!.dialogAddTask() }
+        fragmentBinding.clAddTask.setOnClickListener {
+            myActivity.todoFr?.dialogAddTask()
+        }
         fragmentBinding.clAddItem.setOnClickListener {
             myActivity.multiShoppingFr.editing = false
             myActivity.multiShoppingFr.openAddItemDialog()
@@ -124,7 +122,6 @@ class HomeFr : Fragment() {
             //sleep present, smaller distance
             params.setMargins(sideMargin, bottomMargin, sideMargin, bottomMargin)
         }
-
 
         if (SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean) {
             fragmentBinding.panelTasks.radius = cr
@@ -225,12 +222,8 @@ class HomeFr : Fragment() {
             return
         }
         //no birthday today, set colors to gray
-        fragmentBinding.tvBirthday.setTextColor(
-            myActivity.colorForAttr(R.attr.colorHint)
-        )
-        fragmentBinding.icBirthdaysHome.setColorFilter(
-            myActivity.colorForAttr(R.attr.colorHint)
-        )
+        fragmentBinding.tvBirthday.setTextColor(myActivity.colorForAttr(R.attr.colorHint))
+        fragmentBinding.icBirthdaysHome.setColorFilter(myActivity.colorForAttr(R.attr.colorHint))
 
         //check for ANY birthday in the next 30 days
         val nextBirthday = MainActivity.birthdayList.getNextRelevantBirthday()
@@ -261,9 +254,7 @@ class HomeFr : Fragment() {
      * Checks if SleepReminder is active and shows time / icon in correct color if that's the case.
      */
     private fun updateWakeTimePanel() {
-
         val (message, status) = mySleepFr.sleepReminderInstance.getRemainingWakeDurationString()
-
         //0 -> positive wake time, 1 -> negative wake time, 2 -> no reminder set
         when (status) {
             0 -> { //show icon, set and show message, text white
@@ -277,6 +268,7 @@ class HomeFr : Fragment() {
                     myActivity.colorForAttr(R.attr.colorIconTint)
                 )
             }
+
             1 -> {
                 //show icon, set and show message, text red
                 fragmentBinding.icSleepHome.visibility = View.VISIBLE
@@ -289,6 +281,7 @@ class HomeFr : Fragment() {
                     myActivity.colorForAttr(R.attr.colorGoToSleep)
                 )
             }
+
             2 -> {
                 //hide icon, hide text
                 fragmentBinding.icSleepHome.visibility = View.GONE
@@ -297,5 +290,3 @@ class HomeFr : Fragment() {
         }
     }
 }
-
-

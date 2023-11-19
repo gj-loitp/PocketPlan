@@ -41,7 +41,6 @@ import kotlin.random.Random
  */
 
 class NoteFr : Fragment() {
-
     private lateinit var myMenu: Menu
     private lateinit var myRecycler: RecyclerView
     lateinit var searchView: SearchView
@@ -49,7 +48,6 @@ class NoteFr : Fragment() {
     lateinit var myActivity: MainActivity
     private var _frBinding: FNoteBinding? = null
     private val frBinding get() = _frBinding!!
-
     val darkBorderStyle = SettingsManager.getSetting(SettingId.DARK_BORDER_STYLE) as Double
     val dark = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
     val archiveDeletedNotes = SettingsManager.getSetting(SettingId.NOTES_ARCHIVE) as Boolean
@@ -58,40 +56,31 @@ class NoteFr : Fragment() {
     companion object {
         lateinit var myAdapter: NoteAdapter
         var noteLines = 0
-
         var deletedNote: Note? = null
-
         var searching = false
-
         lateinit var searchResults: ArrayList<Note>
         lateinit var lastQuery: String
         var editNoteHolder: Note? = null
-
         var displayContent: String = ""
         var displayTitle: String = ""
         var displayColor: Int = -1
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
-
         myActivity = (activity as MainActivity)
-
         //inflating layout for NoteFragment
         _frBinding = FNoteBinding.inflate(inflater)
-
         //reset deletedNote to signal no undo is possible
         deletedNote = null
-
         //create and set new adapter for recyclerview
         myRecycler = frBinding.recyclerViewNote
         myAdapter = NoteAdapter(myActivity, this)
         myRecycler.adapter = myAdapter
-
         initializeComponents()
-
         myAdapter.notifyDataSetChanged()
         myRecycler.scrollToPosition(0)
         return frBinding.root
@@ -210,7 +199,7 @@ class NoteFr : Fragment() {
             }
 
             R.id.itemNotesUndo -> {
-                if (deletedNote!!.content != null) noteListDirs.addFullNote(deletedNote!!)
+                if (deletedNote?.content != null) noteListDirs.addFullNote(deletedNote!!)
                 else noteListDirs.addNoteDir(deletedNote!!)
 
                 if (searching) {
@@ -253,8 +242,7 @@ class NoteFr : Fragment() {
         val myDialogBinding = DlgAddNoteFolderBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
-        val myBuilder =
-            myActivity.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
+        val myBuilder = myActivity.let { it1 -> AlertDialog.Builder(it1).setView(myDialogBinding.root) }
         val customTitleBinding = VTitleDialogBinding.inflate(layoutInflater)
         customTitleBinding.tvDialogTitle.text = getString(R.string.notesEditFolder)
         myBuilder?.setCustomTitle(customTitleBinding.root)
@@ -502,7 +490,6 @@ class NoteFr : Fragment() {
         myDialogBinding.etAddNoteFolder.requestFocus()
     }
 
-
     private fun initializeComponents() {
         val noteColumns = SettingsManager.getSetting(SettingId.NOTE_COLUMNS) as String
 
@@ -534,7 +521,7 @@ class NoteFr : Fragment() {
                 override fun onMove(
                     recyclerView: RecyclerView,
                     viewHolder: ViewHolder,
-                    target: ViewHolder
+                    target: ViewHolder,
                 ): Boolean {
                     return true
                 }
@@ -620,19 +607,13 @@ class NoteFr : Fragment() {
 class NoteAdapter(mainActivity: MainActivity, noteFr: NoteFr) :
     RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     private val myActivity = mainActivity
-
-    private val showContained =
-        SettingsManager.getSetting(SettingId.NOTES_SHOW_CONTAINED) as Boolean
-    private val moveViewedToTop =
-        SettingsManager.getSetting(SettingId.NOTES_MOVE_UP_CURRENT) as Boolean
-    private val foldersToTop =
-        SettingsManager.getSetting(SettingId.NOTES_DIRS_TO_TOP) as Boolean
+    private val showContained = SettingsManager.getSetting(SettingId.NOTES_SHOW_CONTAINED) as Boolean
+    private val moveViewedToTop = SettingsManager.getSetting(SettingId.NOTES_MOVE_UP_CURRENT) as Boolean
+    private val foldersToTop = SettingsManager.getSetting(SettingId.NOTES_DIRS_TO_TOP) as Boolean
     private val round = SettingsManager.getSetting(SettingId.SHAPES_ROUND) as Boolean
     private val dark = SettingsManager.getSetting(SettingId.THEME_DARK) as Boolean
-
     private val density = myActivity.resources.displayMetrics.density
     private val cr = myActivity.resources.getDimension(R.dimen.cornerRadius)
-
     private val myNoteFr = noteFr
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {

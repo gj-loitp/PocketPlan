@@ -41,7 +41,6 @@ class NoteDirList : Checkable {
             save()
         } catch (_: Exception) {/* no-op */
         }
-
     }
 
     /**
@@ -52,7 +51,7 @@ class NoteDirList : Checkable {
      * @see NoteList.addNote
      */
     fun addNote(title: String, content: String, color: NoteColors) {
-        currentList().addNote(title, content, color)
+        currentList().addNote(title = title, content = content, color = color)
         save()
     }
 
@@ -75,7 +74,9 @@ class NoteDirList : Checkable {
      * From superordinate-paths
      */
     fun getParentFolderIndex(dir: Note): Int {
-        val parentDir = getDirPathsWithRef().find { it.second.noteList.contains(dir) }!!.second
+        val parentDir = getDirPathsWithRef().find {
+            it.second.noteList.contains(dir)
+        }?.second
         val containingDirs = containingDirs(dir)
         containingDirs.add(dir)
         val supPairs = getDirPathsWithRef().filter {
@@ -142,13 +143,12 @@ class NoteDirList : Checkable {
                 }
             } else {
                 //Check subDirectory val
-                val subResult = getNoteByTitleAndContent(title, content, note)
+                val subResult = getNoteByTitleAndContent(title = title, content = content, directory = note)
                 if (subResult != null) return subResult
             }
         }
         return null
     }
-
 
     fun getSuperordinatePaths(dir: Note, passedRootName: String): ArrayList<String> {
         val paths = arrayListOf<String>()
@@ -283,15 +283,14 @@ class NoteDirList : Checkable {
         return true
     }
 
-
     /**
      * @see NoteList.addNote
      */
     fun addNote(note: Note) {
         if (SettingsManager.getSetting(SettingId.NOTES_MOVE_UP_CURRENT) as Boolean) {
             var index = 0
-            for (n in currentList()){
-                if (n.content == null){
+            for (n in currentList()) {
+                if (n.content == null) {
                     index += 1
                 }
             }

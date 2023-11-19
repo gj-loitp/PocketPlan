@@ -1,6 +1,5 @@
 package com.roy93group.noteking.data.notelist
 
-
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
@@ -31,21 +30,15 @@ import com.roy93group.noteking.databinding.FNoteEditorBinding
 import com.roy93group.noteking.databinding.VTitleDialogBinding
 import kotlin.random.Random
 
-
 class NoteEditorFr : Fragment() {
 
     private var _fragmentBinding: FNoteEditorBinding? = null
     private val fragmentBinding get() = _fragmentBinding!!
-
     private lateinit var myActivity: MainActivity
     private lateinit var myNoteFr: NoteFr
-
     private var dialogOpened = false
-
     private val archiveDeletedNotes = SettingsManager.getSetting(SettingId.NOTES_ARCHIVE) as Boolean
-
     private lateinit var myMenu: Menu
-
     private val colorList = arrayOf(
         R.attr.colorNoteRed, R.attr.colorNoteYellow,
         R.attr.colorNoteGreen, R.attr.colorNoteBlue, R.attr.colorNotePurple,
@@ -59,25 +52,18 @@ class NoteEditorFr : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentBinding = FNoteEditorBinding.inflate(inflater, container, false)
         myActivity = activity as MainActivity
         myNoteFr = myActivity.getFragment(FT.NOTES) as NoteFr
-
-
-
-
         val fontSize = SettingsManager.getSetting(SettingId.FONT_SIZE).toString().trim().toFloat()
-
         fragmentBinding.etNoteTitle.textSize = fontSize + 4
         fragmentBinding.etNoteContent.textSize = fontSize
-
         /**
          * Prepares WriteNoteFragment, fills in necessary text and adjusts colorEdit button when = noteFr
          * called from an editing context
          */
-
         if (NoteFr.editNoteHolder != null) {
             if (NoteFr.displayContent != "" || NoteFr.displayTitle != "") {
                 fragmentBinding.etNoteContent.setText(NoteFr.displayContent)
@@ -85,29 +71,29 @@ class NoteEditorFr : Fragment() {
                 NoteFr.displayTitle = ""
                 NoteFr.displayContent = ""
             } else {
-                fragmentBinding.etNoteTitle.setText(NoteFr.editNoteHolder!!.title)
-                fragmentBinding.etNoteContent.setText(NoteFr.editNoteHolder!!.content)
+                fragmentBinding.etNoteTitle.setText(NoteFr.editNoteHolder?.title)
+                fragmentBinding.etNoteContent.setText(NoteFr.editNoteHolder?.content)
             }
             myActivity.getPreferences(Context.MODE_PRIVATE).edit().putString(
                 PreferenceIDs.EDIT_NOTE_CONTENT.id,
-                NoteFr.editNoteHolder!!.content!!.trim()
+                NoteFr.editNoteHolder?.content?.trim()
             ).apply()
             myActivity.getPreferences(Context.MODE_PRIVATE).edit()
-                .putString(PreferenceIDs.EDIT_NOTE_TITLE.id, NoteFr.editNoteHolder!!.title.trim())
+                .putString(PreferenceIDs.EDIT_NOTE_TITLE.id, NoteFr.editNoteHolder?.title?.trim())
                 .apply()
             myActivity.getPreferences(Context.MODE_PRIVATE).edit().putInt(
                 PreferenceIDs.EDIT_NOTE_COLOR.id,
-                NoteColors.values().indexOf(NoteFr.editNoteHolder!!.color)
+                NoteColors.values().indexOf(NoteFr.editNoteHolder?.color)
             ).apply()
             fragmentBinding.etNoteTitle.clearFocus()
         } else {
             //Empty editNoteContent to signal we are adding a new note
             fragmentBinding.etNoteTitle.setText("")
             fragmentBinding.etNoteContent.setText("")
-            myActivity.getPreferences(Context.MODE_PRIVATE).edit()
-                .putString(PreferenceIDs.EDIT_NOTE_CONTENT.id, "").apply()
-            myActivity.getPreferences(Context.MODE_PRIVATE).edit()
-                .putString(PreferenceIDs.EDIT_NOTE_TITLE.id, "").apply()
+            myActivity.getPreferences(Context.MODE_PRIVATE).edit().putString(PreferenceIDs.EDIT_NOTE_CONTENT.id, "")
+                .apply()
+            myActivity.getPreferences(Context.MODE_PRIVATE).edit().putString(PreferenceIDs.EDIT_NOTE_TITLE.id, "")
+                .apply()
             myActivity.getPreferences(Context.MODE_PRIVATE).edit().putInt(
                 PreferenceIDs.EDIT_NOTE_COLOR.id, NoteColors.values().indexOf(
                     noteColor
@@ -172,8 +158,6 @@ class NoteEditorFr : Fragment() {
                 myActivity.changeToFragment(MainActivity.previousFragmentStack.peek())
             }
         }
-
-
         return super.onOptionsItemSelected(item)
     }
 
@@ -272,10 +256,10 @@ class NoteEditorFr : Fragment() {
     fun relevantNoteChanges(): Boolean {
 
         //check if note was edited, return otherwise
-        if (NoteFr.editNoteHolder != null && NoteFr.editNoteHolder!!.title.trim() == getEditorTitle() &&
+        if (NoteFr.editNoteHolder != null && NoteFr.editNoteHolder?.title?.trim() == getEditorTitle() &&
             //trim necessary here since older version allowed saving notes with trailing white spaces
-            NoteFr.editNoteHolder!!.content!!.trim() == getEditorContent() &&
-            NoteFr.editNoteHolder!!.color == noteColor
+            NoteFr.editNoteHolder?.content?.trim() == getEditorContent() &&
+            NoteFr.editNoteHolder?.color == noteColor
         ) {
             //no relevant note changes if the title, content and color did not get changed
             return false
@@ -295,7 +279,6 @@ class NoteEditorFr : Fragment() {
 
     @SuppressLint("InflateParams")
     fun dialogDiscardNoteChanges(fragmentTag: FT = FT.EMPTY) {
-
         if (dialogOpened) {
             return
         }
@@ -342,7 +325,7 @@ class NoteEditorFr : Fragment() {
         myActivity.hideKeyboard()
         val noteContent = getEditorContent()
         val noteTitle = getEditorTitle()
-        myNoteFr.noteListDirs.addNote(Note(noteTitle, noteContent, noteColor))
+        myNoteFr.noteListDirs.addNote(Note(name = noteTitle, content = noteContent, color = noteColor))
         val cache = MainActivity.previousFragmentStack.pop()
         if (MainActivity.previousFragmentStack.peek() == FT.HOME) {
             Toast.makeText(myActivity, R.string.notesNotificationNoteAdded, Toast.LENGTH_SHORT)
@@ -355,9 +338,9 @@ class NoteEditorFr : Fragment() {
         myActivity.hideKeyboard()
         val noteContent = getEditorContent()
         val noteTitle = getEditorTitle()
-        NoteFr.editNoteHolder!!.title = noteTitle
-        NoteFr.editNoteHolder!!.content = noteContent
-        NoteFr.editNoteHolder!!.color = noteColor
+        NoteFr.editNoteHolder?.title = noteTitle
+        NoteFr.editNoteHolder?.content = noteContent
+        NoteFr.editNoteHolder?.color = noteColor
         NoteFr.editNoteHolder = null
         myNoteFr.noteListDirs.save()
     }
@@ -367,8 +350,7 @@ class NoteEditorFr : Fragment() {
         val dialogMoveNoteBinding = DlgMoveNoteBinding.inflate(layoutInflater)
 
         //AlertDialogBuilder
-        val myBuilder =
-            myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogMoveNoteBinding.root) }
+        val myBuilder = myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogMoveNoteBinding.root) }
         val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
         titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.notesConfirmMove)
         myBuilder?.setCustomTitle(titleDialogBinding.root)
@@ -377,29 +359,27 @@ class NoteEditorFr : Fragment() {
         val myAlertDialog = myBuilder?.create()
         myAlertDialog?.show()
 
-
         val spFolderPaths = dialogMoveNoteBinding.spFolderPaths
         val paths = myNoteFr.noteListDirs.getSuperordinatePaths(
-            NoteFr.editNoteHolder!!,
-            getString(R.string.menuTitleNotes)
+            dir = NoteFr.editNoteHolder!!,
+            passedRootName = getString(R.string.menuTitleNotes)
         )
         val spFolderAdapter = ArrayAdapter(
-            myActivity, android.R.layout.simple_list_item_1,
-            paths
+            /* context = */ myActivity,
+            /* resource = */ android.R.layout.simple_list_item_1,
+            /* objects = */ paths
         )
 
-        val currentParentFolderIndex =
-            myNoteFr.noteListDirs.getParentFolderIndex(NoteFr.editNoteHolder!!)
+        val currentParentFolderIndex = myNoteFr.noteListDirs.getParentFolderIndex(NoteFr.editNoteHolder!!)
 
         spFolderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spFolderPaths.adapter = spFolderAdapter
         spFolderPaths.setSelection(currentParentFolderIndex)
 
-
         dialogMoveNoteBinding.btnAddNoteFolder.setOnClickListener {
             val moveResult = myNoteFr.noteListDirs.moveDir(
-                NoteFr.editNoteHolder!!,
-                spFolderPaths.selectedItemPosition
+                noteToMove = NoteFr.editNoteHolder!!,
+                toIndex = spFolderPaths.selectedItemPosition
             )
             NoteFr.myAdapter.notifyDataSetChanged()
             val moveMessage = when (moveResult) {
@@ -412,8 +392,6 @@ class NoteEditorFr : Fragment() {
 
         val cancelBtn = dialogMoveNoteBinding.btnCancelNoteFolder
         cancelBtn.setOnClickListener { myAlertDialog?.dismiss() }
-
-
     }
 
     @SuppressLint("InflateParams")
