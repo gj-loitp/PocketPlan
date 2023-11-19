@@ -2,8 +2,22 @@ package com.roy93group.noteking
 
 import android.app.Application
 
+//TODO firebase analytic
+//TODO why you see ad
+
+//TODO leak canary
+//TODO rate, more app, share app
+//TODO policy
+//TODO keystore
+//TODO rename app
+//TODO github
+//TODO license
+//TODO ad applovin
+//TODO vung bi mat de show applovin config
+
 //done
 //gen ic_launcher https://easyappicon.com/
+//proguard
 
 class App : Application() {
 
