@@ -772,9 +772,9 @@ class MainActivity : AppCompatActivity() {
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(this).setView(dialogConfirmBinding.root)
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = title
-        myBuilder.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = title
+//        myBuilder.setCustomTitle(titleDialogBinding.root)
         val myAlertDialog = myBuilder.create()
 
         //show or hide hint
@@ -804,6 +804,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //show dialog
+        myAlertDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog.show()
     }
 }
