@@ -289,11 +289,12 @@ class NoteEditorFr : Fragment() {
         //AlertDialogBuilder
         val myBuilder =
             myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogDiscardNoteEdit.root) }
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.noteDiscardDialogTitle)
-        myBuilder?.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = resources.getText(R.string.noteDiscardDialogTitle)
+//        myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         val myAlertDialog = myBuilder?.create()
+        myAlertDialog?.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog?.show()
         myAlertDialog?.setOnCancelListener {
             myActivity.setNavBarUnchecked()
@@ -351,12 +352,13 @@ class NoteEditorFr : Fragment() {
 
         //AlertDialogBuilder
         val myBuilder = myActivity.let { it1 -> AlertDialog.Builder(it1).setView(dialogMoveNoteBinding.root) }
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.notesConfirmMove)
-        myBuilder?.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = myActivity.getString(R.string.notesConfirmMove)
+//        myBuilder?.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder?.create()
+        myAlertDialog?.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog?.show()
 
         val spFolderPaths = dialogMoveNoteBinding.spFolderPaths
@@ -401,12 +403,13 @@ class NoteEditorFr : Fragment() {
 
         //AlertDialogBuilder
         val myBuilder = AlertDialog.Builder(myActivity).setView(dialogChooseColorBinding.root)
-        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
-        titleDialogBinding.tvDialogTitle.text = getString(R.string.menuTitleColorChoose)
-        myBuilder.setCustomTitle(titleDialogBinding.root)
+//        val titleDialogBinding = VTitleDialogBinding.inflate(layoutInflater)
+//        titleDialogBinding.tvDialogTitle.text = getString(R.string.menuTitleColorChoose)
+//        myBuilder.setCustomTitle(titleDialogBinding.root)
 
         //show dialog
         val myAlertDialog = myBuilder.create()
+        myAlertDialog.window?.setBackgroundDrawableResource(R.drawable.bkg_trans)
         myAlertDialog.show()
 
         val buttonList = arrayOf(
