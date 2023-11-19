@@ -155,8 +155,8 @@
         <item name="colorGray">#A5A1A1</item>
         <item name="colorGrayL">#A5A1A1</item>
         <item name="colorGrayD">#D3D3D3</item>
-        <item name="colorAccent">#4FC3F7</item>
-        <item name="colorAccentClone">#4FC3F7</item>
+        <item name="colorAccent">#009688</item>
+        <item name="colorAccentClone">#009688</item>
         <item name="colorBackgroundListElement">#E1E1E1</item>
         <item name="colorBirthdayNotify">#5FCFFB</item>
         <item name="colorBirthdayNotifyDisabled">#CDCDCD</item>
