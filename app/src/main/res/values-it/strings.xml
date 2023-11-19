@@ -70,7 +70,7 @@
     <string name="howtoTodoDelete">Scorri un\'attività a sinistra o a destra per eliminarla.</string>
     <string name="howtoTodoEdit">Tocca un\'attività per modificarla.</string>
     <string name="howtoTodoReorder">Premi a lungo e trascina un\'attività per spostarla all\'interno dell\'elenco.</string>
-    <string name="howtoBackupExplanation">Tutti i tuoi dati di PocketPlan sono archiviati localmente sul tuo dispositivo. Per conservare i dati in caso di perdita del dispositivo o per migrarli su un altro dispositivo, è possibile esportare un backup.\n\nVai in Impostazioni -> Backup e seleziona \"Esporta il backup completo come file .zip\", quindi salva questo file zip, ad esempio inviandolo a te stesso tramite e-mail.\n\nPer importare questo backup su un nuovo dispositivo, vai in Impostazioni -> Backup e seleziona \"Importa backup completo da file .zip\". Quindi seleziona il backup salvato in precedenza.</string>
+    <string name="howtoBackupExplanation">Tutti i tuoi dati di NoteKIng sono archiviati localmente sul tuo dispositivo. Per conservare i dati in caso di perdita del dispositivo o per migrarli su un altro dispositivo, è possibile esportare un backup.\n\nVai in Impostazioni -> Backup e seleziona \"Esporta il backup completo come file .zip\", quindi salva questo file zip, ad esempio inviandolo a te stesso tramite e-mail.\n\nPer importare questo backup su un nuovo dispositivo, vai in Impostazioni -> Backup e seleziona \"Importa backup completo da file .zip\". Quindi seleziona il backup salvato in precedenza.</string>
 
     <!--    menu-->
     <string name="menuTitleAbout">Info</string>
@@ -307,7 +307,7 @@
     <string name="show_advanced_backup_options">Mostra le opzioni di backup avanzate</string>
     <string name="settingsNotesEqualSize">Note di dimensioni uguali</string>
     <string name="settingsNotesSortFoldersTop">Ordinare le cartelle in alto</string>
-    <string name="aboutSupportThisProject">PocketPlan è privo di pubblicità e pertanto non genera alcun reddito. Se volete sostenere lo sviluppo di questo progetto, considerate la possibilità di effettuare una donazione tramite il seguente link.</string>
+    <string name="aboutSupportThisProject">NoteKIng è privo di pubblicità e pertanto non genera alcun reddito. Se volete sostenere lo sviluppo di questo progetto, considerate la possibilità di effettuare una donazione tramite il seguente link.</string>
     <string name="aboutSupportThis">Sostenete questo progetto</string>
 
 </resources>

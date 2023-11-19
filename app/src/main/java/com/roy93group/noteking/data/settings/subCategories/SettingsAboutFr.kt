@@ -22,13 +22,11 @@ class SettingsAboutFr : Fragment() {
         _fragmentSettingsAboutBinding = FSettingsAboutBinding.inflate(inflater, container, false)
 
         fragmentSettingsAboutBinding.clGithubLink.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RayLeaf-Studios/PocketPlan"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/RayLeaf-Studios/NoteKIng"))
             startActivity(intent)
         }
 
         fragmentSettingsAboutBinding.clSupportThisProject.setOnClickListener {
-//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://paypal.me/rayleaf"))
-//            startActivity(intent)
         }
 
         fragmentSettingsAboutBinding.tvStudioMail.setOnClickListener {

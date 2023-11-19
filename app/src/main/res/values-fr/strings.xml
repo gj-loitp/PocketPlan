@@ -61,7 +61,7 @@
     <string name="howtoTodoDelete">Faites glisser une tâche vers la gauche ou la droite pour la supprimer.</string>
     <string name="howtoTodoEdit">Appuyez sur une tâche pour la modifier.</string>
     <string name="howtoTodoReorder">Appuyez longuement et faites glisser une tâche pour la déplacer dans la liste.</string>
-    <string name="howtoBackupExplanation">Toutes vos données PocketPlan sont stockées localement sur votre appareil. Pour conserver vos données, au cas où vous perdriez votre appareil, ou pour les migrer vers un autre appareil, vous pouvez exporter une sauvegarde. Allez dans Paramètres -> Sauvegarde et sélectionnez "Exporter la sauvegarde complète sous .zip", puis enregistrez ce fichier zip, par exemple en vous l\'envoyant par e-mail. Pour importer cette sauvegarde sur un nouvel appareil, allez dans Paramètres -> Sauvegarde et sélectionnez "Importer la sauvegarde depuis .zip". Sélectionnez ensuite la sauvegarde précédemment enregistrée.</string>
+    <string name="howtoBackupExplanation">Toutes vos données NoteKing sont stockées localement sur votre appareil. Pour conserver vos données, au cas où vous perdriez votre appareil, ou pour les migrer vers un autre appareil, vous pouvez exporter une sauvegarde. Allez dans Paramètres -> Sauvegarde et sélectionnez "Exporter la sauvegarde complète sous .zip", puis enregistrez ce fichier zip, par exemple en vous l\'envoyant par e-mail. Pour importer cette sauvegarde sur un nouvel appareil, allez dans Paramètres -> Sauvegarde et sélectionnez "Importer la sauvegarde depuis .zip". Sélectionnez ensuite la sauvegarde précédemment enregistrée.</string>
     <string name="menuTitleAbout">À propos de</string>
     <string name="menuTitleBirthdays">Anniversaires</string>
     <string name="menuTitleColorChoose">Choisissez une couleur</string>
@@ -325,7 +325,7 @@
     <string name="show_advanced_backup_options">Aafficher les options de sauvegarde avancées</string>
     <string name="settingsNotesEqualSize">Notes de même taille</string>
     <string name="settingsNotesSortFoldersTop">Trier les dossiers en haut</string>
-    <string name="aboutSupportThisProject">PocketPlan est sans publicité et ne génère donc aucun revenu. Si vous souhaitez soutenir le développement de ce projet, pensez à faire un don via le lien suivant.</string>
+    <string name="aboutSupportThisProject">NoteKing est sans publicité et ne génère donc aucun revenu. Si vous souhaitez soutenir le développement de ce projet, pensez à faire un don via le lien suivant.</string>
     <string name="aboutSupportThis">Soutenir ce projet</string>
 
 </resources>

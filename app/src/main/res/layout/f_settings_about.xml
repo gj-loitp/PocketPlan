@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorBackground">
@@ -55,11 +56,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autoLink="email"
-                    android:text="@string/aboutMailAdress"
+                    android:text="@string/aboutMailAddress"
                     android:textColor="?attr/colorHint"
                     android:textSize="@dimen/font_size_very_small"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvEstep" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMaintainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/maintainer"
+                    android:textColor="?attr/colorOnBackGround"
+                    android:textSize="@dimen/font_size_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvStudioMail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="email"
+                    android:text="@string/roy93group"
+                    android:textColor="?attr/colorHint"
+                    android:textSize="@dimen/font_size_very_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvMaintainer" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -149,7 +171,9 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="10dp">
+                android:paddingVertical="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -168,7 +192,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:paddingVertical="10dp">
+                android:paddingVertical="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvSupportThisProject"
@@ -180,14 +206,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/aboutSponsorLink"
-                    android:textColor="?attr/colorHyperLink"
-                    android:textSize="@dimen/font_size_very_small"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvSupportThisProject" />
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="@string/aboutSponsorLink"-->
+                <!--                    android:textColor="?attr/colorHyperLink"-->
+                <!--                    android:textSize="@dimen/font_size_very_small"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/tvSupportThisProject" />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

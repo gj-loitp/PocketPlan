@@ -93,7 +93,7 @@ class ExportHandler(private val parentActivity: AppCompatActivity) {
     private fun backUpAsZip() {
         zipFile = File(
             /* parent = */ parentActivity.filesDir.absolutePath,
-            /* child = */ "pocket_plan_${BuildConfig.VERSION_NAME}_backup_${LocalDate.now()}.zip"
+            /* child = */ "NoteKing_${BuildConfig.VERSION_NAME}_backup_${LocalDate.now()}.zip"
         )
         val outputStream = FileOutputStream(zipFile)
         val zipStream = ZipOutputStream(outputStream)

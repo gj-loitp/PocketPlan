@@ -61,7 +61,7 @@
     <string name="howtoTodoDelete">Deslice una tarea hacia la izquierda o la derecha para eliminarla.</string>
     <string name="howtoTodoEdit">Toque una tarea para editarla.</string>
     <string name="howtoTodoReorder">Mantenga pulsada y arrastre una tarea para moverla dentro de la lista.</string>
-    <string name="howtoBackupExplanation">Todos sus datos de PocketPlan se almacenan localmente en su dispositivo. Para conservar sus datos, en caso de que pierda su dispositivo, o para migrarlos a un dispositivo diferente, puede exportar una copia de seguridad.\n\nVaya a ajustes -> Copia de seguridad y seleccione \n\n "Exportar copia de seguridad completa como .zip", luego guarde este archivo zip, por ejemplo enviándoselo a usted mismo por correo electrónico.\n\nPara importar esta copia de seguridad en un nuevo dispositivo, vaya a ajustes -> Copia de seguridad y seleccione \"Importar copia de seguridad de .zip\". A continuación, seleccione la copia de seguridad guardada anteriormente.</string>
+    <string name="howtoBackupExplanation">Todos sus datos de NoteKing se almacenan localmente en su dispositivo. Para conservar sus datos, en caso de que pierda su dispositivo, o para migrarlos a un dispositivo diferente, puede exportar una copia de seguridad.\n\nVaya a ajustes -> Copia de seguridad y seleccione \n\n "Exportar copia de seguridad completa como .zip", luego guarde este archivo zip, por ejemplo enviándoselo a usted mismo por correo electrónico.\n\nPara importar esta copia de seguridad en un nuevo dispositivo, vaya a ajustes -> Copia de seguridad y seleccione \"Importar copia de seguridad de .zip\". A continuación, seleccione la copia de seguridad guardada anteriormente.</string>
     <string name="menuTitleAbout">Acerca de</string>
     <string name="menuTitleBirthdays">Cumpleaños</string>
     <string name="menuTitleColorChoose">Elija un color</string>
@@ -305,7 +305,7 @@
     <string name="show_advanced_backup_options">Mostrar opciones avanzadas de copia de seguridad</string>
     <string name="settingsNotesEqualSize">Billetes de igual tamaño</string>
     <string name="settingsNotesSortFoldersTop">Ordenar las carpetas al principio</string>
-    <string name="aboutSupportThisProject">PocketPlan no tiene publicidad y, por tanto, no genera ingresos. Si desea apoyar el desarrollo de este proyecto, considere hacer una donación a través del siguiente enlace.</string>
+    <string name="aboutSupportThisProject">NoteKing no tiene publicidad y, por tanto, no genera ingresos. Si desea apoyar el desarrollo de este proyecto, considere hacer una donación a través del siguiente enlace.</string>
     <string name="aboutSupportThis">Apoyar este proyecto</string>
 
 </resources>
