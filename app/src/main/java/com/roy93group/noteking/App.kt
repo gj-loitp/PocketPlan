@@ -7,8 +7,6 @@ import android.app.Application
 //TODO ad applovin
 //TODO vung bi mat de show applovin config
 
-//TODO keystore
-
 //done
 //gen ic_launcher https://easyappicon.com/
 //proguard
@@ -19,6 +17,7 @@ import android.app.Application
 //rename app
 //github
 //license
+//keystore
 
 class App : Application() {
 
