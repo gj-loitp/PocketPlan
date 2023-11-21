@@ -8,6 +8,7 @@ import com.roy93group.noteking.data.settings.Languages
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 
+@Keep
 class ItemTemplateList : ArrayList<ItemTemplate>() {
     init {
         loadFromAssets()

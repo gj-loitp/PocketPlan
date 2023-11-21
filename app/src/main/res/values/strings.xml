@@ -43,7 +43,7 @@
     <string name="birthdaysReminderActivated">\nReminder set</string>
 
     <!--    general-->
-    <string name="generalAppName" translatable="false">NoteKIng</string>
+<!--    <string name="generalAppName" translatable="false">NoteKing</string>-->
     <string name="generalClose">close</string>
     <string name="generalOk">OK</string>
     <string name="generalOpen">open</string>

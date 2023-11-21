@@ -1,5 +1,6 @@
 package com.roy93group.noteking.data.shoppinglist
 
+import androidx.annotation.Keep
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.data.Checkable
@@ -9,6 +10,7 @@ import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 /**
  * A simple wrapper for shopping lists to easily manage multiple instances of them.
  */
+@Keep
 class ShoppingListWrapper(defaultListName: String = "") : ArrayList<Pair<String, ShoppingList>>(), Checkable {
     private val defaultName = defaultListName
 

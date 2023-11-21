@@ -1,11 +1,13 @@
 package com.roy93group.noteking.data.shoppinglist
 
+import androidx.annotation.Keep
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageHandler
 import com.roy93group.noteking.systemInteraction.handler.storage.StorageId
 
+@Keep
 class UserItemTemplateList : ArrayList<ItemTemplate>(), Checkable {
     init {
         StorageHandler.createJsonFile(StorageId.USER_TEMPLATE_LIST)

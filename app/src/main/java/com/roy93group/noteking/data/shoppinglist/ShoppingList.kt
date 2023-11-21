@@ -1,9 +1,11 @@
 package com.roy93group.noteking.data.shoppinglist
 
+import androidx.annotation.Keep
 import com.roy93group.noteking.data.Checkable
 import com.roy93group.noteking.data.settings.SettingId
 import com.roy93group.noteking.data.settings.SettingsManager
 
+@Keep
 class ShoppingList(private var wrapper: ShoppingListWrapper?) :
     ArrayList<Pair<String, ArrayList<ShoppingItem>>>(), Checkable {
     constructor() : this(null)
